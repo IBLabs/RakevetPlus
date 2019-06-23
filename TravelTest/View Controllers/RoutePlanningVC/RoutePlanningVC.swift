@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RoutePlanningVC.swift
 //  TravelTest
 //
 //  Created by Itamar Biton on 14/06/2019.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RoutePlanningVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-

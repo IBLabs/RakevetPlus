@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerVC" customModule="TravelTest" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="NhQ-gW-HRb" id="XPm-Kv-Dcp"/>
+                <outlet property="datePicker" destination="qMQ-11-XTB" id="NgT-qF-Wft"/>
+                <outlet property="overlayButton" destination="WeH-yA-ulx" id="HDc-Ws-nid"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeH-yA-ulx" userLabel="Overlay Button">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="didClickedOverlayButtonWithSender:" destination="-1" eventType="touchUpInside" id="ktK-OA-GEA"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhQ-gW-HRb">
+                    <rect key="frame" x="0.0" y="602" width="414" height="294"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qMQ-11-XTB">
+                            <rect key="frame" x="0.0" y="44" width="414" height="216"/>
+                            <date key="date" timeIntervalSinceReferenceDate="582491144.31938004">
+                                <!--2019-06-17 19:05:44 +0000-->
+                            </date>
+                            <locale key="locale" localeIdentifier="he_IL"/>
+                        </datePicker>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRI-0d-ajG">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-Y6-ovZ">
+                                    <rect key="frame" x="334" y="8" width="72" height="28"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="5DR-lB-4il"/>
+                                        <constraint firstAttribute="width" constant="72" id="JC3-6k-gh2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <state key="normal" title="אישור"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="14"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="didClickedConfirmButtonWithSender:" destination="-1" eventType="touchUpInside" id="wwy-O6-DSm"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Gm9-Y6-ovZ" firstAttribute="top" secondItem="kRI-0d-ajG" secondAttribute="top" constant="8" id="CAs-1U-IMr"/>
+                                <constraint firstAttribute="trailing" secondItem="Gm9-Y6-ovZ" secondAttribute="trailing" constant="8" id="Dlt-wc-XiK"/>
+                                <constraint firstItem="Gm9-Y6-ovZ" firstAttribute="centerY" secondItem="kRI-0d-ajG" secondAttribute="centerY" id="JsN-gT-2JH"/>
+                                <constraint firstAttribute="height" constant="44" id="itb-JV-bOu"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="qMQ-11-XTB" firstAttribute="leading" secondItem="NhQ-gW-HRb" secondAttribute="leading" id="WfH-yK-9v1"/>
+                        <constraint firstItem="kRI-0d-ajG" firstAttribute="top" secondItem="NhQ-gW-HRb" secondAttribute="top" id="aBp-0T-AzQ"/>
+                        <constraint firstItem="qMQ-11-XTB" firstAttribute="top" secondItem="kRI-0d-ajG" secondAttribute="bottom" id="anO-va-btd"/>
+                        <constraint firstAttribute="trailing" secondItem="qMQ-11-XTB" secondAttribute="trailing" id="eh5-RX-9VB"/>
+                        <constraint firstAttribute="trailing" secondItem="kRI-0d-ajG" secondAttribute="trailing" id="nJH-Xf-2HG"/>
+                        <constraint firstItem="kRI-0d-ajG" firstAttribute="leading" secondItem="NhQ-gW-HRb" secondAttribute="leading" id="vLf-CK-TUJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qMQ-11-XTB" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2u9-gB-vRc"/>
+                <constraint firstItem="WeH-yA-ulx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FAW-N3-Hrq"/>
+                <constraint firstItem="NhQ-gW-HRb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OhE-Bj-fpO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NhQ-gW-HRb" secondAttribute="trailing" id="WM2-yS-goE"/>
+                <constraint firstItem="WeH-yA-ulx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mht-N0-z2d"/>
+                <constraint firstAttribute="trailing" secondItem="WeH-yA-ulx" secondAttribute="trailing" id="oKp-13-FmQ"/>
+                <constraint firstAttribute="bottom" secondItem="NhQ-gW-HRb" secondAttribute="bottom" id="obC-IL-xnw"/>
+                <constraint firstAttribute="bottom" secondItem="WeH-yA-ulx" secondAttribute="bottom" id="zle-R4-3dz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
