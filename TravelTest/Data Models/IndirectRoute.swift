@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct IndirectRoute {
+    let routeTrains: [RouteTrain]
+    
+    init(service: IndirectRouteService, trains: [String : Train]) {
+        var routeTrains = [RouteTrain]()
+        for routeTrainService in service.routeTrains {
+            guard let train = trains[routeTrainService.trainNumber], let routeTrain = RouteTrain(service: routeTrainService, train: train) else {
+                continue
+            }
+            
+            routeTrains.append(routeTrain)
+        }
+        
+        self.routeTrains = routeTrains
+    }
+}

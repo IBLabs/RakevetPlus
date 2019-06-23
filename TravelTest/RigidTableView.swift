@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+class RigidTableView: UITableView {
+    override var contentSize: CGSize {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return self.contentSize
+    }
+}

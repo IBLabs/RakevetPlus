@@ -10,8 +10,19 @@ import UIKit
 
 class RouteResultVC: UIViewController {
     
+    var origStation: TrainStation?
+    var destStation: TrainStation?
+    var date: Date?
+    
     @IBOutlet weak private var directRoutesTableView: UITableView!
     @IBOutlet weak private var indirectRoutesTableView: UITableView!
+    @IBOutlet weak private var origStationLabel: UILabel!
+    @IBOutlet weak private var destStationLabel: UILabel!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var dateLabel: UILabel!
+    
+    @IBOutlet weak var routeSliderView: UIView!
+    @IBOutlet var routeButtons: [UIButton]!
     
     var routeResult: RouteResult? {
         didSet {
@@ -30,12 +41,35 @@ class RouteResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        
+
+        
+        configureTabButtons()
         configureTableViews()
         
-        if routeResult != nil {
+        if self.routeResult != nil {
             self.indirectRoutesTableView.reloadData()
             self.directRoutesTableView.reloadData()
         }
+        
+        if let origStation = self.origStation, let destStation = self.destStation, let date = self.date {
+            self.origStationLabel.text = origStation.heName
+            self.destStationLabel.text = destStation.heName
+            
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "he_IL")
+            formatter.dateFormat = "EEEE, d MMMM, HH:mm"
+            
+            self.dateLabel.text = formatter.string(from: date)
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
+    private func configureTabButtons() {
+        self.routeButtons[0].setTitle("\(self.directRoutes.count) ישיר", for: .normal)
+        self.routeButtons[1].setTitle("\(self.indirectRoutes.count) עם החלפות", for: .normal)
     }
     
     private func configureTableViews() {
@@ -55,7 +89,33 @@ class RouteResultVC: UIViewController {
     // MARK: User Interaction Methods
     
     @IBAction private func didClickedCloseButton(sender: UIButton) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func didClickedRouteButton(sender: UIButton) {
+        let buttonIndex = self.routeButtons.firstIndex { $0 == sender }
+        guard let index = buttonIndex else {
+            return
+        }
+        
+        self.routeSliderView.removeAllConstraints()
+        self.routeSliderView.leadingAnchor.constraint(equalTo: sender.leadingAnchor, constant: -12).isActive = true
+        self.routeSliderView.topAnchor.constraint(equalTo: sender.topAnchor).isActive = true
+        self.routeSliderView.trailingAnchor.constraint(equalTo: sender.trailingAnchor, constant: 12).isActive = true
+        self.routeSliderView.bottomAnchor.constraint(equalTo: sender.bottomAnchor).isActive = true
+        
+        let targetContentOffset: CGFloat = CGFloat(index) * self.scrollView.bounds.width
+        
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+            self.scrollView.setContentOffset(CGPoint(x: targetContentOffset, y: 0), animated: false)
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        for button in self.routeButtons {
+            let textColor: UIColor = button == sender ? .white : .lightGray
+            button.setTitleColor(textColor, for: .normal)
+        }
     }
 }
 
@@ -110,5 +170,27 @@ extension RouteResultVC: UITableViewDataSource {
 extension RouteResultVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 64
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var routeTrains: [RouteTrain]!
+        
+        switch tableView {
+        case self.directRoutesTableView:
+            let train = self.directRoutes[indexPath.row].routeTrain
+            routeTrains = [train]
+            
+        case self.indirectRoutesTableView:
+            let trains = self.indirectRoutes[indexPath.row].routeTrains
+            routeTrains = trains
+            
+        default:
+            break
+        }
+        
+        let routeDetailsVC = RouteDetailsVC()
+        routeDetailsVC.routeTrains = routeTrains
+        
+        self.present(routeDetailsVC, animated: true, completion: nil)
     }
 }

@@ -14,7 +14,9 @@ struct RouteTrainService: Codable  {
     let destStationId: String
     let destPlatform: String
     let origPlatform: String
-    let stopStations: RouteStationContainerService
+    let departureTime: String
+    let arrivalTime: String
+    let stopStations: RouteStationContainerService?
     
     private enum CodingKeys: String, CodingKey {
         case trainNumber = "Trainno"
@@ -23,5 +25,7 @@ struct RouteTrainService: Codable  {
         case destPlatform = "DestPlatform"
         case origPlatform = "Platform"
         case stopStations = "StopStations"
+        case departureTime = "DepartureTime"
+        case arrivalTime = "ArrivalTime"
     }
 }

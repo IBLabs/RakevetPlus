@@ -27,7 +27,11 @@ class RouteDetailsVC: UIViewController {
         var routeDetails = [Any]()
         
         for (index, train) in self.routeTrains.enumerated() {
-            routeDetails.append(train)
+            guard let stopStations = train.stopStations else {
+                continue
+            }
+            
+            routeDetails.append(contentsOf: stopStations)
             if index + 1 < self.routeTrains.count {
                 let nextTrain = self.routeTrains[index + 1]
                 let trainSwitch = TrainSwitch(arrivalTime: train.arrivalTime, departureTime: nextTrain.departureTime, arrivalPlatform: train.destPlatform, departurePlatform: nextTrain.origPlatform)
@@ -48,5 +52,36 @@ struct TrainSwitch {
     
     var waitingTime: TimeInterval {
         return self.departureTime.timeIntervalSince(self.arrivalTime)
+    }
+}
+
+extension RouteDetailsVC: UITableViewDataSource {
+    var detailCellIdentifier: String { return "co.itamarbiton.TravelTest.DetailCellIdentifier" }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: detailCellIdentifier, for: indexPath)
+        
+        var detailType: RouteDetailCell.DetailType = .middle
+        if let cell = cell as? RouteDetailCell {
+            if indexPath.row + 1 > self.routeTrains.count {
+                if self.routeTrains[indexPath.row + 1] is TrainSwitch {
+                    
+                } else {
+                    
+                }
+            } else {
+                detailType = .last
+            }
+        }
+        
+        return cell
     }
 }

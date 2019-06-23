@@ -12,10 +12,13 @@ struct TrainStopService: Codable {
     let stationId: String
     let arrivalPlatform: String
     let arrivalTime: String
+    let load: String
     
     private enum CodingKeys: String, CodingKey {
         case stationId = "@Num"
         case arrivalPlatform = "@Platform"
         case arrivalTime = "@Time"
+        case load = "@Omes"
+        
     }
 }

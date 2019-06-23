@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class Train {
+    let trainNumber: String
+    let stops: [TrainStop]
+    
+    init(service: TrainService) {
+        self.trainNumber = service.trainNumber
+        self.stops = service.stops.compactMap { TrainStop(service: $0) }
+    }
+}

@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class DirectRoute {
+    let routeTrain: RouteTrain
+    
+    init?(service: DirectRouteService, train: Train) {
+        guard let routeTrain = RouteTrain(service: service.routeTrain, train: train) else {
+            return nil
+        }
+        
+        self.routeTrain = routeTrain
+    }
+}
