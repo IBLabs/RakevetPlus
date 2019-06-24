@@ -24,6 +24,9 @@
 		A891E32422BE9B6D009F9D10 /* RouteDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A891E32222BE9B6D009F9D10 /* RouteDetailsVC.xib */; };
 		A891E32922BEF2BC009F9D10 /* RouteDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891E32722BEF2BC009F9D10 /* RouteDetailCell.swift */; };
 		A891E32A22BEF2BC009F9D10 /* RouteDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A891E32822BEF2BC009F9D10 /* RouteDetailCell.xib */; };
+		A891E33522BFEE2A009F9D10 /* TrainSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891E33322BFEE2A009F9D10 /* TrainSwitchCell.swift */; };
+		A891E33622BFEE2A009F9D10 /* TrainSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A891E33422BFEE2A009F9D10 /* TrainSwitchCell.xib */; };
+		A891E33922C008A3009F9D10 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891E33822C008A3009F9D10 /* UIColor+Hex.swift */; };
 		A896D95422BBFB1F005F61DF /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896D95322BBFB1F005F61DF /* Train.swift */; };
 		A896D95622BBFB50005F61DF /* TrainStopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896D95522BBFB50005F61DF /* TrainStopService.swift */; };
 		A896D95922BBFB90005F61DF /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A896D95822BBFB90005F61DF /* TrainStop.swift */; };
@@ -77,6 +80,9 @@
 		A891E32222BE9B6D009F9D10 /* RouteDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteDetailsVC.xib; sourceTree = "<group>"; };
 		A891E32722BEF2BC009F9D10 /* RouteDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailCell.swift; sourceTree = "<group>"; };
 		A891E32822BEF2BC009F9D10 /* RouteDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteDetailCell.xib; sourceTree = "<group>"; };
+		A891E33322BFEE2A009F9D10 /* TrainSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSwitchCell.swift; sourceTree = "<group>"; };
+		A891E33422BFEE2A009F9D10 /* TrainSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainSwitchCell.xib; sourceTree = "<group>"; };
+		A891E33822C008A3009F9D10 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		A896D95322BBFB1F005F61DF /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		A896D95522BBFB50005F61DF /* TrainStopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStopService.swift; sourceTree = "<group>"; };
 		A896D95822BBFB90005F61DF /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
@@ -241,9 +247,10 @@
 		A891E32522BEF28E009F9D10 /* RouteDetailsVC */ = {
 			isa = PBXGroup;
 			children = (
-				A891E32622BEF296009F9D10 /* RouteDetailCell */,
 				A891E32122BE9B6D009F9D10 /* RouteDetailsVC.swift */,
 				A891E32222BE9B6D009F9D10 /* RouteDetailsVC.xib */,
+				A891E33722C00022009F9D10 /* TrainSwitchCell */,
+				A891E32622BEF296009F9D10 /* RouteDetailCell */,
 			);
 			path = RouteDetailsVC;
 			sourceTree = "<group>";
@@ -255,6 +262,15 @@
 				A891E32822BEF2BC009F9D10 /* RouteDetailCell.xib */,
 			);
 			path = RouteDetailCell;
+			sourceTree = "<group>";
+		};
+		A891E33722C00022009F9D10 /* TrainSwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				A891E33322BFEE2A009F9D10 /* TrainSwitchCell.swift */,
+				A891E33422BFEE2A009F9D10 /* TrainSwitchCell.xib */,
+			);
+			path = TrainSwitchCell;
 			sourceTree = "<group>";
 		};
 		A896D95722BBFB73005F61DF /* Intermediate */ = {
@@ -276,6 +292,7 @@
 			children = (
 				A896D96322BC05DF005F61DF /* Array+ToDictionary.swift */,
 				A8B05AFB22BE1C290087DA3F /* UIView+RemoveConstraints.swift */,
+				A891E33822C008A3009F9D10 /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,6 +408,7 @@
 				A891E32422BE9B6D009F9D10 /* RouteDetailsVC.xib in Resources */,
 				A891E32A22BEF2BC009F9D10 /* RouteDetailCell.xib in Resources */,
 				A896D96B22BC07D6005F61DF /* DirectRouteCell.xib in Resources */,
+				A891E33622BFEE2A009F9D10 /* TrainSwitchCell.xib in Resources */,
 				A896D97522BC1B65005F61DF /* IndirectRouteCell.xib in Resources */,
 				A8D7E3DB22B81B61002E0A39 /* DatePickerVC.xib in Resources */,
 				A853A31B22B3FFF600D0B05C /* Main.storyboard in Resources */,
@@ -465,6 +483,7 @@
 				A896D96422BC05DF005F61DF /* Array+ToDictionary.swift in Sources */,
 				A8AFA5B022BB00B000467D89 /* RouteStationService.swift in Sources */,
 				A8AFA5A622BAFE6400467D89 /* RouteResultService.swift in Sources */,
+				A891E33522BFEE2A009F9D10 /* TrainSwitchCell.swift in Sources */,
 				A896D97322BC1B20005F61DF /* IndirectRouteCell.swift in Sources */,
 				A8AFA5AA22BAFEFE00467D89 /* DirectRouteService.swift in Sources */,
 				A853A32E22B4247700D0B05C /* TrainStation.swift in Sources */,
@@ -484,6 +503,7 @@
 				A896D95F22BBFE50005F61DF /* DirectRoute.swift in Sources */,
 				A896D95B22BBFCB7005F61DF /* RouteResult.swift in Sources */,
 				A853A33722B42A2C00D0B05C /* SearchStationVC.swift in Sources */,
+				A891E33922C008A3009F9D10 /* UIColor+Hex.swift in Sources */,
 				A8B05AFC22BE1C290087DA3F /* UIView+RemoveConstraints.swift in Sources */,
 				A896D95422BBFB1F005F61DF /* Train.swift in Sources */,
 				A891E32022BE9B51009F9D10 /* AppDelegate.swift in Sources */,

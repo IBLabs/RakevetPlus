@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TrainSwitchCell" customModule="TravelTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIx-hr-ZcQ">
+                        <rect key="frame" x="32" y="4" width="256" height="55.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="החלפה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUo-1W-Fcy">
+                                <rect key="frame" x="103" y="4" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUr-qB-5TY">
+                                <rect key="frame" x="56.5" y="29" width="143" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="רציף 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLh-9q-raM">
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 דק׳ המתנה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5F-3C-h64">
+                                        <rect key="frame" x="57" y="0.0" width="86" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="E5F-3C-h64" firstAttribute="leading" secondItem="dLh-9q-raM" secondAttribute="trailing" constant="16" id="CR6-zf-rFs"/>
+                                    <constraint firstItem="dLh-9q-raM" firstAttribute="leading" secondItem="nUr-qB-5TY" secondAttribute="leading" id="RxF-Us-G2w"/>
+                                    <constraint firstAttribute="trailing" secondItem="E5F-3C-h64" secondAttribute="trailing" id="aKK-sq-CbF"/>
+                                    <constraint firstAttribute="bottom" secondItem="dLh-9q-raM" secondAttribute="bottom" id="eOe-UD-hwi"/>
+                                    <constraint firstItem="dLh-9q-raM" firstAttribute="top" secondItem="nUr-qB-5TY" secondAttribute="top" id="hPb-Ba-NJN"/>
+                                    <constraint firstItem="E5F-3C-h64" firstAttribute="top" secondItem="nUr-qB-5TY" secondAttribute="top" id="tMB-TD-RGQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="E5F-3C-h64" secondAttribute="bottom" id="ziN-Ra-X0Z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.92904562793427226" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nUr-qB-5TY" firstAttribute="centerX" secondItem="cIx-hr-ZcQ" secondAttribute="centerX" id="9ie-Ps-UZW"/>
+                            <constraint firstItem="gUo-1W-Fcy" firstAttribute="centerX" secondItem="cIx-hr-ZcQ" secondAttribute="centerX" id="Edj-ZL-wrb"/>
+                            <constraint firstItem="nUr-qB-5TY" firstAttribute="top" secondItem="gUo-1W-Fcy" secondAttribute="bottom" constant="4" id="NQd-a8-hp0"/>
+                            <constraint firstItem="gUo-1W-Fcy" firstAttribute="top" secondItem="cIx-hr-ZcQ" secondAttribute="top" constant="4" id="PRx-Xw-doR"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="28"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cIx-hr-ZcQ" secondAttribute="trailing" constant="32" id="D2E-kG-otn"/>
+                    <constraint firstItem="cIx-hr-ZcQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="IyL-Hk-44u"/>
+                    <constraint firstAttribute="bottom" secondItem="cIx-hr-ZcQ" secondAttribute="bottom" constant="4" id="RD9-eK-KTi"/>
+                    <constraint firstItem="cIx-hr-ZcQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="hPG-i6-1nG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="platformLabel" destination="dLh-9q-raM" id="jwA-EG-cOj"/>
+                <outlet property="waitingTimeLabel" destination="E5F-3C-h64" id="zB2-bN-9k5"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

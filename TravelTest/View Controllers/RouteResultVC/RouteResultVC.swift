@@ -173,6 +173,8 @@ extension RouteResultVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         var routeTrains: [RouteTrain]!
         
         switch tableView {
@@ -188,9 +190,6 @@ extension RouteResultVC: UITableViewDelegate {
             break
         }
         
-        let routeDetailsVC = RouteDetailsVC()
-        routeDetailsVC.routeTrains = routeTrains
-        
-        self.present(routeDetailsVC, animated: true, completion: nil)
+        RouteDetailsVC.present(from: self, routeTrains: routeTrains)
     }
 }

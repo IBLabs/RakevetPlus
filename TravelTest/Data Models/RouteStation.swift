@@ -27,4 +27,11 @@ class RouteStation {
         self.departureTime = departureTime
         self.platform = service.platform
     }
+    
+    init(station: TrainStation, arrivalTime: Date, departureTime: Date, platform: String) {
+        self.station = station
+        self.arrivalTime = arrivalTime
+        self.departureTime = departureTime
+        self.platform = platform
+    }
 }

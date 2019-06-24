@@ -18,6 +18,18 @@ struct RouteTrain {
     let departureTime: Date
     let stopStations: [RouteStation]?
     
+    var origRouteStation: RouteStation {
+        get {
+            return RouteStation(station: origStation, arrivalTime: departureTime, departureTime: departureTime, platform: origPlatform)
+        }
+    }
+    
+    var destRouteStation: RouteStation {
+        get {
+            return RouteStation(station: destStation, arrivalTime: arrivalTime, departureTime: arrivalTime, platform: destPlatform)
+        }
+    }
+    
     init?(service: RouteTrainService, train: Train) {
         guard let origStation = DataStore.shared.station(forId: service.origStationId),
             let destStation = DataStore.shared.station(forId: service.destStationId),

@@ -15,25 +15,41 @@ class RouteDetailCell: UITableViewCell {
     @IBOutlet weak var bottomLegView: UIView!
     @IBOutlet weak var dotView: UIView!
     
-    func configure(with trainStop: TrainStop, type: DetailType) {
-        self.stationLabel.text = trainStop.station.heName
-        self.platformLabel.text = trainStop.arrivalPlatform
+    func configure(with station: RouteStation, type: DetailType) {
+        self.stationLabel.text = station.station.heName
+        self.platformLabel.text = "רציף \(station.platform)"
         
         switch type {
         case .initial:
             self.topLegView.isHidden = true
             self.bottomLegView.isHidden = false
-            self.dotView.backgroundColor = .red
+            
+            let dotColor = UIColor.colorWithHex(hex: "#0090DA")
+            self.dotView.backgroundColor = dotColor
+            
+            self.dotView.layer.shadowColor = dotColor.cgColor
+            self.dotView.layer.shadowOffset = .zero
+            self.dotView.layer.shadowRadius = 8
+            self.dotView.layer.shadowOpacity = 0.3
+            self.dotView.layer.shadowPath = UIBezierPath(ovalIn: self.dotView.bounds).cgPath
             
         case .middle:
             self.topLegView.isHidden = false
             self.bottomLegView.isHidden = false
-            self.dotView.backgroundColor = .lightGray
+            self.dotView.backgroundColor = UIColor(white: 0.88, alpha: 1)
             
         case .last:
             self.topLegView.isHidden = false
             self.bottomLegView.isHidden = true
-            self.dotView.backgroundColor = .red
+            
+            let dotColor = UIColor.colorWithHex(hex: "#FF5200")
+            self.dotView.backgroundColor = dotColor
+            
+            self.dotView.layer.shadowColor = dotColor.cgColor
+            self.dotView.layer.shadowOffset = .zero
+            self.dotView.layer.shadowRadius = 8
+            self.dotView.layer.shadowOpacity = 0.3
+            self.dotView.layer.shadowPath = UIBezierPath(ovalIn: self.dotView.bounds).cgPath
         }
     }
     
