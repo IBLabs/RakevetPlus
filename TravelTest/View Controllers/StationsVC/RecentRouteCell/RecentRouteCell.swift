@@ -13,10 +13,24 @@ class RecentRouteCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var origStationLabel: UILabel!
     @IBOutlet weak var destStationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    func configure(with recentRoute: RecentRoute) {
+    func configure(with recentRoute: RecentRoute, dateFormatter: DateFormatter? = nil) {
         self.origStationLabel.text = recentRoute.origStation.heName
         self.destStationLabel.text = recentRoute.destStation.heName
+
+        var formatter: DateFormatter!
+        if dateFormatter != nil {
+            formatter = dateFormatter
+        } else {
+            formatter = {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/yyyy H:mm"
+                return formatter
+            }()
+        }
+
+        self.dateLabel.text = formatter.string(from: recentRoute.date)
     }
     
     func performNudgeAnimation() {

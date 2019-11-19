@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftDate
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // create a window
+        window = UIWindow(frame: UIScreen.main.bounds)
+
+        // configure firebase
+        FirebaseApp.configure()
+
+        // sign the user in anonymously
+        Auth.auth().signInAnonymously { (authResult, error) in
+            if let error = error {
+                print("failed to sign in, \(error.localizedDescription)")
+            } else {
+                print("successfully signed in!")
+            }
+        }
+
+        // configure the default region for SwiftDate
+        let region = Region(calendar: Calendars.gregorian, zone: Zones.asiaJerusalem, locale: Locales.hebrewIsrael)
+        SwiftDate.defaultRegion = region
+
+        let stationsVC = StationsVC()
+        let navigationController = UINavigationController(rootViewController: stationsVC)
+        navigationController.isNavigationBarHidden = true
+        window!.rootViewController = navigationController
+        window!.makeKeyAndVisible()
+        
         return true
     }
 

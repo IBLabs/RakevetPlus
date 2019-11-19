@@ -19,7 +19,7 @@ struct RouteResultContainerService: Codable {
 struct RouteResultService: Codable {
     let lineType: String
     let lineTypeDescription: String
-    let avgTime: String
+    let avgTime: String?
     let directRoutes: DirectRouteContainerService?
     let indirectRoutes: IndirectRouteContainerService?
     let trains: TrainContainerService?

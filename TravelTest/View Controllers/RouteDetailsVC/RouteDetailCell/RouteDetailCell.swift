@@ -16,6 +16,9 @@ class RouteDetailCell: UITableViewCell {
     @IBOutlet weak var dotView: UIView!
     
     func configure(with station: RouteStation, type: DetailType) {
+        self.contentView.backgroundColor = .clear
+        self.contentView.superview?.backgroundColor = .clear
+        
         self.stationLabel.text = station.station.heName
         self.platformLabel.text = "רציף \(station.platform)"
         
@@ -37,6 +40,12 @@ class RouteDetailCell: UITableViewCell {
             self.topLegView.isHidden = false
             self.bottomLegView.isHidden = false
             self.dotView.backgroundColor = UIColor(white: 0.88, alpha: 1)
+            
+            self.dotView.layer.shadowColor = nil
+            self.dotView.layer.shadowOffset = .zero
+            self.dotView.layer.shadowRadius = 0
+            self.dotView.layer.shadowOpacity = 0
+            self.dotView.layer.shadowPath = nil
             
         case .last:
             self.topLegView.isHidden = false

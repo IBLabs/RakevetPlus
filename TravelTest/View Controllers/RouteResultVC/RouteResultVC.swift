@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class RouteResultVC: UIViewController {
     
@@ -42,9 +43,7 @@ class RouteResultVC: UIViewController {
         super.viewDidLoad()
         
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
-        
-
-        
+       
         configureTabButtons()
         configureTableViews()
         
@@ -62,6 +61,36 @@ class RouteResultVC: UIViewController {
             formatter.dateFormat = "EEEE, d MMMM, HH:mm"
             
             self.dateLabel.text = formatter.string(from: date)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        var activeDirectRouteIndex = -1
+        for (index, route) in directRoutes.enumerated() {
+            if route.routeTrain.departureTime.isInPast {
+                continue
+            } else {
+                activeDirectRouteIndex = index
+                break
+            }
+        }
+        
+        if activeDirectRouteIndex != -1 {
+            self.directRoutesTableView.scrollToRow(at: IndexPath(row: activeDirectRouteIndex, section: 0), at: .top, animated: true)
+        }
+        
+        var activeIndirectRouteIndex = -1
+        for (index, route) in indirectRoutes.enumerated() {
+            if route.routeTrains.first?.departureTime.isInPast ?? false {
+                continue
+            } else {
+                activeIndirectRouteIndex = index
+                break
+            }
+        }
+        
+        if activeIndirectRouteIndex != -1 {
+            self.indirectRoutesTableView.scrollToRow(at: IndexPath(row: activeIndirectRouteIndex, section: 0), at: .top, animated: true)
         }
     }
     
@@ -169,7 +198,7 @@ extension RouteResultVC: UITableViewDataSource {
 
 extension RouteResultVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64
+        return 76
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

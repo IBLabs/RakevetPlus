@@ -9,9 +9,12 @@
 import UIKit
 import CoreLocation
 import Alamofire
+import Firebase
 
 class StationsVC: UIViewController {
-    
+
+    @IBOutlet weak private var origStationContainerView: UIView!
+    @IBOutlet weak private var destStationContainerView: UIView!
     @IBOutlet weak private var destStationLabel: UILabel!
     @IBOutlet weak private var origStationLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
@@ -27,16 +30,47 @@ class StationsVC: UIViewController {
     private var destStation: TrainStation? {
         didSet {
             guard let station = self.destStation else { return }
-            self.destStationLabel.text = station.heName
+            self.animateReplaceText(label: self.destStationLabel, text: station.heName)
         }
     }
     private var origStation: TrainStation? {
         didSet {
             guard let station = self.origStation else { return }
-            self.origStationLabel.text = station.heName
+            
+            // self.origStationLabel.text = station.heName
+            self.animateReplaceText(label: self.origStationLabel, text: station.heName)
         }
     }
     private var selectedDate: Date? = Date()
+    
+    private func animateReplaceText(label: UILabel, text: String) {
+        let replacementLabel = UILabel(frame: .zero)
+        replacementLabel.font = label.font
+        replacementLabel.textColor = .black
+        replacementLabel.alpha = 0
+        replacementLabel.text = text
+        replacementLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        let superview = label.superview!
+        superview.addSubview(replacementLabel)
+        
+        replacementLabel.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
+        replacementLabel.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 0).isActive = true
+        superview.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: [], animations: {
+            label.transform = .init(translationX: 0, y: -(replacementLabel.center.y - label.center.y))
+            label.alpha = 0
+            replacementLabel.transform = .init(translationX: 0, y: -(replacementLabel.center.y - label.center.y))
+            replacementLabel.alpha = 1
+        }) { (succeeded) in
+            label.text = text
+            label.transform = .identity
+            label.alpha = 1
+            replacementLabel.alpha = 0
+            replacementLabel.removeFromSuperview()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +83,8 @@ class StationsVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.recentRoutes = DataStore.shared.getRecentRoutes()
-        self.recentsTableView.reloadData()
+        refreshRecentsTableView()
+        refreshFavouritesTableView()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -85,8 +119,18 @@ class StationsVC: UIViewController {
     // MARK: Configuration Methods
     
     private func configureTableViews() {
+        let emptyFavouriteRouteCellNib = UINib(nibName: "EmptyFavouriteRouteCell", bundle: nil)
+        self.favouritesTableView.register(emptyFavouriteRouteCellNib, forCellReuseIdentifier: "co.itamarbiton.TravelTest.EmptyFavouriteRouteCellIdentifier")
+        let favouriteRouteCellNib = UINib(nibName: "FavouriteRouteCell", bundle: nil)
+        self.favouritesTableView.register(favouriteRouteCellNib, forCellReuseIdentifier: "co.itamarbiton.TravelTest.FavouriteRouteCellIdentifier")
+        
         self.favouritesTableView.dataSource = self
         self.favouritesTableView.delegate = self
+
+        let emptyRecentRouteCellNib = UINib(nibName: "EmptyRecentRouteCell", bundle: nil)
+        self.recentsTableView.register(emptyRecentRouteCellNib, forCellReuseIdentifier: "co.itamarbiton.TravelTest.EmptyRecentRouteCellIdentifier")
+        let recentRouteCellNib = UINib(nibName: "RecentRouteCell", bundle: nil)
+        self.recentsTableView.register(recentRouteCellNib, forCellReuseIdentifier: "co.itamarbiton.TravelTest.RecentRouteCellIdentifier")
         
         self.recentsTableView.dataSource = self
         self.recentsTableView.delegate = self
@@ -105,6 +149,16 @@ class StationsVC: UIViewController {
     }
     
     // MARK: Utility Methods
+    
+    private func refreshRecentsTableView() {
+        self.recentRoutes = DataStore.shared.getRecentRoutes()
+        self.recentsTableView.reloadData()
+    }
+    
+    private func refreshFavouritesTableView() {
+        self.favouriteRoutes = DataStore.shared.getFavouriteRoutes()
+        self.favouritesTableView.reloadData()
+    }
     
     private func fetchRoute() {
         guard let selectedDate = self.selectedDate,
@@ -161,7 +215,7 @@ class StationsVC: UIViewController {
                     let container = try decoder.decode(TrainStationContainer.self, from: stationsData)
                     let stations = container.stationsContainer.stations
                     DataStore.shared.set(stations: stations)
-                    self.stations = stations
+                    self.stations = DataStore.shared.stations
                 } catch let error {
                     print("error decoding stations JSON, \(error.localizedDescription)")
                 }
@@ -180,14 +234,13 @@ class StationsVC: UIViewController {
     }
     
     @IBAction private func didClickedSetOriginButton(sender: UIButton) {
-        SearchStationVC.present(from: self, stations: self.stations) { station in
+        SearchStationVC.present(from: self, stations: self.stations, type: .origin) { station in
             self.origStation = station
-            
         }
     }
     
     @IBAction private func didClickedSetDestinationButton(sender: UIButton) {
-        SearchStationVC.present(from: self, stations: self.stations) { station in
+        SearchStationVC.present(from: self, stations: self.stations, type: .destination) { station in
             self.destStation = station
         }
     }
@@ -204,16 +257,40 @@ class StationsVC: UIViewController {
         }
     }
     
+    @IBAction private func didClickedAddFavouriteButton(sender: UIButton) {
+        Analytics.logEvent(RPEventNames.createFavouriteButtonClicked, parameters: nil)
+        FavouriteDetailsVC.present(from: self) {
+            self.refreshFavouritesTableView()
+        }
+    }
+    
     @IBAction private func didClickedSearchButton(sender: UIButton) {
-        guard let origStation = self.origStation, let destStation = self.destStation, self.selectedDate != nil else {
+        if origStation == nil {
+            self.origStationContainerView.shake()
+        }
+
+        if destStation == nil {
+            self.destStationContainerView.shake()
+        }
+
+        if let origStation = self.origStation, let destStation = self.destStation, self.selectedDate != nil {
+            Analytics.logEvent(RPEventNames.searchButtonClicked, parameters: [RPEventParameters.isValid: true])
+
+            let recentRoute = RecentRoute(origStation: origStation, destStation: destStation, date: Date())
+            DataStore.shared.add(recentRoute: recentRoute)
+
+            self.setSearchButton(loading: true)
+            self.fetchRoute()
+        } else {
+            Analytics.logEvent(RPEventNames.searchButtonClicked, parameters: [RPEventParameters.isValid: false])
             return
         }
+    }
+    
+    @IBAction func didClickedEditFavouritesButton(sender: UIButton) {
+        let editFavouritesVC = EditFavouritesVC()
         
-        let recentRoute = RecentRoute(origStation: origStation, destStation: destStation, date: Date())
-        DataStore.shared.add(recentRoute: recentRoute)
-        
-        self.setSearchButton(loading: true)
-        self.fetchRoute()
+        self.navigationController?.pushViewController(editFavouritesVC, animated: true)
     }
 }
 
@@ -276,17 +353,36 @@ extension StationsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case self.favouritesTableView:
-            break
-            
-        case self.recentsTableView:
-            if let cell = tableView.cellForRow(at: indexPath) as? RecentRouteCell {
-                tableView.deselectRow(at: indexPath, animated: true)
-                cell.performNudgeAnimation()
+            tableView.deselectRow(at: indexPath, animated: true)
+
+            if self.favouriteRoutes.count == 0 {
+                FavouriteDetailsVC.present(from: self) {
+                    self.refreshFavouritesTableView()
+                }
+            } else {
+                let favouriteRoute = self.favouriteRoutes[indexPath.row]
+                self.destStation = favouriteRoute.destStation
+                self.origStation = favouriteRoute.origStation
             }
             
-            let recentRoute = self.recentRoutes[(self.recentRoutes.count - 1) - indexPath.row]
-            self.origStation = recentRoute.origStation
-            self.destStation = recentRoute.destStation
+            
+        case self.recentsTableView:
+            tableView.deselectRow(at: indexPath, animated: true)
+
+            if self.recentRoutes.isEmpty {
+                SearchStationVC.present(from: self, stations: self.stations, type: .origin) { (station) in
+                    self.origStation = station
+                }
+            } else {
+                if let cell = tableView.cellForRow(at: indexPath) as? RecentRouteCell {
+                    tableView.deselectRow(at: indexPath, animated: true)
+                    cell.performNudgeAnimation()
+                }
+
+                let recentRoute = self.recentRoutes[(self.recentRoutes.count - 1) - indexPath.row]
+                self.origStation = recentRoute.origStation
+                self.destStation = recentRoute.destStation
+            }
             
         default:
             break

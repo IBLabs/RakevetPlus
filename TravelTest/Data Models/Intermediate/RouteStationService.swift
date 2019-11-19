@@ -9,10 +9,28 @@
 import Foundation
 
 struct RouteStationContainerService: Codable {
-    let container: [RouteStationService]
+    let arrayContainer: [RouteStationService]?
+    let singleContainer: RouteStationService?
     
-    private enum CodingKeys: String, CodingKey {
-        case container = "Station"
+    init(from decoder: Decoder) throws {
+        let arrayValues = try? decoder.container(keyedBy: ArrayCodingKeys.self)
+        let singleValue = try? decoder.container(keyedBy: SingleCodingKeys.self)
+        
+        self.arrayContainer = try? arrayValues?.decode([RouteStationService]?.self, forKey: .arrayContainer)
+        self.singleContainer = try? singleValue?.decode(RouteStationService?.self, forKey: .singleContainer)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        
+    }
+    
+    private enum ArrayCodingKeys: String, CodingKey {
+        case arrayContainer = "Station"
+        
+    }
+    
+    private enum SingleCodingKeys: String, CodingKey {
+        case singleContainer = "Station"
     }
 }
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1018883962182-j81r695alurrlqhjqrvrfic2vqklj4t2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1018883962182-j81r695alurrlqhjqrvrfic2vqklj4t2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAn1qDS7LizR1Fyei0xqvw2STezXDKMDgk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1018883962182</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.itamarbiton.RakevetPlus</string>
+	<key>PROJECT_ID</key>
+	<string>rakevet-plus</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rakevet-plus.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1018883962182:ios:33a666b8f10f654e256147</string>
+	<key>DATABASE_URL</key>
+	<string>https://rakevet-plus.firebaseio.com</string>
+</dict>
+</plist>

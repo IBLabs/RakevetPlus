@@ -12,7 +12,7 @@ import Foundation
 class RouteResult {
     let lineType: String
     let lineTypeDescription: String
-    let avgTime: String
+    let avgTime: String?
     private(set) var directRoutes: [DirectRoute]? = nil
     private(set) var indirectRoutes: [IndirectRoute]? = nil
     private(set) var trains: [String : Train]? = nil

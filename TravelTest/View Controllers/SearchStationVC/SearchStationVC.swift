@@ -17,7 +17,8 @@ extension SearchStationVCDelegate {
 }
 
 class SearchStationVC: UIViewController {
-    
+
+    @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var overlayButton: UIButton!
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var stationsTableView: UITableView!
@@ -28,10 +29,12 @@ class SearchStationVC: UIViewController {
     
     private var completion: ((TrainStation) -> Void)? = nil
     private var filteredStations = [TrainStation]()
+    private var type: SearchType = .origin
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        self.configureLabels()
         self.configureTableViews()
         
         self.prepareForEnterAnimation()
@@ -44,15 +47,15 @@ class SearchStationVC: UIViewController {
     }
     
     // MARK: User Interaction Methods
+
+    private func configureLabels() {
+        self.titleLabel.text = self.type.getTitle()
+    }
     
     private func configureTableViews() {
         let cellNib = UINib(nibName: "StationResultCell", bundle: nil)
         self.stationsTableView.register(cellNib, forCellReuseIdentifier: stationResultCellIdentifier)
         self.resultTableView.register(cellNib, forCellReuseIdentifier: stationResultCellIdentifier)
-    }
-    
-    @IBAction private func didClickedCloseButton(sender: UIButton) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction private func didClickedOverlayButton(sender: UIButton) {
@@ -88,24 +91,24 @@ class SearchStationVC: UIViewController {
     
     // MARK: - Presentation Methods
     
-    static func present(from presentingVC: UIViewController, stations: [TrainStation], completion: @escaping (TrainStation) -> Void) {
-        guard let searchStationsVC = StoryboardUtilities.instantiateFromMainStoryboard(identifier: ViewControllerIdentifiers.searchStations) as? SearchStationVC else  {
-            return
-        }
-        
+    static func present(from presentingVC: UIViewController, stations: [TrainStation], type: SearchType, completion: @escaping (TrainStation) -> Void) {
+        let searchStationsVC = SearchStationVC()
+
         searchStationsVC.stations = stations
+        searchStationsVC.type = type
         searchStationsVC.completion = completion
         searchStationsVC.modalPresentationStyle = .overCurrentContext
         
         presentingVC.present(searchStationsVC, animated: false, completion: nil)
     }
     
-    static func present(from presentingVC: UIViewController, stations: [TrainStation], delegate: SearchStationVCDelegate) {
+    static func present(from presentingVC: UIViewController, stations: [TrainStation], type: SearchType, delegate: SearchStationVCDelegate) {
         guard let searchStationsVC = StoryboardUtilities.instantiateFromMainStoryboard(identifier: ViewControllerIdentifiers.searchStations) as? SearchStationVC else  {
             return
         }
         
         searchStationsVC.stations = stations
+        searchStationsVC.type = type
         searchStationsVC.delegate = delegate
         searchStationsVC.modalPresentationStyle = .overCurrentContext
         

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 struct RouteTrain {
     let train: Train
@@ -17,6 +18,11 @@ struct RouteTrain {
     let arrivalTime: Date
     let departureTime: Date
     let stopStations: [RouteStation]?
+    
+    public var localizedDepartureTime: DateInRegion {
+        let region = Region(calendar: Calendar.current, zone: TimeZone.current, locale: Locale.current)
+        return DateInRegion(self.departureTime, region: region)
+    }
     
     var origRouteStation: RouteStation {
         get {
@@ -45,6 +51,17 @@ struct RouteTrain {
         self.origPlatform = service.origPlatform
         self.arrivalTime = arrivalTime
         self.departureTime = departureTime
-        self.stopStations = service.stopStations?.container.compactMap { RouteStation(service: $0) }
+        
+        if let multipleStations = service.stopStations?.arrayContainer?.compactMap({ RouteStation(service: $0) }) {
+            self.stopStations = multipleStations
+        } else if let singleStationService = service.stopStations?.singleContainer {
+            if let singleStation = RouteStation(service: singleStationService) {
+                self.stopStations = [singleStation]
+            } else {
+                self.stopStations = nil
+            }
+        } else {
+            self.stopStations = nil
+        }
     }
 }

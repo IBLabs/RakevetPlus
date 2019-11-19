@@ -17,6 +17,9 @@ class RouteDetailsVC: UIViewController {
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var overlayButton: UIButton!
     @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var origStationLabel: UILabel!
+    @IBOutlet weak private var destStationLabel: UILabel!
+    @IBOutlet weak private var dateLabel: UILabel!
     
     private var routeDetails = [Any]()
 
@@ -24,6 +27,7 @@ class RouteDetailsVC: UIViewController {
         super.viewDidLoad()
         
         initializeRouteDetails()
+        configureRouteDetails()
         configureTableView()
         configureScrollView()
         configureContainerView()
@@ -53,6 +57,12 @@ class RouteDetailsVC: UIViewController {
         }
         
         self.routeDetails = routeDetails
+    }
+    
+    private func configureRouteDetails() {
+        self.origStationLabel.text = self.routeTrains.first?.origStation.heName ?? "--"
+        self.destStationLabel.text = self.routeTrains.last?.destStation.heName ?? "--"
+        self.dateLabel.text = self.routeTrains.first?.departureTime.toFormat("EEEE, d MMMM, HH:mm")
     }
     
     private func configureContainerView() {
@@ -182,9 +192,9 @@ extension RouteDetailsVC: UITableViewDelegate {
         let object = self.routeDetails[indexPath.row]
         
         if object is RouteStation {
-            return 92
+            return 72
         } else if object is TrainSwitch {
-            return 64
+            return 149
         }
         
         return 0

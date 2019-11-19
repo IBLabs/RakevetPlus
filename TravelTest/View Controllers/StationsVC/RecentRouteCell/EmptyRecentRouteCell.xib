@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="co.itamarbiton.TravelTest.EmptyRecentRouteCellIdentifier" rowHeight="64" id="RIL-4t-hIq">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RIL-4t-hIq" id="hSy-kH-ceh">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRI-k7-TPy">
+                        <rect key="frame" x="129.5" y="14" width="155" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טרם בוצעו חיפושי מסלולים" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V73-4E-Ea0">
+                                <rect key="frame" x="0.0" y="0.0" width="155" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="לחצ/י כאן כדי לחפש" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEI-0U-ALD">
+                                <rect key="frame" x="17" y="18" width="121.5" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V73-4E-Ea0" firstAttribute="top" secondItem="cRI-k7-TPy" secondAttribute="top" id="BpI-NH-DtV"/>
+                            <constraint firstAttribute="trailing" secondItem="V73-4E-Ea0" secondAttribute="trailing" id="Mpd-6m-dJ1"/>
+                            <constraint firstItem="zEI-0U-ALD" firstAttribute="centerX" secondItem="cRI-k7-TPy" secondAttribute="centerX" id="Qgq-Gh-0pq"/>
+                            <constraint firstAttribute="bottom" secondItem="zEI-0U-ALD" secondAttribute="bottom" id="Tnf-nY-01Q"/>
+                            <constraint firstItem="V73-4E-Ea0" firstAttribute="centerX" secondItem="cRI-k7-TPy" secondAttribute="centerX" id="YH3-OZ-454"/>
+                            <constraint firstItem="V73-4E-Ea0" firstAttribute="leading" secondItem="cRI-k7-TPy" secondAttribute="leading" id="cRL-V5-K5j"/>
+                            <constraint firstItem="zEI-0U-ALD" firstAttribute="top" secondItem="V73-4E-Ea0" secondAttribute="bottom" id="wDn-ng-ao3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cRI-k7-TPy" firstAttribute="centerY" secondItem="hSy-kH-ceh" secondAttribute="centerY" id="IwQ-mE-wJe"/>
+                    <constraint firstItem="cRI-k7-TPy" firstAttribute="centerX" secondItem="hSy-kH-ceh" secondAttribute="centerX" id="YCJ-1O-UdP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="132" y="153"/>
+        </tableViewCell>
+    </objects>
+</document>

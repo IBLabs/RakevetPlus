@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17A25058D9FD2120A7434093 /* Pods_TravelTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A92C6EDAF80D7C74F48C10 /* Pods_TravelTest.framework */; };
+		03E21B20519141F7C80E49AB /* Pods_RakevetPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA335E91A07766E079B7ACB /* Pods_RakevetPlus.framework */; };
 		A853A31822B3FFF600D0B05C /* StationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A31722B3FFF600D0B05C /* StationsVC.swift */; };
 		A853A31B22B3FFF600D0B05C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A853A31922B3FFF600D0B05C /* Main.storyboard */; };
 		A853A31D22B3FFFA00D0B05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A853A31C22B3FFFA00D0B05C /* Assets.xcassets */; };
@@ -15,8 +15,6 @@
 		A853A32922B4005200D0B05C /* train_stations.json in Resources */ = {isa = PBXBuildFile; fileRef = A853A32822B4005200D0B05C /* train_stations.json */; };
 		A853A32B22B4076A00D0B05C /* StationsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A32A22B4076A00D0B05C /* StationsMapVC.swift */; };
 		A853A32E22B4247700D0B05C /* TrainStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A32D22B4247700D0B05C /* TrainStation.swift */; };
-		A853A33222B4252700D0B05C /* TrainStationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A33122B4252700D0B05C /* TrainStationCell.swift */; };
-		A853A33422B429F000D0B05C /* RoutePlanningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A33322B429F000D0B05C /* RoutePlanningVC.swift */; };
 		A853A33722B42A2C00D0B05C /* SearchStationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A33622B42A2C00D0B05C /* SearchStationVC.swift */; };
 		A853A33922B42B2F00D0B05C /* StationResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A33822B42B2F00D0B05C /* StationResultCell.swift */; };
 		A891E32022BE9B51009F9D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891E31F22BE9B51009F9D10 /* AppDelegate.swift */; };
@@ -52,17 +50,33 @@
 		A8AFA5B022BB00B000467D89 /* RouteStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFA5AF22BB00B000467D89 /* RouteStationService.swift */; };
 		A8AFA5B222BB070D00467D89 /* TrainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFA5B122BB070D00467D89 /* TrainService.swift */; };
 		A8B05AFC22BE1C290087DA3F /* UIView+RemoveConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B05AFB22BE1C290087DA3F /* UIView+RemoveConstraints.swift */; };
+		A8C86F90238448C30042675A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8C86F8F238448C30042675A /* GoogleService-Info.plist */; };
+		A8C86F9223844E880042675A /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C86F9123844E880042675A /* SearchType.swift */; };
+		A8C86F942384816A0042675A /* RPEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C86F932384816A0042675A /* RPEvents.swift */; };
+		A8D6C3E922C3F479003CD712 /* FavouriteDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6C3E722C3F479003CD712 /* FavouriteDetailsVC.swift */; };
+		A8D6C3EA22C3F479003CD712 /* FavouriteDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D6C3E822C3F479003CD712 /* FavouriteDetailsVC.xib */; };
+		A8D6C3EC22C3FF69003CD712 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6C3EB22C3FF69003CD712 /* UIView+Shake.swift */; };
+		A8D6C3F022C40874003CD712 /* EditFavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6C3EE22C40874003CD712 /* EditFavouritesVC.swift */; };
+		A8D6C3F122C40874003CD712 /* EditFavouritesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D6C3EF22C40874003CD712 /* EditFavouritesVC.xib */; };
+		A8D6C3F322C4099D003CD712 /* FavouriteRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D6C3F222C4099D003CD712 /* FavouriteRouteCell.xib */; };
 		A8D7E3D222B8000C002E0A39 /* StoryboardUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7E3D122B8000C002E0A39 /* StoryboardUtilities.swift */; };
 		A8D7E3D422B80255002E0A39 /* StationResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D7E3D322B80255002E0A39 /* StationResultCell.xib */; };
 		A8D7E3D622B8072D002E0A39 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7E3D522B8072D002E0A39 /* DataStore.swift */; };
 		A8D7E3DA22B81B61002E0A39 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7E3D822B81B61002E0A39 /* DatePickerVC.swift */; };
 		A8D7E3DB22B81B61002E0A39 /* DatePickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D7E3D922B81B61002E0A39 /* DatePickerVC.xib */; };
+		A8D9121023848AC0005E461F /* StationsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9120F23848AC0005E461F /* StationsVC.xib */; };
+		A8D9121323848BAC005E461F /* StationsMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121223848BAC005E461F /* StationsMapVC.xib */; };
+		A8D9121523848BC6005E461F /* SearchStationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121423848BC6005E461F /* SearchStationVC.xib */; };
+		A8D9121B23848D8C005E461F /* RecentRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121A23848D8C005E461F /* RecentRouteCell.xib */; };
+		A8D9121D23848E65005E461F /* EmptyRecentRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */; };
+		A8D9121F23848FF2005E461F /* EmptyFavouriteRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A383DF8A4795C38E3D3F956 /* Pods-TravelTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest.release.xcconfig"; sourceTree = "<group>"; };
+		5EA335E91A07766E079B7ACB /* Pods_RakevetPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RakevetPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB36C880582403E2F06F2D5 /* Pods-TravelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest.debug.xcconfig"; sourceTree = "<group>"; };
-		A853A31222B3FFF600D0B05C /* TravelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A853A31222B3FFF600D0B05C /* RakevetPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RakevetPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A853A31722B3FFF600D0B05C /* StationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsVC.swift; sourceTree = "<group>"; };
 		A853A31A22B3FFF600D0B05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A853A31C22B3FFFA00D0B05C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,8 +85,6 @@
 		A853A32822B4005200D0B05C /* train_stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = train_stations.json; sourceTree = "<group>"; };
 		A853A32A22B4076A00D0B05C /* StationsMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsMapVC.swift; sourceTree = "<group>"; };
 		A853A32D22B4247700D0B05C /* TrainStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStation.swift; sourceTree = "<group>"; };
-		A853A33122B4252700D0B05C /* TrainStationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStationCell.swift; sourceTree = "<group>"; };
-		A853A33322B429F000D0B05C /* RoutePlanningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanningVC.swift; sourceTree = "<group>"; };
 		A853A33622B42A2C00D0B05C /* SearchStationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationVC.swift; sourceTree = "<group>"; };
 		A853A33822B42B2F00D0B05C /* StationResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResultCell.swift; sourceTree = "<group>"; };
 		A891E31F22BE9B51009F9D10 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,12 +120,29 @@
 		A8AFA5AF22BB00B000467D89 /* RouteStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStationService.swift; sourceTree = "<group>"; };
 		A8AFA5B122BB070D00467D89 /* TrainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainService.swift; sourceTree = "<group>"; };
 		A8B05AFB22BE1C290087DA3F /* UIView+RemoveConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RemoveConstraints.swift"; sourceTree = "<group>"; };
+		A8C86F8F238448C30042675A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A8C86F9123844E880042675A /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
+		A8C86F932384816A0042675A /* RPEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPEvents.swift; sourceTree = "<group>"; };
+		A8D6C3E722C3F479003CD712 /* FavouriteDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteDetailsVC.swift; sourceTree = "<group>"; };
+		A8D6C3E822C3F479003CD712 /* FavouriteDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteDetailsVC.xib; sourceTree = "<group>"; };
+		A8D6C3EB22C3FF69003CD712 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
+		A8D6C3EE22C40874003CD712 /* EditFavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFavouritesVC.swift; sourceTree = "<group>"; };
+		A8D6C3EF22C40874003CD712 /* EditFavouritesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFavouritesVC.xib; sourceTree = "<group>"; };
+		A8D6C3F222C4099D003CD712 /* FavouriteRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteRouteCell.xib; sourceTree = "<group>"; };
 		A8D7E3D122B8000C002E0A39 /* StoryboardUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardUtilities.swift; sourceTree = "<group>"; };
 		A8D7E3D322B80255002E0A39 /* StationResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationResultCell.xib; sourceTree = "<group>"; };
 		A8D7E3D522B8072D002E0A39 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		A8D7E3D822B81B61002E0A39 /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
 		A8D7E3D922B81B61002E0A39 /* DatePickerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerVC.xib; sourceTree = "<group>"; };
+		A8D9120F23848AC0005E461F /* StationsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationsVC.xib; sourceTree = "<group>"; };
+		A8D9121223848BAC005E461F /* StationsMapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationsMapVC.xib; sourceTree = "<group>"; };
+		A8D9121423848BC6005E461F /* SearchStationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchStationVC.xib; sourceTree = "<group>"; };
+		A8D9121A23848D8C005E461F /* RecentRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentRouteCell.xib; sourceTree = "<group>"; };
+		A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyRecentRouteCell.xib; sourceTree = "<group>"; };
+		A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyFavouriteRouteCell.xib; sourceTree = "<group>"; };
+		C1BF3787C8638A1E94209EDF /* Pods-RakevetPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RakevetPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-RakevetPlus/Pods-RakevetPlus.release.xcconfig"; sourceTree = "<group>"; };
 		C8A92C6EDAF80D7C74F48C10 /* Pods_TravelTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F33CC8902F6E2BB2842ECE /* Pods-RakevetPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RakevetPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RakevetPlus/Pods-RakevetPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17A25058D9FD2120A7434093 /* Pods_TravelTest.framework in Frameworks */,
+				03E21B20519141F7C80E49AB /* Pods_RakevetPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +162,8 @@
 			children = (
 				6CB36C880582403E2F06F2D5 /* Pods-TravelTest.debug.xcconfig */,
 				5A383DF8A4795C38E3D3F956 /* Pods-TravelTest.release.xcconfig */,
+				F2F33CC8902F6E2BB2842ECE /* Pods-RakevetPlus.debug.xcconfig */,
+				C1BF3787C8638A1E94209EDF /* Pods-RakevetPlus.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -141,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				C8A92C6EDAF80D7C74F48C10 /* Pods_TravelTest.framework */,
+				5EA335E91A07766E079B7ACB /* Pods_RakevetPlus.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,7 +190,7 @@
 		A853A31322B3FFF600D0B05C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A853A31222B3FFF600D0B05C /* TravelTest.app */,
+				A853A31222B3FFF600D0B05C /* RakevetPlus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				A853A32122B3FFFA00D0B05C /* Info.plist */,
+				A8C86F8F238448C30042675A /* GoogleService-Info.plist */,
 				A853A31922B3FFF600D0B05C /* Main.storyboard */,
 				A891E31F22BE9B51009F9D10 /* AppDelegate.swift */,
 				A853A31E22B3FFFA00D0B05C /* LaunchScreen.storyboard */,
@@ -210,9 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				A853A31722B3FFF600D0B05C /* StationsVC.swift */,
-				A853A33122B4252700D0B05C /* TrainStationCell.swift */,
-				A896D97922BD393C005F61DF /* FavouriteRouteCell.swift */,
-				A896D97B22BD39D9005F61DF /* RecentRouteCell.swift */,
+				A8D9120F23848AC0005E461F /* StationsVC.xib */,
+				A8D91220238499CD005E461F /* FavouriteRouteCell */,
+				A8D91221238499D9005E461F /* RecentRouteCell */,
 			);
 			path = StationsVC;
 			sourceTree = "<group>";
@@ -221,25 +254,18 @@
 			isa = PBXGroup;
 			children = (
 				A853A32A22B4076A00D0B05C /* StationsMapVC.swift */,
+				A8D9121223848BAC005E461F /* StationsMapVC.xib */,
 			);
 			path = StationsMapVC;
-			sourceTree = "<group>";
-		};
-		A853A33522B429F500D0B05C /* RoutePlanningVC */ = {
-			isa = PBXGroup;
-			children = (
-				A853A33322B429F000D0B05C /* RoutePlanningVC.swift */,
-				A853A33A22B42E1D00D0B05C /* SearchStationVC */,
-			);
-			path = RoutePlanningVC;
 			sourceTree = "<group>";
 		};
 		A853A33A22B42E1D00D0B05C /* SearchStationVC */ = {
 			isa = PBXGroup;
 			children = (
 				A853A33622B42A2C00D0B05C /* SearchStationVC.swift */,
-				A853A33822B42B2F00D0B05C /* StationResultCell.swift */,
-				A8D7E3D322B80255002E0A39 /* StationResultCell.xib */,
+				A8D9121423848BC6005E461F /* SearchStationVC.xib */,
+				A8D91222238499F1005E461F /* StationResultCell */,
+				A8C86F9123844E880042675A /* SearchType.swift */,
 			);
 			path = SearchStationVC;
 			sourceTree = "<group>";
@@ -291,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				A896D96322BC05DF005F61DF /* Array+ToDictionary.swift */,
+				A8D6C3EB22C3FF69003CD712 /* UIView+Shake.swift */,
 				A8B05AFB22BE1C290087DA3F /* UIView+RemoveConstraints.swift */,
 				A891E33822C008A3009F9D10 /* UIColor+Hex.swift */,
 			);
@@ -302,10 +329,8 @@
 			children = (
 				A896D96622BC076B005F61DF /* RouteResultVC.swift */,
 				A896D96722BC076B005F61DF /* RouteResultVC.xib */,
-				A896D96A22BC07D6005F61DF /* DirectRouteCell.xib */,
-				A896D96C22BC0829005F61DF /* DirectRouteCell.swift */,
-				A896D97222BC1B20005F61DF /* IndirectRouteCell.swift */,
-				A896D97422BC1B65005F61DF /* IndirectRouteCell.xib */,
+				A8C5C5D122DBAC76002F27C5 /* DirectRouteCell */,
+				A8C5C5D222DBAC7D002F27C5 /* IndirectRouteCell */,
 			);
 			path = RouteResultVC;
 			sourceTree = "<group>";
@@ -313,20 +338,59 @@
 		A896D97622BD2BDF005F61DF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A8D6C3ED22C40861003CD712 /* EditFavouritesVC */,
+				A8D6C3E622C3F45A003CD712 /* FavouriteDetailsVC */,
 				A8D7E3D722B81B4B002E0A39 /* DatePickerVC */,
 				A896D96522BC0756005F61DF /* RouteResultVC */,
 				A853A32F22B424BF00D0B05C /* StationsVC */,
 				A853A33022B424C900D0B05C /* StationsMapVC */,
-				A853A33522B429F500D0B05C /* RoutePlanningVC */,
+				A853A33A22B42E1D00D0B05C /* SearchStationVC */,
 				A891E32522BEF28E009F9D10 /* RouteDetailsVC */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A8C5C5D122DBAC76002F27C5 /* DirectRouteCell */ = {
+			isa = PBXGroup;
+			children = (
+				A896D96A22BC07D6005F61DF /* DirectRouteCell.xib */,
+				A896D96C22BC0829005F61DF /* DirectRouteCell.swift */,
+			);
+			path = DirectRouteCell;
+			sourceTree = "<group>";
+		};
+		A8C5C5D222DBAC7D002F27C5 /* IndirectRouteCell */ = {
+			isa = PBXGroup;
+			children = (
+				A896D97222BC1B20005F61DF /* IndirectRouteCell.swift */,
+				A896D97422BC1B65005F61DF /* IndirectRouteCell.xib */,
+			);
+			path = IndirectRouteCell;
+			sourceTree = "<group>";
+		};
+		A8D6C3E622C3F45A003CD712 /* FavouriteDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				A8D6C3E722C3F479003CD712 /* FavouriteDetailsVC.swift */,
+				A8D6C3E822C3F479003CD712 /* FavouriteDetailsVC.xib */,
+			);
+			path = FavouriteDetailsVC;
+			sourceTree = "<group>";
+		};
+		A8D6C3ED22C40861003CD712 /* EditFavouritesVC */ = {
+			isa = PBXGroup;
+			children = (
+				A8D6C3EE22C40874003CD712 /* EditFavouritesVC.swift */,
+				A8D6C3EF22C40874003CD712 /* EditFavouritesVC.xib */,
+			);
+			path = EditFavouritesVC;
 			sourceTree = "<group>";
 		};
 		A8D7E3D022B7FFEC002E0A39 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				A8D7E3D122B8000C002E0A39 /* StoryboardUtilities.swift */,
+				A8C86F932384816A0042675A /* RPEvents.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -340,12 +404,41 @@
 			path = DatePickerVC;
 			sourceTree = "<group>";
 		};
+		A8D91220238499CD005E461F /* FavouriteRouteCell */ = {
+			isa = PBXGroup;
+			children = (
+				A896D97922BD393C005F61DF /* FavouriteRouteCell.swift */,
+				A8D6C3F222C4099D003CD712 /* FavouriteRouteCell.xib */,
+				A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */,
+			);
+			path = FavouriteRouteCell;
+			sourceTree = "<group>";
+		};
+		A8D91221238499D9005E461F /* RecentRouteCell */ = {
+			isa = PBXGroup;
+			children = (
+				A896D97B22BD39D9005F61DF /* RecentRouteCell.swift */,
+				A8D9121A23848D8C005E461F /* RecentRouteCell.xib */,
+				A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */,
+			);
+			path = RecentRouteCell;
+			sourceTree = "<group>";
+		};
+		A8D91222238499F1005E461F /* StationResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				A853A33822B42B2F00D0B05C /* StationResultCell.swift */,
+				A8D7E3D322B80255002E0A39 /* StationResultCell.xib */,
+			);
+			path = StationResultCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A853A31122B3FFF600D0B05C /* TravelTest */ = {
+		A853A31122B3FFF600D0B05C /* RakevetPlus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A853A32422B3FFFA00D0B05C /* Build configuration list for PBXNativeTarget "TravelTest" */;
+			buildConfigurationList = A853A32422B3FFFA00D0B05C /* Build configuration list for PBXNativeTarget "RakevetPlus" */;
 			buildPhases = (
 				B8F5DB447FAC92181A4C3C5B /* [CP] Check Pods Manifest.lock */,
 				A853A30E22B3FFF600D0B05C /* Sources */,
@@ -357,9 +450,9 @@
 			);
 			dependencies = (
 			);
-			name = TravelTest;
+			name = RakevetPlus;
 			productName = TravelTest;
-			productReference = A853A31222B3FFF600D0B05C /* TravelTest.app */;
+			productReference = A853A31222B3FFF600D0B05C /* RakevetPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -390,7 +483,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A853A31122B3FFF600D0B05C /* TravelTest */,
+				A853A31122B3FFF600D0B05C /* RakevetPlus */,
 			);
 		};
 /* End PBXProject section */
@@ -402,12 +495,22 @@
 			files = (
 				A853A32022B3FFFA00D0B05C /* LaunchScreen.storyboard in Resources */,
 				A853A32922B4005200D0B05C /* train_stations.json in Resources */,
+				A8D6C3F322C4099D003CD712 /* FavouriteRouteCell.xib in Resources */,
 				A8D7E3D422B80255002E0A39 /* StationResultCell.xib in Resources */,
 				A853A31D22B3FFFA00D0B05C /* Assets.xcassets in Resources */,
 				A896D96922BC076B005F61DF /* RouteResultVC.xib in Resources */,
+				A8D9121B23848D8C005E461F /* RecentRouteCell.xib in Resources */,
+				A8D9121D23848E65005E461F /* EmptyRecentRouteCell.xib in Resources */,
+				A8D9121523848BC6005E461F /* SearchStationVC.xib in Resources */,
 				A891E32422BE9B6D009F9D10 /* RouteDetailsVC.xib in Resources */,
 				A891E32A22BEF2BC009F9D10 /* RouteDetailCell.xib in Resources */,
+				A8D6C3EA22C3F479003CD712 /* FavouriteDetailsVC.xib in Resources */,
+				A8C86F90238448C30042675A /* GoogleService-Info.plist in Resources */,
+				A8D9121323848BAC005E461F /* StationsMapVC.xib in Resources */,
+				A8D6C3F122C40874003CD712 /* EditFavouritesVC.xib in Resources */,
+				A8D9121023848AC0005E461F /* StationsVC.xib in Resources */,
 				A896D96B22BC07D6005F61DF /* DirectRouteCell.xib in Resources */,
+				A8D9121F23848FF2005E461F /* EmptyFavouriteRouteCell.xib in Resources */,
 				A891E33622BFEE2A009F9D10 /* TrainSwitchCell.xib in Resources */,
 				A896D97522BC1B65005F61DF /* IndirectRouteCell.xib in Resources */,
 				A8D7E3DB22B81B61002E0A39 /* DatePickerVC.xib in Resources */,
@@ -433,7 +536,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TravelTest-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RakevetPlus-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -448,20 +551,26 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RakevetPlus/Pods-RakevetPlus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RakevetPlus/Pods-RakevetPlus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -471,12 +580,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D6C3F022C40874003CD712 /* EditFavouritesVC.swift in Sources */,
 				A8AFA5A222BAFDFC00467D89 /* RouteTrain.swift in Sources */,
 				A8AFA5AE22BAFFF800467D89 /* RouteTrainService.swift in Sources */,
 				A8D7E3D222B8000C002E0A39 /* StoryboardUtilities.swift in Sources */,
+				A8C86F942384816A0042675A /* RPEvents.swift in Sources */,
 				A896D97122BC1983005F61DF /* IndirectRoute.swift in Sources */,
-				A853A33222B4252700D0B05C /* TrainStationCell.swift in Sources */,
 				A853A32B22B4076A00D0B05C /* StationsMapVC.swift in Sources */,
+				A8C86F9223844E880042675A /* SearchType.swift in Sources */,
 				A8D7E3D622B8072D002E0A39 /* DataStore.swift in Sources */,
 				A896D97822BD3492005F61DF /* RigidTableView.swift in Sources */,
 				A896D96F22BC1646005F61DF /* IndirectRouteService.swift in Sources */,
@@ -494,9 +605,11 @@
 				A896D95922BBFB90005F61DF /* TrainStop.swift in Sources */,
 				A853A33922B42B2F00D0B05C /* StationResultCell.swift in Sources */,
 				A896D96822BC076B005F61DF /* RouteResultVC.swift in Sources */,
+				A8D6C3E922C3F479003CD712 /* FavouriteDetailsVC.swift in Sources */,
 				A8AFA5B222BB070D00467D89 /* TrainService.swift in Sources */,
 				A8D7E3DA22B81B61002E0A39 /* DatePickerVC.swift in Sources */,
 				A891E32322BE9B6D009F9D10 /* RouteDetailsVC.swift in Sources */,
+				A8D6C3EC22C3FF69003CD712 /* UIView+Shake.swift in Sources */,
 				A896D95622BBFB50005F61DF /* TrainStopService.swift in Sources */,
 				A896D96122BBFEF6005F61DF /* RouteStation.swift in Sources */,
 				A853A31822B3FFF600D0B05C /* StationsVC.swift in Sources */,
@@ -507,7 +620,6 @@
 				A8B05AFC22BE1C290087DA3F /* UIView+RemoveConstraints.swift in Sources */,
 				A896D95422BBFB1F005F61DF /* Train.swift in Sources */,
 				A891E32022BE9B51009F9D10 /* AppDelegate.swift in Sources */,
-				A853A33422B429F000D0B05C /* RoutePlanningVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,17 +763,18 @@
 		};
 		A853A32522B3FFFA00D0B05C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CB36C880582403E2F06F2D5 /* Pods-TravelTest.debug.xcconfig */;
+			baseConfigurationReference = F2F33CC8902F6E2BB2842ECE /* Pods-RakevetPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 55XWPXKYKX;
+				DEVELOPMENT_TEAM = NKCD2E3F5G;
 				INFOPLIST_FILE = TravelTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.climacell.TravelTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itamarbiton.RakevetP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -670,17 +783,18 @@
 		};
 		A853A32622B3FFFA00D0B05C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A383DF8A4795C38E3D3F956 /* Pods-TravelTest.release.xcconfig */;
+			baseConfigurationReference = C1BF3787C8638A1E94209EDF /* Pods-RakevetPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 55XWPXKYKX;
+				DEVELOPMENT_TEAM = NKCD2E3F5G;
 				INFOPLIST_FILE = TravelTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.climacell.TravelTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itamarbiton.RakevetP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -699,7 +813,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A853A32422B3FFFA00D0B05C /* Build configuration list for PBXNativeTarget "TravelTest" */ = {
+		A853A32422B3FFFA00D0B05C /* Build configuration list for PBXNativeTarget "RakevetPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A853A32522B3FFFA00D0B05C /* Debug */,
