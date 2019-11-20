@@ -23,7 +23,18 @@ struct RouteResultService: Codable {
     let directRoutes: DirectRouteContainerService?
     let indirectRoutes: IndirectRouteContainerService?
     let trains: TrainContainerService?
-    
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        self.lineType = try container.decode(String.self, forKey: .lineType)
+        self.lineTypeDescription = try container.decode(String.self, forKey: .lineTypeDescription)
+        self.avgTime = try? container.decode(String.self, forKey: .avgTime)
+        self.directRoutes = try? container.decode(DirectRouteContainerService.self, forKey: .directRoutes)
+        self.indirectRoutes = try? container.decode(IndirectRouteContainerService.self, forKey: .indirectRoutes)
+        self.trains = try? container.decode(TrainContainerService.self, forKey: .trains)
+    }
+
     private enum CodingKeys: String, CodingKey {
         case lineType = "SugKav"
         case lineTypeDescription = "SugKavDesc"
