@@ -126,21 +126,27 @@ class RouteResultVC: UIViewController {
         guard let index = buttonIndex else {
             return
         }
-        
+
+        self.moveToTab(atIndex: index)
+    }
+
+    private func moveToTab(atIndex index: Int) {
+        let sender = self.routeButtons[index]
+
         self.routeSliderView.removeAllConstraints()
         self.routeSliderView.leadingAnchor.constraint(equalTo: sender.leadingAnchor, constant: -12).isActive = true
         self.routeSliderView.topAnchor.constraint(equalTo: sender.topAnchor).isActive = true
         self.routeSliderView.trailingAnchor.constraint(equalTo: sender.trailingAnchor, constant: 12).isActive = true
         self.routeSliderView.bottomAnchor.constraint(equalTo: sender.bottomAnchor).isActive = true
-        
+
         let targetContentOffset: CGFloat = CGFloat(index) * self.scrollView.bounds.width
-        
+
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
             self.scrollView.setContentOffset(CGPoint(x: targetContentOffset, y: 0), animated: false)
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }, completion: nil)
-        
+
         for button in self.routeButtons {
             let textColor: UIColor = button == sender ? .white : .lightGray
             button.setTitleColor(textColor, for: .normal)
