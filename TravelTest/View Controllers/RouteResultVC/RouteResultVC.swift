@@ -24,7 +24,7 @@ class RouteResultVC: UIViewController {
     
     @IBOutlet weak var routeSliderView: UIView!
     @IBOutlet var routeButtons: [UIButton]!
-    
+        
     var routeResult: RouteResult? {
         didSet {
             guard let routeResult = self.routeResult else {
@@ -91,6 +91,11 @@ class RouteResultVC: UIViewController {
         
         if activeIndirectRouteIndex != -1 {
             self.indirectRoutesTableView.scrollToRow(at: IndexPath(row: activeIndirectRouteIndex, section: 0), at: .top, animated: true)
+        }
+        
+        // if there's no direct routes, move straight to the exchange tab
+        if self.directRoutes.count == 0 {
+            self.moveToTab(atIndex: 1)
         }
     }
     
