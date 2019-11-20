@@ -78,7 +78,7 @@ class DataStore {
     
     func add(recentRoute: RecentRoute) {
         self.recentRoutes.append(recentRoute)
-        self.recentRoutes = self.recentRoutes.suffix(5)
+        self.recentRoutes = self.recentRoutes.suffix(10)
         
         let decoder = JSONDecoder()
         if let savedRecentRoutesData = UserDefaults.standard.data(forKey: UserDefaultsKeys.recentRoutes) {

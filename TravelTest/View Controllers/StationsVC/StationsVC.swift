@@ -173,7 +173,7 @@ class StationsVC: UIViewController {
         
         AF.request("https://moblin.rail.co.il/rail/v01/schedulev2", method: .get, parameters: parameters).response { response in
             self.setSearchButton(loading: false)
-            
+
             if let data = try? response.result.get(), let routeResult = self.decodeRouteResult(data: data) {
                 let routeResultVC = RouteResultVC()
                 routeResultVC.routeResult = routeResult
