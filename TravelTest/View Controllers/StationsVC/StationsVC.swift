@@ -216,12 +216,10 @@ class StationsVC: UIViewController {
                     let container = try decoder.decode(TrainStationContainer.self, from: stationsData)
                     let stations = container.stationsContainer.stations
                     
-                    let remoteConfig = RemoteConfig.remoteConfig()
-                    let keywordsData = remoteConfig["additional_keywords"].dataValue
-                    let keywordsDict = try decoder.decode([String: Array<String>].self, from: keywordsData)
-                    
-                    for station in stations {
-                        station.keywords = keywordsDict[station.id]
+                    if let keywordsDict = RemoteConfigService.shared.additionalKeywords {
+                        for station in stations {
+                            station.keywords = keywordsDict[station.id]
+                        }
                     }
                     
                     DataStore.shared.set(stations: stations)

@@ -69,6 +69,7 @@
 		A8D9121B23848D8C005E461F /* RecentRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121A23848D8C005E461F /* RecentRouteCell.xib */; };
 		A8D9121D23848E65005E461F /* EmptyRecentRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */; };
 		A8D9121F23848FF2005E461F /* EmptyFavouriteRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */; };
+		A8E3356823871794004D5B24 /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E3356723871794004D5B24 /* RemoteConfigService.swift */; };
 		A8F2BF5C23866E0700ADDB7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8F2BF5B23866E0700ADDB7E /* GoogleService-Info.plist */; };
 		A8F2BF5E2386EE3000ADDB7E /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8F2BF5D2386EE3000ADDB7E /* RemoteConfigDefaults.plist */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,7 @@
 		A8D9121A23848D8C005E461F /* RecentRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentRouteCell.xib; sourceTree = "<group>"; };
 		A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyRecentRouteCell.xib; sourceTree = "<group>"; };
 		A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyFavouriteRouteCell.xib; sourceTree = "<group>"; };
+		A8E3356723871794004D5B24 /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		A8F2BF5A238662CC00ADDB7E /* RakevetPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RakevetPlus.entitlements; sourceTree = "<group>"; };
 		A8F2BF5B23866E0700ADDB7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8F2BF5D2386EE3000ADDB7E /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				A8F2BF5B23866E0700ADDB7E /* GoogleService-Info.plist */,
 				A853A31922B3FFF600D0B05C /* Main.storyboard */,
 				A8F2BF5D2386EE3000ADDB7E /* RemoteConfigDefaults.plist */,
+				A8E3356723871794004D5B24 /* RemoteConfigService.swift */,
 				A891E31F22BE9B51009F9D10 /* AppDelegate.swift */,
 				A853A31E22B3FFFA00D0B05C /* LaunchScreen.storyboard */,
 				A853A31C22B3FFFA00D0B05C /* Assets.xcassets */,
@@ -598,6 +601,7 @@
 				A896D95922BBFB90005F61DF /* TrainStop.swift in Sources */,
 				A853A33922B42B2F00D0B05C /* StationResultCell.swift in Sources */,
 				A896D96822BC076B005F61DF /* RouteResultVC.swift in Sources */,
+				A8E3356823871794004D5B24 /* RemoteConfigService.swift in Sources */,
 				A8D6C3E922C3F479003CD712 /* FavouriteDetailsVC.swift in Sources */,
 				A8AFA5B222BB070D00467D89 /* TrainService.swift in Sources */,
 				A8D7E3DA22B81B61002E0A39 /* DatePickerVC.swift in Sources */,
