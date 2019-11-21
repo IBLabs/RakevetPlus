@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // create a window
         window = UIWindow(frame: UIScreen.main.bounds)
-
+        
         // configure firebase
         FirebaseApp.configure()
 
@@ -31,6 +31,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("successfully signed in!")
             }
         }
+        
+        // register for remote notifications
+        if #available(iOS 10.0, *) {
+          // For iOS 10 display notification (sent via APNS)
+          UNUserNotificationCenter.current().delegate = self
+
+          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+          UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
+        } else {
+          let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+          application.registerUserNotificationSettings(settings)
+        }
+
+        application.registerForRemoteNotifications()
+        
+        Messaging.messaging().delegate = self
 
         // configure the default region for SwiftDate
         let region = Region(calendar: Calendars.gregorian, zone: Zones.asiaJerusalem, locale: Locales.hebrewIsrael)
@@ -70,3 +86,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+    }
+}

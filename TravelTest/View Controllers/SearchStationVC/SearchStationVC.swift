@@ -192,7 +192,19 @@ extension SearchStationVC: UITextFieldDelegate {
             return true
         }
         
-        self.filteredStations = self.stations.filter({ $0.heName.contains(searchText) })
+        self.filteredStations = self.stations.filter({
+            let nameContains = $0.heName.contains(searchText)
+            var keywordsContain = false
+            if let keywords = $0.keywords {
+                for keyword in keywords {
+                    if keyword.contains(searchText) {
+                        keywordsContain = true
+                        break
+                    }
+                }
+            }
+            return nameContains || keywordsContain
+        })
         self.resultTableView.reloadData()
         
         return true

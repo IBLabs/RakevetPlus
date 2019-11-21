@@ -10,5 +10,7 @@ target 'RakevetPlus' do
 
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/RemoteConfig'
 
 end

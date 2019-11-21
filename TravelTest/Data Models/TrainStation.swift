@@ -25,11 +25,13 @@ struct TrainStationContainer: Codable {
     }
 }
 
-struct TrainStation: Codable {
+class TrainStation: Codable {
     let id: String
     let heName: String
     let enName: String
     let arName: String
+    
+    var keywords: [String]?
     
     private let _coordinate: TrainStationCoordinate
     private let _isAccessible: String

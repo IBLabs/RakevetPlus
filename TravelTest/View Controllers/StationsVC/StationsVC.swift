@@ -75,11 +75,12 @@ class StationsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTableViews()
-        configureDate()
-        initializeSearchButtonAnimation()
+        self.configureTableViews()
+        self.configureDate()
+        self.initializeSearchButtonAnimation()
+        self.configureRemoteConfig()
         
-        decodeStations()
+        self.decodeStations()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -214,6 +215,15 @@ class StationsVC: UIViewController {
                 do {
                     let container = try decoder.decode(TrainStationContainer.self, from: stationsData)
                     let stations = container.stationsContainer.stations
+                    
+                    let remoteConfig = RemoteConfig.remoteConfig()
+                    let keywordsData = remoteConfig["additional_keywords"].dataValue
+                    let keywordsDict = try decoder.decode([String: Array<String>].self, from: keywordsData)
+                    
+                    for station in stations {
+                        station.keywords = keywordsDict[station.id]
+                    }
+                    
                     DataStore.shared.set(stations: stations)
                     self.stations = DataStore.shared.stations
                 } catch let error {
@@ -291,6 +301,35 @@ class StationsVC: UIViewController {
         let editFavouritesVC = EditFavouritesVC()
         
         self.navigationController?.pushViewController(editFavouritesVC, animated: true)
+    }
+    
+    // MARK: Remote Config Methods
+    
+    private func configureRemoteConfig() {
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        
+        // set the defaults
+        remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
+        
+        // fetch config values
+        remoteConfig.fetchAndActivate { (status, error) in
+            switch status {
+            case .successFetchedFromRemote:
+                print("successfully fetched remote config values from remote!")
+            case .successUsingPreFetchedData:
+                print("successfully fetched remote config values from the cache!")
+            case .error:
+                if let error = error {
+                    print("failed to get remote config values: \(error.localizedDescription)")
+                }
+            default:
+                print("remote config unhandled status received")
+                break
+            }
+        }
     }
 }
 

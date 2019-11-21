@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1018883962182-j81r695alurrlqhjqrvrfic2vqklj4t2.apps.googleusercontent.com</string>
+	<string>1018883962182-6d024ouvlq9jq5hhg5b08grv59sm23rj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1018883962182-j81r695alurrlqhjqrvrfic2vqklj4t2</string>
+	<string>com.googleusercontent.apps.1018883962182-6d024ouvlq9jq5hhg5b08grv59sm23rj</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAn1qDS7LizR1Fyei0xqvw2STezXDKMDgk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.itamarbiton.RakevetPlus</string>
+	<string>com.itamarbiton.RakevetP</string>
 	<key>PROJECT_ID</key>
 	<string>rakevet-plus</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1018883962182:ios:33a666b8f10f654e256147</string>
+	<string>1:1018883962182:ios:aa1e6d0f0a8ff6dc256147</string>
 	<key>DATABASE_URL</key>
 	<string>https://rakevet-plus.firebaseio.com</string>
 </dict>
