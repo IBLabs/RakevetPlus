@@ -20,12 +20,14 @@ class IndirectRouteCell: UITableViewCell {
     @IBOutlet weak var platformLabel: UILabel!
     @IBOutlet weak var platformTitleLabel: UILabel!
     @IBOutlet weak private var arrowImageView: UIImageView!
+    @IBOutlet weak private var durationLabel: UILabel!
     
     func configure(with indirectRoute: IndirectRoute) {
         self.departureTimeLabel.text = indirectRoute.routeTrains.first?.departureTime.toFormat("HH:mm") ?? "--"
         self.arrivalTimeLabel.text = indirectRoute.routeTrains.last?.arrivalTime.toFormat("HH:mm") ?? "--"
         self.platformLabel.text = indirectRoute.routeTrains.first?.origPlatform ?? "--"
         self.legCountLabel.text = "\(indirectRoute.routeTrains.count - 1)"
+        self.configureDurationLabel(indirectRoute: indirectRoute)
         
         if indirectRoute.routeTrains.first?.departureTime.isInPast ?? false {
             self.departureTimeLabel.alpha = 0.2
@@ -47,6 +49,31 @@ class IndirectRouteCell: UITableViewCell {
             self.legCountTitleLabel.alpha = 1
             self.platformTitleLabel.alpha = 1
             self.arrowImageView.alpha = 1
+        }
+    }
+    
+    private func configureDurationLabel(indirectRoute: IndirectRoute) {
+        let duration = indirectRoute.routeTrains.first?.departureTime.getInterval(toDate: indirectRoute.routeTrains.last?.arrivalTime, component: .minute) ?? 0
+        let hours = duration / 60
+        let minutes = duration % 60
+        var durationString = String(format: NSLocalizedString("%d דק׳", comment: "%d דק׳"), minutes)
+        if hours > 0 {
+            durationString = String(format: NSLocalizedString("%d שעות, ", comment: "%d שעות, "), hours) + durationString
+        }
+        self.durationLabel.text = durationString
+        self.durationLabel.textColor = self.colorForDuration(duration: duration)
+    }
+    
+    private func colorForDuration(duration: Int64) -> UIColor {
+        switch duration {
+        case 0..<41:
+            return UIColor(red:0.09, green:0.75, blue:0.24, alpha:1.0)
+        case 41..<90:
+            return UIColor.orange
+        case 90..<Int64.max:
+            return UIColor.red
+        default:
+            return UIColor.black
         }
     }
 }

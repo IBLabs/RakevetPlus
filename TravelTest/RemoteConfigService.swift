@@ -25,20 +25,29 @@ class RemoteConfigService {
     }
     
     func performFetchAndActivate() {
-        self.remoteConfig.fetchAndActivate { (status, error) in
+        self.remoteConfig.fetch { (status, error) in
             if let error = error {
                 print("failed to fetch and activate remote config, \(error.localizedDescription)")
             } else {
                 switch status {
-                case .successFetchedFromRemote:
+                case .success:
                     print("successfully fetched remote config from server")
-                case .successUsingPreFetchedData:
-                    print("successfully fetched remote config from cache")
-                case .error:
-                    print("failed to fetch and activate remote config")
+                    self.activateFetchedRemoteConfig()
+                case .failure:
+                    print("failed to fetch remote config from server")
+                case .throttled:
+                    print("remote config fetch was throttled")
                 default:
                     break
                 }
+            }
+        }
+    }
+    
+    func activateFetchedRemoteConfig() {
+        self.remoteConfig.activate { (error) in
+            if let error = error {
+                print ("failed to activate fetched remote config")
             }
         }
     }

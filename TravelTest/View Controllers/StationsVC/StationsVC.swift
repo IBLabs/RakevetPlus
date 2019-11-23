@@ -26,6 +26,7 @@ class StationsVC: UIViewController {
     var stations = [TrainStation]()
     var favouriteRoutes = [FavouriteRoute]()
     var recentRoutes = DataStore.shared.getRecentRoutes()
+    var isFetchActive = false
     
     private var destStation: TrainStation? {
         didSet {
@@ -151,6 +152,11 @@ class StationsVC: UIViewController {
     
     // MARK: Utility Methods
     
+    private func addRecentRoute(origStation: TrainStation, destStation: TrainStation, date: Date) {
+        let recentRoute = RecentRoute(origStation: origStation, destStation: destStation, date: date)
+        DataStore.shared.add(recentRoute: recentRoute)
+    }
+    
     private func refreshRecentsTableView() {
         self.recentRoutes = DataStore.shared.getRecentRoutes()
         self.recentsTableView.reloadData()
@@ -172,7 +178,11 @@ class StationsVC: UIViewController {
         let dateString = formatDateAsParameter(date: selectedDate)
         let parameters: Parameters = ["date": dateString, "destination": destStation.id, "origin": origStation.id, "hours": 0]
         
+        self.isFetchActive = true
+        
         AF.request("https://moblin.rail.co.il/rail/v01/schedulev2", method: .get, parameters: parameters).response { response in
+            self.isFetchActive = false
+            
             self.setSearchButton(loading: false)
 
             if let data = try? response.result.get(), let routeResult = self.decodeRouteResult(data: data) {
@@ -281,12 +291,10 @@ class StationsVC: UIViewController {
             self.destStationContainerView.shake()
         }
 
-        if let origStation = self.origStation, let destStation = self.destStation, self.selectedDate != nil {
+        if let origStation = self.origStation, let destStation = self.destStation, self.selectedDate != nil, !self.isFetchActive {
             Analytics.logEvent(RPEventNames.searchButtonClicked, parameters: [RPEventParameters.isValid: true])
-
-            let recentRoute = RecentRoute(origStation: origStation, destStation: destStation, date: Date())
-            DataStore.shared.add(recentRoute: recentRoute)
-
+            
+            self.addRecentRoute(origStation: origStation, destStation: destStation, date: Date())
             self.setSearchButton(loading: true)
             self.fetchRoute()
         } else {

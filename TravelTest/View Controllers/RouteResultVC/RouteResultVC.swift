@@ -67,12 +67,21 @@ class RouteResultVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         var activeDirectRouteIndex = -1
         for (index, route) in directRoutes.enumerated() {
+            if route.routeTrain.departureTime.isBeforeDate(self.date!, granularity: .minute) {
+                continue
+            } else {
+                activeDirectRouteIndex = index
+                break
+            }
+            
+            /*
             if route.routeTrain.departureTime.isInPast {
                 continue
             } else {
                 activeDirectRouteIndex = index
                 break
             }
+             */
         }
         
         if activeDirectRouteIndex != -1 {
@@ -81,12 +90,22 @@ class RouteResultVC: UIViewController {
         
         var activeIndirectRouteIndex = -1
         for (index, route) in indirectRoutes.enumerated() {
+            
+            if route.routeTrains.first?.departureTime.isBeforeDate(self.date!, granularity: .minute) ?? false {
+                continue
+            } else {
+                activeIndirectRouteIndex = index
+                break
+            }
+            
+            /*
             if route.routeTrains.first?.departureTime.isInPast ?? false {
                 continue
             } else {
                 activeIndirectRouteIndex = index
                 break
             }
+             */
         }
         
         if activeIndirectRouteIndex != -1 {

@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqO-Wf-kUh">
-                    <rect key="frame" x="232" y="15" width="166" height="46"/>
+                    <rect key="frame" x="232" y="7" width="166" height="46"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת יציאה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2M-CN-wuk">
                             <rect key="frame" x="112.5" y="0.0" width="53.5" height="15"/>
@@ -43,7 +43,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="1Pb-12-cXR" firstAttribute="leading" secondItem="hqn-JV-ZcX" secondAttribute="trailing" constant="12" id="5Zd-iY-iVT"/>
                         <constraint firstItem="1Pb-12-cXR" firstAttribute="top" secondItem="u2M-CN-wuk" secondAttribute="bottom" constant="2" id="8cw-sY-8kd"/>
@@ -76,7 +76,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="yPu-iF-2F9" secondAttribute="bottom" id="5aE-B0-Ndg"/>
                         <constraint firstAttribute="trailing" secondItem="bcV-Sr-XSp" secondAttribute="trailing" id="Ot0-1v-LyY"/>
@@ -86,13 +86,21 @@
                         <constraint firstItem="bcV-Sr-XSp" firstAttribute="leading" secondItem="MdU-aG-4pC" secondAttribute="leading" id="tnJ-Yr-ZAs"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה ו-32 דק׳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeG-AI-rwy">
+                    <rect key="frame" x="330.5" y="53" width="67.5" height="14.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="MdU-aG-4pC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1Ri-QT-Jhr"/>
                 <constraint firstItem="MdU-aG-4pC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="62d-bg-gxf"/>
+                <constraint firstItem="HeG-AI-rwy" firstAttribute="trailing" secondItem="NqO-Wf-kUh" secondAttribute="trailing" id="BDs-ti-yL4"/>
                 <constraint firstAttribute="trailing" secondItem="NqO-Wf-kUh" secondAttribute="trailing" constant="16" id="TTH-Ku-qGJ"/>
-                <constraint firstItem="NqO-Wf-kUh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="omb-in-KVo"/>
+                <constraint firstItem="NqO-Wf-kUh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-8" id="omb-in-KVo"/>
+                <constraint firstItem="HeG-AI-rwy" firstAttribute="top" secondItem="NqO-Wf-kUh" secondAttribute="bottom" id="twy-vr-d2K"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -101,6 +109,7 @@
                 <outlet property="arrowImageView" destination="hqn-JV-ZcX" id="rsR-RJ-B7I"/>
                 <outlet property="departureTimeLabel" destination="1Pb-12-cXR" id="0Ux-dc-80H"/>
                 <outlet property="departureTimeTitleLabel" destination="u2M-CN-wuk" id="CNS-pg-aJP"/>
+                <outlet property="durationLabel" destination="HeG-AI-rwy" id="tH2-K7-4zf"/>
                 <outlet property="platformLabel" destination="yPu-iF-2F9" id="riH-YE-Lop"/>
                 <outlet property="platformTitleLabel" destination="bcV-Sr-XSp" id="qj8-M1-ww8"/>
             </connections>

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchStationVC" customModule="RakevetPlus" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="AKC-wE-60B" id="5iD-gB-8El"/>
                 <outlet property="containerView" destination="eUn-Tr-BPB" id="t1h-jl-NPj"/>
                 <outlet property="overlayButton" destination="qhZ-M3-hiJ" id="5YC-7V-Dae"/>
                 <outlet property="resultTableView" destination="5Fx-fW-YPG" id="tmy-RI-aZM"/>
@@ -40,7 +41,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOW-yH-1tm">
-                            <rect key="frame" x="16" y="45" width="382" height="44"/>
+                            <rect key="frame" x="16" y="53" width="382" height="44"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="חפש תחנה" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPo-oC-ivx">
                                     <rect key="frame" x="8" y="0.0" width="338" height="44"/>
@@ -75,7 +76,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBs-Uu-Q9k">
-                            <rect key="frame" x="0.0" y="105" width="414" height="683"/>
+                            <rect key="frame" x="0.0" y="113" width="414" height="675"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="jdb-uv-ele"/>
@@ -83,7 +84,7 @@
                             </connections>
                         </tableView>
                         <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Fx-fW-YPG">
-                            <rect key="frame" x="0.0" y="105" width="414" height="683"/>
+                            <rect key="frame" x="0.0" y="113" width="414" height="675"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="x4R-vg-jyB"/>
@@ -91,12 +92,20 @@
                             </connections>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdO-IY-pDT">
-                            <rect key="frame" x="0.0" y="104" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="112" width="414" height="1"/>
                             <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="3VM-oS-kCS"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKC-wE-60B">
+                            <rect key="frame" x="24" y="10" width="32" height="33"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="סגור"/>
+                            <connections>
+                                <action selector="didClickCloseButtonWithSender:" destination="-1" eventType="touchUpInside" id="bR9-Ht-Tvl"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -105,13 +114,15 @@
                         <constraint firstItem="eBs-Uu-Q9k" firstAttribute="top" secondItem="qdO-IY-pDT" secondAttribute="bottom" id="8JI-fb-Kv1"/>
                         <constraint firstItem="4Ef-07-AOe" firstAttribute="trailing" secondItem="gOW-yH-1tm" secondAttribute="trailing" constant="-8" id="A4w-T7-9z7"/>
                         <constraint firstItem="gOW-yH-1tm" firstAttribute="leading" secondItem="eUn-Tr-BPB" secondAttribute="leading" constant="16" id="Hlu-SM-dhc"/>
+                        <constraint firstItem="AKC-wE-60B" firstAttribute="centerY" secondItem="4Ef-07-AOe" secondAttribute="centerY" id="MqN-4P-EhD"/>
                         <constraint firstItem="qdO-IY-pDT" firstAttribute="leading" secondItem="eUn-Tr-BPB" secondAttribute="leading" id="RSi-Cw-Dvd"/>
                         <constraint firstAttribute="trailing" secondItem="qdO-IY-pDT" secondAttribute="trailing" id="SkX-vP-cgQ"/>
                         <constraint firstItem="5Fx-fW-YPG" firstAttribute="top" secondItem="gOW-yH-1tm" secondAttribute="bottom" constant="16" id="Sob-3h-B9W"/>
+                        <constraint firstItem="AKC-wE-60B" firstAttribute="leading" secondItem="gOW-yH-1tm" secondAttribute="leading" constant="8" id="aFk-fK-Z0C"/>
                         <constraint firstAttribute="trailing" secondItem="5Fx-fW-YPG" secondAttribute="trailing" id="aYL-j9-AOE"/>
                         <constraint firstItem="eBs-Uu-Q9k" firstAttribute="leading" secondItem="eUn-Tr-BPB" secondAttribute="leading" id="kHz-I2-wIN"/>
                         <constraint firstAttribute="bottom" secondItem="5Fx-fW-YPG" secondAttribute="bottom" id="lrP-KD-EAR"/>
-                        <constraint firstItem="gOW-yH-1tm" firstAttribute="top" secondItem="4Ef-07-AOe" secondAttribute="bottom" constant="8" id="oY3-HS-yOC"/>
+                        <constraint firstItem="gOW-yH-1tm" firstAttribute="top" secondItem="4Ef-07-AOe" secondAttribute="bottom" constant="16" id="oY3-HS-yOC"/>
                         <constraint firstAttribute="bottom" secondItem="eBs-Uu-Q9k" secondAttribute="bottom" id="p9Z-Pi-4Kz"/>
                         <constraint firstItem="4Ef-07-AOe" firstAttribute="top" secondItem="eUn-Tr-BPB" secondAttribute="top" constant="16" id="q9K-WL-Wfa"/>
                         <constraint firstAttribute="trailing" secondItem="gOW-yH-1tm" secondAttribute="trailing" constant="16" id="qQk-8C-h6V"/>

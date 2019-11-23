@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteResultVC" customModule="TravelTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteResultVC" customModule="RakevetPlus" customModuleProvider="target">
             <connections>
                 <outlet property="dateLabel" destination="UIh-f6-S78" id="Q1u-i8-mKC"/>
                 <outlet property="destStationLabel" destination="Nye-fa-vNi" id="JRo-0H-Zem"/>
@@ -65,7 +63,12 @@
                                     <rect key="frame" x="8" y="0.0" width="382" height="42"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_trip_icon" translatesAutoresizingMaskIntoConstraints="NO" id="o7V-Xe-faT">
-                                            <rect key="frame" x="376" y="6" width="6" height="30"/>
+                                            <rect key="frame" x="376" y="8" width="6" height="30"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אשדוד עד הלום" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeK-m4-wd9">
                                             <rect key="frame" x="277" y="0.0" width="91" height="18"/>
@@ -85,7 +88,7 @@
                                         <constraint firstItem="Nye-fa-vNi" firstAttribute="trailing" secondItem="WeK-m4-wd9" secondAttribute="trailing" id="1vS-gt-bGR"/>
                                         <constraint firstItem="Nye-fa-vNi" firstAttribute="top" secondItem="WeK-m4-wd9" secondAttribute="bottom" constant="6" id="HfH-8P-DwP"/>
                                         <constraint firstAttribute="bottom" secondItem="Nye-fa-vNi" secondAttribute="bottom" id="JDX-gc-Amb"/>
-                                        <constraint firstItem="o7V-Xe-faT" firstAttribute="centerY" secondItem="opY-Go-ZXy" secondAttribute="centerY" id="ObI-jx-aTa"/>
+                                        <constraint firstItem="o7V-Xe-faT" firstAttribute="centerY" secondItem="opY-Go-ZXy" secondAttribute="centerY" constant="2" id="ObI-jx-aTa"/>
                                         <constraint firstItem="WeK-m4-wd9" firstAttribute="top" secondItem="opY-Go-ZXy" secondAttribute="top" id="UJi-f3-eYc"/>
                                         <constraint firstItem="WeK-m4-wd9" firstAttribute="top" secondItem="opY-Go-ZXy" secondAttribute="top" id="cNg-vf-ATg"/>
                                         <constraint firstAttribute="trailing" secondItem="o7V-Xe-faT" secondAttribute="trailing" id="g9Z-4M-1ga"/>

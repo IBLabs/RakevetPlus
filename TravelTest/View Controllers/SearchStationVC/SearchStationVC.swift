@@ -23,6 +23,7 @@ class SearchStationVC: UIViewController {
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var stationsTableView: UITableView!
     @IBOutlet weak private var resultTableView: UITableView!
+    @IBOutlet weak private var closeButton: UIButton!
     
     var delegate: SearchStationVCDelegate?
     var stations = [TrainStation]()
@@ -37,6 +38,8 @@ class SearchStationVC: UIViewController {
         self.configureLabels()
         self.configureTableViews()
         
+        self.configureKeyboardNotifications()
+        
         self.prepareForEnterAnimation()
     }
     
@@ -50,6 +53,7 @@ class SearchStationVC: UIViewController {
 
     private func configureLabels() {
         self.titleLabel.text = self.type.getTitle()
+        self.closeButton.setTitle(NSLocalizedString("סגור", comment: "סגור"), for: .normal)
     }
     
     private func configureTableViews() {
@@ -61,6 +65,12 @@ class SearchStationVC: UIViewController {
     @IBAction private func didClickedOverlayButton(sender: UIButton) {
         self.performExitAnimation { succeeded in
             self.presentingViewController?.dismiss(animated: false, completion: nil)
+        }
+    }
+    
+    @IBAction private func didClickCloseButton(sender: UIButton) {
+        self.performExitAnimation { (finished) in
+            self.dismiss(animated: false, completion: nil)
         }
     }
     
@@ -113,6 +123,27 @@ class SearchStationVC: UIViewController {
         searchStationsVC.modalPresentationStyle = .overCurrentContext
         
         presentingVC.present(searchStationsVC, animated: false, completion: nil)
+    }
+    
+    // MARK: - Notification Related Methods
+    
+    private func configureKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShowNotification(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHideNotification(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardDidShowNotification(notification: Notification) {
+        guard let userInfo = notification.userInfo, let keyboardFrame = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else {
+            return
+        }
+        
+        self.stationsTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+        self.resultTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    }
+    
+    @objc private func keyboardDidHideNotification(notification: Notification) {
+        self.stationsTableView.contentInset = .zero
+        self.resultTableView.contentInset = .zero
     }
     
 }

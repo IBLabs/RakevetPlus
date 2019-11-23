@@ -28,7 +28,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="fZh-sV-0DT" secondAttribute="bottom" id="0M5-mr-N1w"/>
                         <constraint firstItem="Phn-eV-qDY" firstAttribute="leading" secondItem="NxI-1C-B69" secondAttribute="leading" id="8Vj-hj-3aJ"/>
@@ -41,7 +41,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wt-JJ-Aqj">
-                    <rect key="frame" x="232" y="15" width="166" height="46"/>
+                    <rect key="frame" x="232" y="7" width="166" height="46"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת יציאה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-R5-nAA">
                             <rect key="frame" x="112.5" y="0.0" width="53.5" height="15"/>
@@ -72,7 +72,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="PLY-o9-nTB" secondAttribute="bottom" id="1WD-Pl-9ug"/>
                         <constraint firstAttribute="trailing" secondItem="mpm-wZ-baj" secondAttribute="trailing" id="C6Z-1h-w7v"/>
@@ -105,7 +105,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="yhJ-fH-LVO" firstAttribute="leading" secondItem="Dew-ot-xjD" secondAttribute="leading" id="4Tb-k0-OQM"/>
                         <constraint firstItem="yhJ-fH-LVO" firstAttribute="top" secondItem="Qg3-BB-Pnw" secondAttribute="bottom" constant="2" id="Aap-H3-rcL"/>
@@ -115,11 +115,19 @@
                         <constraint firstAttribute="bottom" secondItem="yhJ-fH-LVO" secondAttribute="bottom" id="yeH-Ky-gmf"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה ו-32 דק׳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkx-aC-NYb">
+                    <rect key="frame" x="330.5" y="53" width="67.5" height="14.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="3Wt-JJ-Aqj" firstAttribute="centerY" secondItem="DAF-pi-Jjy" secondAttribute="centerY" id="1Ne-2S-9Ia"/>
+                <constraint firstItem="3Wt-JJ-Aqj" firstAttribute="centerY" secondItem="DAF-pi-Jjy" secondAttribute="centerY" constant="-8" id="1Ne-2S-9Ia"/>
                 <constraint firstItem="Dew-ot-xjD" firstAttribute="centerY" secondItem="DAF-pi-Jjy" secondAttribute="centerY" id="3CA-i7-5Xy"/>
+                <constraint firstItem="Vkx-aC-NYb" firstAttribute="trailing" secondItem="3Wt-JJ-Aqj" secondAttribute="trailing" id="9M6-hp-yHa"/>
+                <constraint firstItem="Vkx-aC-NYb" firstAttribute="top" secondItem="3Wt-JJ-Aqj" secondAttribute="bottom" id="AUf-Pf-K2p"/>
                 <constraint firstAttribute="trailing" secondItem="3Wt-JJ-Aqj" secondAttribute="trailing" constant="16" id="LPT-Pm-Juq"/>
                 <constraint firstItem="NxI-1C-B69" firstAttribute="leading" secondItem="DAF-pi-Jjy" secondAttribute="leading" constant="16" id="Zmr-YR-pgq"/>
                 <constraint firstItem="Dew-ot-xjD" firstAttribute="leading" secondItem="NxI-1C-B69" secondAttribute="trailing" constant="12" id="pde-RN-YeW"/>
@@ -132,6 +140,7 @@
                 <outlet property="arrowImageView" destination="3f9-1i-w0w" id="EaQ-3X-40K"/>
                 <outlet property="departureTimeLabel" destination="mpm-wZ-baj" id="2Ri-4X-7Z1"/>
                 <outlet property="departureTimeTitleLabel" destination="9Ie-R5-nAA" id="oWr-bR-hKw"/>
+                <outlet property="durationLabel" destination="Vkx-aC-NYb" id="HV6-Nh-8SC"/>
                 <outlet property="legCountLabel" destination="fZh-sV-0DT" id="cVL-FP-pOg"/>
                 <outlet property="legCountTitleLabel" destination="Phn-eV-qDY" id="mpC-Le-2IG"/>
                 <outlet property="platformLabel" destination="yhJ-fH-LVO" id="7Dg-9I-Qg5"/>
