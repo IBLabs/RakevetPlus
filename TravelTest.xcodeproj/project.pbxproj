@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		03E21B20519141F7C80E49AB /* Pods_RakevetPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA335E91A07766E079B7ACB /* Pods_RakevetPlus.framework */; };
+		A83B1316238B14E300E24111 /* Notifications+RakevetPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B1315238B14E300E24111 /* Notifications+RakevetPlus.swift */; };
+		A83B1318238B165D00E24111 /* UserNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B1317238B165D00E24111 /* UserNotificationsService.swift */; };
 		A853A31822B3FFF600D0B05C /* StationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A31722B3FFF600D0B05C /* StationsVC.swift */; };
 		A853A31B22B3FFF600D0B05C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A853A31922B3FFF600D0B05C /* Main.storyboard */; };
 		A853A31D22B3FFFA00D0B05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A853A31C22B3FFFA00D0B05C /* Assets.xcassets */; };
@@ -50,6 +52,13 @@
 		A8AFA5B022BB00B000467D89 /* RouteStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFA5AF22BB00B000467D89 /* RouteStationService.swift */; };
 		A8AFA5B222BB070D00467D89 /* TrainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFA5B122BB070D00467D89 /* TrainService.swift */; };
 		A8B05AFC22BE1C290087DA3F /* UIView+RemoveConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B05AFB22BE1C290087DA3F /* UIView+RemoveConstraints.swift */; };
+		A8BFD9F6238A6389005E6EFB /* PermissionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFD9F5238A6389005E6EFB /* PermissionInteractionController.swift */; };
+		A8BFD9FA238A6425005E6EFB /* PermissionContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFD9F8238A6425005E6EFB /* PermissionContainerVC.swift */; };
+		A8BFD9FB238A6425005E6EFB /* PermissionContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8BFD9F9238A6425005E6EFB /* PermissionContainerVC.xib */; };
+		A8BFD9FE238A6895005E6EFB /* LocationPermissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFD9FC238A6895005E6EFB /* LocationPermissionVC.swift */; };
+		A8BFD9FF238A6895005E6EFB /* LocationPermissionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8BFD9FD238A6895005E6EFB /* LocationPermissionVC.xib */; };
+		A8BFDA02238A68A3005E6EFB /* NotificationsPermissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFDA00238A68A3005E6EFB /* NotificationsPermissionVC.swift */; };
+		A8BFDA03238A68A3005E6EFB /* NotificationsPermissionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8BFDA01238A68A3005E6EFB /* NotificationsPermissionVC.xib */; };
 		A8C86F9223844E880042675A /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C86F9123844E880042675A /* SearchType.swift */; };
 		A8C86F942384816A0042675A /* RPEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C86F932384816A0042675A /* RPEvents.swift */; };
 		A8D6C3E922C3F479003CD712 /* FavouriteDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6C3E722C3F479003CD712 /* FavouriteDetailsVC.swift */; };
@@ -78,6 +87,8 @@
 		5A383DF8A4795C38E3D3F956 /* Pods-TravelTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest.release.xcconfig"; sourceTree = "<group>"; };
 		5EA335E91A07766E079B7ACB /* Pods_RakevetPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RakevetPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB36C880582403E2F06F2D5 /* Pods-TravelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest.debug.xcconfig"; sourceTree = "<group>"; };
+		A83B1315238B14E300E24111 /* Notifications+RakevetPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+RakevetPlus.swift"; sourceTree = "<group>"; };
+		A83B1317238B165D00E24111 /* UserNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsService.swift; sourceTree = "<group>"; };
 		A853A31222B3FFF600D0B05C /* RakevetPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RakevetPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A853A31722B3FFF600D0B05C /* StationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsVC.swift; sourceTree = "<group>"; };
 		A853A31A22B3FFF600D0B05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +133,13 @@
 		A8AFA5AF22BB00B000467D89 /* RouteStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStationService.swift; sourceTree = "<group>"; };
 		A8AFA5B122BB070D00467D89 /* TrainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainService.swift; sourceTree = "<group>"; };
 		A8B05AFB22BE1C290087DA3F /* UIView+RemoveConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RemoveConstraints.swift"; sourceTree = "<group>"; };
+		A8BFD9F5238A6389005E6EFB /* PermissionInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionInteractionController.swift; sourceTree = "<group>"; };
+		A8BFD9F8238A6425005E6EFB /* PermissionContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionContainerVC.swift; sourceTree = "<group>"; };
+		A8BFD9F9238A6425005E6EFB /* PermissionContainerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PermissionContainerVC.xib; sourceTree = "<group>"; };
+		A8BFD9FC238A6895005E6EFB /* LocationPermissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionVC.swift; sourceTree = "<group>"; };
+		A8BFD9FD238A6895005E6EFB /* LocationPermissionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationPermissionVC.xib; sourceTree = "<group>"; };
+		A8BFDA00238A68A3005E6EFB /* NotificationsPermissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermissionVC.swift; sourceTree = "<group>"; };
+		A8BFDA01238A68A3005E6EFB /* NotificationsPermissionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsPermissionVC.xib; sourceTree = "<group>"; };
 		A8C86F9123844E880042675A /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		A8C86F932384816A0042675A /* RPEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPEvents.swift; sourceTree = "<group>"; };
 		A8D6C3E722C3F479003CD712 /* FavouriteDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteDetailsVC.swift; sourceTree = "<group>"; };
@@ -328,6 +346,8 @@
 				A8D6C3EB22C3FF69003CD712 /* UIView+Shake.swift */,
 				A8B05AFB22BE1C290087DA3F /* UIView+RemoveConstraints.swift */,
 				A891E33822C008A3009F9D10 /* UIColor+Hex.swift */,
+				A83B1315238B14E300E24111 /* Notifications+RakevetPlus.swift */,
+				A83B1317238B165D00E24111 /* UserNotificationsService.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +366,7 @@
 		A896D97622BD2BDF005F61DF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A8BFD9F7238A63E9005E6EFB /* PermissionIInteractionControllers */,
 				A8D6C3ED22C40861003CD712 /* EditFavouritesVC */,
 				A8D6C3E622C3F45A003CD712 /* FavouriteDetailsVC */,
 				A8D7E3D722B81B4B002E0A39 /* DatePickerVC */,
@@ -356,6 +377,19 @@
 				A891E32522BEF28E009F9D10 /* RouteDetailsVC */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A8BFD9F7238A63E9005E6EFB /* PermissionIInteractionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8BFD9F8238A6425005E6EFB /* PermissionContainerVC.swift */,
+				A8BFD9F9238A6425005E6EFB /* PermissionContainerVC.xib */,
+				A8BFD9FC238A6895005E6EFB /* LocationPermissionVC.swift */,
+				A8BFD9FD238A6895005E6EFB /* LocationPermissionVC.xib */,
+				A8BFDA00238A68A3005E6EFB /* NotificationsPermissionVC.swift */,
+				A8BFDA01238A68A3005E6EFB /* NotificationsPermissionVC.xib */,
+			);
+			path = PermissionIInteractionControllers;
 			sourceTree = "<group>";
 		};
 		A8C5C5D122DBAC76002F27C5 /* DirectRouteCell */ = {
@@ -399,6 +433,7 @@
 			children = (
 				A8D7E3D122B8000C002E0A39 /* StoryboardUtilities.swift */,
 				A8C86F932384816A0042675A /* RPEvents.swift */,
+				A8BFD9F5238A6389005E6EFB /* PermissionInteractionController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -502,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A853A32022B3FFFA00D0B05C /* LaunchScreen.storyboard in Resources */,
+				A8BFD9FF238A6895005E6EFB /* LocationPermissionVC.xib in Resources */,
 				A853A32922B4005200D0B05C /* train_stations.json in Resources */,
 				A8D6C3F322C4099D003CD712 /* FavouriteRouteCell.xib in Resources */,
 				A8D7E3D422B80255002E0A39 /* StationResultCell.xib in Resources */,
@@ -510,6 +546,7 @@
 				A8D9121B23848D8C005E461F /* RecentRouteCell.xib in Resources */,
 				A8D9121D23848E65005E461F /* EmptyRecentRouteCell.xib in Resources */,
 				A8D9121523848BC6005E461F /* SearchStationVC.xib in Resources */,
+				A8BFDA03238A68A3005E6EFB /* NotificationsPermissionVC.xib in Resources */,
 				A891E32422BE9B6D009F9D10 /* RouteDetailsVC.xib in Resources */,
 				A891E32A22BEF2BC009F9D10 /* RouteDetailCell.xib in Resources */,
 				A8D6C3EA22C3F479003CD712 /* FavouriteDetailsVC.xib in Resources */,
@@ -521,6 +558,7 @@
 				A8D9121F23848FF2005E461F /* EmptyFavouriteRouteCell.xib in Resources */,
 				A891E33622BFEE2A009F9D10 /* TrainSwitchCell.xib in Resources */,
 				A896D97522BC1B65005F61DF /* IndirectRouteCell.xib in Resources */,
+				A8BFD9FB238A6425005E6EFB /* PermissionContainerVC.xib in Resources */,
 				A8F2BF5C23866E0700ADDB7E /* GoogleService-Info.plist in Resources */,
 				A8D7E3DB22B81B61002E0A39 /* DatePickerVC.xib in Resources */,
 				A853A31B22B3FFF600D0B05C /* Main.storyboard in Resources */,
@@ -592,9 +630,11 @@
 				A8AFA5A622BAFE6400467D89 /* RouteResultService.swift in Sources */,
 				A891E33522BFEE2A009F9D10 /* TrainSwitchCell.swift in Sources */,
 				A896D97322BC1B20005F61DF /* IndirectRouteCell.swift in Sources */,
+				A8BFD9FE238A6895005E6EFB /* LocationPermissionVC.swift in Sources */,
 				A8AFA5AA22BAFEFE00467D89 /* DirectRouteService.swift in Sources */,
 				A853A32E22B4247700D0B05C /* TrainStation.swift in Sources */,
 				A896D97C22BD39D9005F61DF /* RecentRouteCell.swift in Sources */,
+				A83B1318238B165D00E24111 /* UserNotificationsService.swift in Sources */,
 				A896D97A22BD393C005F61DF /* FavouriteRouteCell.swift in Sources */,
 				A891E32922BEF2BC009F9D10 /* RouteDetailCell.swift in Sources */,
 				A896D96D22BC0829005F61DF /* DirectRouteCell.swift in Sources */,
@@ -607,16 +647,20 @@
 				A8D7E3DA22B81B61002E0A39 /* DatePickerVC.swift in Sources */,
 				A891E32322BE9B6D009F9D10 /* RouteDetailsVC.swift in Sources */,
 				A8D6C3EC22C3FF69003CD712 /* UIView+Shake.swift in Sources */,
+				A8BFD9F6238A6389005E6EFB /* PermissionInteractionController.swift in Sources */,
 				A896D95622BBFB50005F61DF /* TrainStopService.swift in Sources */,
+				A8BFDA02238A68A3005E6EFB /* NotificationsPermissionVC.swift in Sources */,
 				A896D96122BBFEF6005F61DF /* RouteStation.swift in Sources */,
 				A853A31822B3FFF600D0B05C /* StationsVC.swift in Sources */,
 				A896D95F22BBFE50005F61DF /* DirectRoute.swift in Sources */,
 				A896D95B22BBFCB7005F61DF /* RouteResult.swift in Sources */,
 				A853A33722B42A2C00D0B05C /* SearchStationVC.swift in Sources */,
 				A891E33922C008A3009F9D10 /* UIColor+Hex.swift in Sources */,
+				A8BFD9FA238A6425005E6EFB /* PermissionContainerVC.swift in Sources */,
 				A8B05AFC22BE1C290087DA3F /* UIView+RemoveConstraints.swift in Sources */,
 				A896D95422BBFB1F005F61DF /* Train.swift in Sources */,
 				A891E32022BE9B51009F9D10 /* AppDelegate.swift in Sources */,
+				A83B1316238B14E300E24111 /* Notifications+RakevetPlus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,7 +809,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RakevetPlus.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = NKCD2E3F5G;
 				INFOPLIST_FILE = TravelTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -788,7 +832,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RakevetPlus.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = NKCD2E3F5G;
 				INFOPLIST_FILE = TravelTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

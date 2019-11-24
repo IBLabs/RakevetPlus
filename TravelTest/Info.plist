@@ -41,5 +41,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>רכבת+ צריכה את שירותי המיקום כדי למצוא את התחנה הקרובה ביותר אליך</string>
 </dict>
 </plist>

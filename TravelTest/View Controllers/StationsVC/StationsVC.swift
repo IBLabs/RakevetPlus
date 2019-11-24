@@ -87,6 +87,12 @@ class StationsVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         refreshRecentsTableView()
         refreshFavouritesTableView()
+        
+        self.presentPermissionControllers()
+    }
+    
+    private func presentPermissionControllers() {
+        PermissionContainerVC.presentPermissionContainer(on: self, dataSource: self)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -431,6 +437,22 @@ extension StationsVC: UITableViewDelegate {
             
         default:
             break
+        }
+    }
+}
+
+extension StationsVC: PermissionInteractionControllerDataSource {
+    func numberOfPermissionInteractionControllerForPermissionContainer(permissonContainerVC: PermissionContainerVC) -> Int {
+        return 2
+    }
+    
+    func permissonContainer(permissionContainerVC: PermissionContainerVC, permissionInteractionControllerForIndex index: Int) -> PermissionInteractionController {
+        switch index {
+        case 0:
+            return LocationPermissionVC()
+            
+        default:
+            return NotificationsPermissionVC()
         }
     }
 }
