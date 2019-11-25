@@ -37,8 +37,6 @@ class StationsVC: UIViewController {
     private var origStation: TrainStation? {
         didSet {
             guard let station = self.origStation else { return }
-            
-            // self.origStationLabel.text = station.heName
             self.animateReplaceText(label: self.origStationLabel, text: station.heName)
         }
     }
