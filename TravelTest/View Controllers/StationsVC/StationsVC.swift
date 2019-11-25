@@ -86,7 +86,8 @@ class StationsVC: UIViewController {
         refreshRecentsTableView()
         refreshFavouritesTableView()
         
-        self.presentPermissionControllers()
+        // TODO: uncomment when you wish to activate
+        // self.presentPermissionControllers()
     }
     
     private func presentPermissionControllers() {
