@@ -21,24 +21,41 @@ class RouteDetailsVC: UIViewController {
     @IBOutlet weak private var destStationLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
     
+    @IBOutlet weak private var remindButtonContainer: UIView!
+    @IBOutlet weak private var remindButtonLabel: UILabel!
+    @IBOutlet weak private var remindButton: UIButton!
+    
     private var routeDetails = [Any]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeRouteDetails()
-        configureRouteDetails()
-        configureTableView()
-        configureScrollView()
-        configureContainerView()
+        self.setRemimdButton(visible: false, animated: false)
         
-        prepareForEnterAnimation()
+        self.initializeRouteDetails()
+        self.configureRouteDetails()
+        self.configureTableView()
+        self.configureScrollView()
+        self.configureContainerView()
+        self.configureShadows()
+        
+        self.prepareForEnterAnimation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.performEnterAnimation()
+        self.performEnterAnimation { finished in
+            self.showRemindButtonIfNeeded()
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.updateInsets()
+        self.updateRoundedCorners()
+        self.updateShadows()
     }
     
     private func initializeRouteDetails() {
@@ -85,7 +102,56 @@ class RouteDetailsVC: UIViewController {
         self.routeTableView.register(trainSwitchCellNib, forCellReuseIdentifier: trainSwitchCellIdentifier)
     }
     
+    private func configureShadows() {
+        self.remindButtonContainer.layer.shadowColor = UIColor.black.cgColor
+        self.remindButtonContainer.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.remindButtonContainer.layer.shadowRadius = 10
+        self.remindButtonContainer.layer.shadowOpacity = 0.2
+    }
+    
+    private func updateInsets() {
+        let bottomInset = self.view.frame.maxY - self.remindButtonContainer.frame.minY
+        self.scrollView.contentInset = UIEdgeInsets(top: self.scrollView.adjustedContentInset.top, left: 0, bottom: bottomInset, right: 0)
+    }
+    
+    private func updateShadows() {
+        self.remindButtonContainer.layer.shadowPath = UIBezierPath(roundedRect: self.remindButtonContainer.bounds, cornerRadius: self.remindButtonContainer.bounds.height / 2).cgPath
+    }
+    
+    private func updateRoundedCorners() {
+        self.remindButtonContainer.layer.cornerRadius = self.remindButtonContainer.bounds.height / 2
+    }
+    
+    // MARK: Utility Methods
+    
+    private func showRemindButtonIfNeeded() {
+        let isTrainInPast = self.routeTrains.first!.departureTime.isInPast
+        let isReminderRelevant =  self.routeTrains.first!.departureTime.timeIntervalSinceNow > 31.minutes.timeInterval
+        
+        if !isTrainInPast && isReminderRelevant {
+            self.setRemimdButton(visible: true, animated: true)
+        }
+    }
+    
     // MARK: User Interaction Methods
+    
+    @IBAction private func didClickRemindButton(sender: UIButton) {
+        UserNotificationsService.shared.hasNotificationsPermission { (authorized) in
+            if authorized {
+                self.setRemimdButton(visible: false, animated: true)
+                
+                let alertController = UIAlertController(title: NSLocalizedString("בחר/י זמן תזכורת", comment: "בחר/י זמן תזכורת"), message: NSLocalizedString("כמה זמן לפני צאת הרכבת תרצה/י לקבל תזכורת?", comment: "כמה זמן לפני צאת הרכבת תרצה/י לקבל תזכורת?"), preferredStyle: .actionSheet)
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("15 דקות", comment: "15 דקות"), style: .default, handler: { action in LocalNotificationsService.shared.addTrainReminder(targetDate: self.routeTrains.first!.departureTime, minutesBefore: 15) }))
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("30 דקות", comment: "30 דקות"), style: .default, handler: { action in LocalNotificationsService.shared.addTrainReminder(targetDate: self.routeTrains.first!.departureTime, minutesBefore: 30) }))
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("ביטול", comment: "ביטול"), style: .cancel, handler: { action in self.setRemimdButton(visible: true, animated: true) }))
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                let alertController = UIAlertController(title: NSLocalizedString("שימוש בהתראות", comment: "שימוש בהתראות"), message: NSLocalizedString("טרם אישרת שימוש בהתראות, רכבת+ צריכה אישור שימוש בהתראות כדי להזכיר לך מתי לצאת, אפשר שימוש בהתראות דרך הגדרות המכשיר ונסה שנית", comment: "טרם אישרת שימוש בהתראות, רכבת+ צריכה אישור שימוש בהתראות כדי להזכיר לך מתי לצאת, אפשר שימוש בהתראות דרך הגדרות המכשיר ונסה שנית"), preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("אישור", comment: "אישור"), style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
     
     @IBAction private func didClickedCloseButton(sender: UIButton) {
         self.performExitAnimation { succeeded in
@@ -93,7 +159,20 @@ class RouteDetailsVC: UIViewController {
         }
     }
     
-    // MARK: Presentation Methods
+    // MARK: Animation Methods
+    
+    private func setRemimdButton(visible: Bool, animated: Bool) {
+        let screenBounds = UIScreen.main.bounds
+        let targetTransform: CGAffineTransform = visible ? .identity : .init(translationX: 0, y: screenBounds.height)
+        
+        if animated {
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                self.remindButtonContainer.transform = targetTransform
+            }, completion: nil)
+        } else {
+            self.remindButtonContainer.transform = targetTransform
+        }
+    }
     
     private func prepareForEnterAnimation() {
         self.overlayButton.alpha = 0
@@ -117,6 +196,8 @@ class RouteDetailsVC: UIViewController {
             self.scrollView.transform = .init(translationX: 0, y: screenHeight)
         }, completion: completion)
     }
+    
+    // MARK: Presentation Methods
     
     static func present(from presentingVC: UIViewController, routeTrains: [RouteTrain]) {
         let routeDetailsVC = RouteDetailsVC()

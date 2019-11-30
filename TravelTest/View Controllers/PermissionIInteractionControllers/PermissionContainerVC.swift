@@ -9,22 +9,43 @@
 import UIKit
 
 protocol PermissionInteractionControllerDataSource: class {
-    func numberOfPermissionInteractionControllerForPermissionContainer(permissonContainerVC: PermissionContainerVC) -> Int
-    func permissonContainer(permissionContainerVC: PermissionContainerVC, permissionInteractionControllerForIndex index: Int) -> PermissionInteractionController
+    func numberOfPermissionInteractionControllerForPermissionContainer(_ permissonContainerVC: PermissionContainerVC) -> Int
+    func permissonContainer(_ permissionContainerVC: PermissionContainerVC, permissionInteractionControllerForIndex index: Int) -> PermissionInteractionController
+}
+
+protocol PermissionInteractionControllerDelegate: class {
+    func permissionContainerDidFinish(_ permissionContainer: PermissionContainerVC)
 }
 
 class PermissionContainerVC: UIViewController {
     
     var dataSource: PermissionInteractionControllerDataSource?
+    var delegate: PermissionInteractionControllerDelegate?
     
     @IBOutlet private weak var scrollView: UIScrollView!
     
     private var permissionInteractionControllers: [PermissionInteractionController] = []
+    
+    private(set) static var didDisplayPermissionsRequest: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "didDisplayPermissionsRequest")
+        }
+        
+        set {
+            UserDefaults.standard.set(newValue, forKey: "didDisplayPermissionsRequest")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.configureScrollView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        PermissionContainerVC.didDisplayPermissionsRequest = true
     }
     
     func permissionInterfaceControllerDidFinish(permissionIC: PermissionInteractionController) {
@@ -33,7 +54,9 @@ class PermissionContainerVC: UIViewController {
         }
         
         if index == self.children.count - 1 {
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true) {
+                self.delegate?.permissionContainerDidFinish(self)
+            }
         } else {
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
                 self.scrollView.setContentOffset(CGPoint(x: CGFloat(index + 1) * self.scrollView.bounds.width, y: 0), animated: false)
@@ -41,12 +64,25 @@ class PermissionContainerVC: UIViewController {
         }
     }
     
-    static func presentPermissionContainer(on presentingVC: UIViewController, dataSource: PermissionInteractionControllerDataSource) {
+    // MARK: Presentation Methods
+    
+    static func presentPermissionContainer(on presentingVC: UIViewController, dataSource: PermissionInteractionControllerDataSource, delegate: PermissionInteractionControllerDelegate? = nil) {
         let permissionContainerVC = PermissionContainerVC(nibName: "PermissionContainerVC", bundle: nil)
         
         permissionContainerVC.dataSource = dataSource
+        permissionContainerVC.delegate = delegate
         presentingVC.present(permissionContainerVC, animated: true, completion: nil)
     }
+    
+    static func shouldDisplayPermissionRequest() -> Bool {
+        guard !PermissionContainerVC.didDisplayPermissionsRequest else {
+            return false
+        }
+        
+        return true
+    }
+    
+    // MARK: Configuration Methods
     
     private func configureScrollView() {
         guard let dataSource = self.dataSource else {
@@ -64,12 +100,12 @@ class PermissionContainerVC: UIViewController {
         containerView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
         
-        let permissionControllersCount = dataSource.numberOfPermissionInteractionControllerForPermissionContainer(permissonContainerVC: self)
+        let permissionControllersCount = dataSource.numberOfPermissionInteractionControllerForPermissionContainer(self)
         
         var previousPIC: PermissionInteractionController?
         for i in 0..<permissionControllersCount {
             // get a permission interaction controller
-            let permissionIC = dataSource.permissonContainer(permissionContainerVC: self, permissionInteractionControllerForIndex: i)
+            let permissionIC = dataSource.permissonContainer(self, permissionInteractionControllerForIndex: i)
             
             // add the new permission interaction controller to the container view
             containerView.addSubview(permissionIC.view)

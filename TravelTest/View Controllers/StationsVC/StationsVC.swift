@@ -22,6 +22,7 @@ class StationsVC: UIViewController {
     @IBOutlet weak private var recentsTableView: RigidTableView!
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak private var searchButtonLabel: UILabel!
+    @IBOutlet weak private var swapButton: UIButton!
     
     var stations = [TrainStation]()
     var favouriteRoutes = [FavouriteRoute]()
@@ -87,11 +88,29 @@ class StationsVC: UIViewController {
         refreshFavouritesTableView()
         
         // TODO: uncomment when you wish to activate
-        // self.presentPermissionControllers()
+        if !self.presentPermissionControllersIfNeeded() {
+            self.presentWhatsNewIfNeeded()
+        }
     }
     
-    private func presentPermissionControllers() {
-        PermissionContainerVC.presentPermissionContainer(on: self, dataSource: self)
+    @discardableResult
+    private func presentWhatsNewIfNeeded() -> Bool {
+        guard WhatsNewVC.shouldDisplayWhatNew() else {
+            return false
+        }
+        
+        WhatsNewVC.present(from: self)
+        return true
+    }
+    
+    @discardableResult
+    private func presentPermissionControllersIfNeeded() -> Bool {
+        guard PermissionContainerVC.shouldDisplayPermissionRequest() else {
+            return false
+        }
+        
+        PermissionContainerVC.presentPermissionContainer(on: self, dataSource: self, delegate: self)
+        return true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -248,6 +267,17 @@ class StationsVC: UIViewController {
     
     // MARK: User Intreaction Methods
     
+    @IBAction private func didClickSwapButton(sender: UIButton) {
+        let originTransform = self.swapButton.transform
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [], animations: {
+            self.swapButton.transform = originTransform.concatenating(.init(rotationAngle: .pi))
+        }, completion: nil)
+        
+        let tempDestStation = self.destStation
+        self.destStation = self.origStation
+        self.origStation = tempDestStation
+    }
+    
     @IBAction private func didClickedMapButton(sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let stationsMapVC = storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.stationsMap) as? StationsMapVC {
@@ -344,6 +374,8 @@ class StationsVC: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource Methods
+
 extension StationsVC: UITableViewDataSource {
     var emptyFavouriteCellIdentifier: String { return "co.itamarbiton.TravelTest.EmptyFavouriteRouteCellIdentifier" }
     var favouriteCellIdentifier: String { return "co.itamarbiton.TravelTest.FavouriteRouteCellIdentifier" }
@@ -395,6 +427,8 @@ extension StationsVC: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate Methods
+
 extension StationsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 64
@@ -440,12 +474,14 @@ extension StationsVC: UITableViewDelegate {
     }
 }
 
+// MARK: - PermissionInteractionControllerDataSource Methods
+
 extension StationsVC: PermissionInteractionControllerDataSource {
-    func numberOfPermissionInteractionControllerForPermissionContainer(permissonContainerVC: PermissionContainerVC) -> Int {
+    func numberOfPermissionInteractionControllerForPermissionContainer(_ permissonContainerVC: PermissionContainerVC) -> Int {
         return 2
     }
     
-    func permissonContainer(permissionContainerVC: PermissionContainerVC, permissionInteractionControllerForIndex index: Int) -> PermissionInteractionController {
+    func permissonContainer(_ permissionContainerVC: PermissionContainerVC, permissionInteractionControllerForIndex index: Int) -> PermissionInteractionController {
         switch index {
         case 0:
             return LocationPermissionVC()
@@ -453,5 +489,13 @@ extension StationsVC: PermissionInteractionControllerDataSource {
         default:
             return NotificationsPermissionVC()
         }
+    }
+}
+
+// MARK: - PermissionInteractionControllerDelegate Methods
+
+extension StationsVC: PermissionInteractionControllerDelegate {
+    func permissionContainerDidFinish(_ permissionContainer: PermissionContainerVC) {
+        self.presentWhatsNewIfNeeded()
     }
 }

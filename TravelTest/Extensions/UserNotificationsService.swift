@@ -30,6 +30,14 @@ class UserNotificationsService: NSObject {
             }
         }
     }
+    
+    func hasNotificationsPermission(completion: @escaping ((Bool) -> Void)) {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            DispatchQueue.main.async {
+                completion(settings.authorizationStatus == .authorized)
+            }
+        }
+    }
 }
 
 extension UserNotificationsService: UNUserNotificationCenterDelegate {

@@ -22,20 +22,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndh-TC-XVh">
+                    <rect key="frame" x="16" y="60" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="7sL-fS-0rP"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="ghr-pz-nBr"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="kii-Tp-0hE"/>
+                        <constraint firstAttribute="width" constant="36" id="nKj-tq-Bfa"/>
+                    </constraints>
+                    <state key="normal" image="close_button"/>
+                    <connections>
+                        <action selector="didClickCloseButtonWithSender:" destination="-1" eventType="touchUpInside" id="xHz-7x-eyq"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שירותי מיקום" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53W-6e-mgY">
-                    <rect key="frame" x="24" y="428" width="366" height="38.5"/>
+                    <rect key="frame" x="24" y="372" width="366" height="38.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כדי לקצר את זמני החיפוש באפליקציה ולהציג את תחנות הרכבת הקרובות ביותך אליך, רכבת+ צריכה גישה לשירותי מיקום." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdQ-AP-VCG">
-                    <rect key="frame" x="24" y="470.5" width="366" height="61"/>
+                    <rect key="frame" x="24" y="414.5" width="366" height="61"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_graphic" translatesAutoresizingMaskIntoConstraints="NO" id="zSH-oA-cPU">
-                    <rect key="frame" x="79" y="172" width="256" height="256"/>
+                    <rect key="frame" x="79" y="116" width="256" height="256"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvj-Jo-6ST">
                     <rect key="frame" x="16" y="790" width="382" height="56"/>
@@ -73,15 +86,17 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="ndh-TC-XVh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="17H-2h-9rz"/>
                 <constraint firstItem="53W-6e-mgY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="1K8-Ke-Y6e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jvj-Jo-6ST" secondAttribute="trailing" constant="16" id="2g3-bU-J3Y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="53W-6e-mgY" secondAttribute="trailing" constant="24" id="2sW-Qh-J4u"/>
                 <constraint firstItem="PdQ-AP-VCG" firstAttribute="top" secondItem="53W-6e-mgY" secondAttribute="bottom" constant="4" id="7ee-EA-TyM"/>
                 <constraint firstItem="Jvj-Jo-6ST" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="F9Z-mF-17Y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PdQ-AP-VCG" secondAttribute="trailing" constant="24" id="RKA-SO-Lb3"/>
+                <constraint firstItem="ndh-TC-XVh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="TOe-qJ-vux"/>
                 <constraint firstItem="53W-6e-mgY" firstAttribute="top" secondItem="zSH-oA-cPU" secondAttribute="bottom" id="YI8-0P-eUZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jvj-Jo-6ST" secondAttribute="bottom" constant="16" id="akM-9G-jSN"/>
-                <constraint firstItem="zSH-oA-cPU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="128" id="icj-Nt-An3"/>
+                <constraint firstItem="zSH-oA-cPU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="72" id="icj-Nt-An3"/>
                 <constraint firstItem="zSH-oA-cPU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ojw-ta-LXY"/>
                 <constraint firstItem="PdQ-AP-VCG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="qOB-au-kND"/>
             </constraints>
@@ -90,6 +105,7 @@
         </view>
     </objects>
     <resources>
+        <image name="close_button" width="36" height="36"/>
         <image name="location_graphic" width="256" height="256"/>
     </resources>
 </document>

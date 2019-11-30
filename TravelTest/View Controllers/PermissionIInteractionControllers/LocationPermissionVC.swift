@@ -15,6 +15,7 @@ class LocationPermissionVC: PermissionInteractionController {
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak private var buttonLabel: UILabel!
     @IBOutlet weak private var button: UIButton!
+    @IBOutlet weak private var closeButton: UIButton!
     
     var locationManager = CLLocationManager()
 
@@ -35,6 +36,10 @@ class LocationPermissionVC: PermissionInteractionController {
         self.locationManager.requestWhenInUseAuthorization()
         
         self.set(isLoading: true, animated: true)
+    }
+    
+    @IBAction private func didClickCloseButton(sender: UIButton) {
+        self.finish()
     }
     
     // MARK: Animation Methods

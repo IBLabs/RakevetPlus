@@ -47,7 +47,7 @@ class RemoteConfigService {
     func activateFetchedRemoteConfig() {
         self.remoteConfig.activate { (error) in
             if let error = error {
-                print ("failed to activate fetched remote config")
+                print ("failed to activate fetched remote config, \(error.localizedDescription)")
             }
         }
     }

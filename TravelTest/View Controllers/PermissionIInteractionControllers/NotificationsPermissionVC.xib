@@ -21,20 +21,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCq-bS-idE">
+                    <rect key="frame" x="16" y="60" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="7lt-qs-fOk"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="YU8-T1-nWz"/>
+                        <constraint firstAttribute="height" constant="36" id="bNN-2z-B0g"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="ux4-TI-Mfw"/>
+                    </constraints>
+                    <state key="normal" image="close_button"/>
+                    <connections>
+                        <action selector="didClickCloseButtonWithSender:" destination="-1" eventType="touchUpInside" id="hSi-Gc-aa4"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="התראות" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agf-4i-DbW">
-                    <rect key="frame" x="24" y="428" width="366" height="38.5"/>
+                    <rect key="frame" x="24" y="372" width="366" height="38.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כדי לקבל התראות על שיבושים בתנעות הרכבות, שינויים ועדכונים, אפליקציית רכבת+ צריכה הרשאות לשליחת התראות." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCW-hu-wgA">
-                    <rect key="frame" x="24" y="470.5" width="366" height="61"/>
+                    <rect key="frame" x="24" y="414.5" width="366" height="61"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notifications_graphic" translatesAutoresizingMaskIntoConstraints="NO" id="2Lt-Lv-bmZ">
-                    <rect key="frame" x="79" y="172" width="256" height="256"/>
+                    <rect key="frame" x="79" y="116" width="256" height="256"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-80-8UG">
                     <rect key="frame" x="16" y="790" width="382" height="56"/>
@@ -79,12 +92,14 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="l1G-80-8UG" secondAttribute="bottom" constant="16" id="9YA-ZE-alf"/>
                 <constraint firstItem="JCW-hu-wgA" firstAttribute="top" secondItem="agf-4i-DbW" secondAttribute="bottom" constant="4" id="9rN-kW-FlU"/>
                 <constraint firstItem="l1G-80-8UG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="BEc-Jh-F9l"/>
+                <constraint firstItem="uCq-bS-idE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="EaF-4W-8fc"/>
                 <constraint firstItem="agf-4i-DbW" firstAttribute="top" secondItem="2Lt-Lv-bmZ" secondAttribute="bottom" id="R8N-6O-aYH"/>
                 <constraint firstItem="agf-4i-DbW" firstAttribute="top" secondItem="2Lt-Lv-bmZ" secondAttribute="bottom" id="SVt-xs-nsx"/>
                 <constraint firstItem="agf-4i-DbW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="WIp-qS-w32"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l1G-80-8UG" secondAttribute="trailing" constant="16" id="hBd-9o-27L"/>
-                <constraint firstItem="2Lt-Lv-bmZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="128" id="hVf-Qq-RAD"/>
+                <constraint firstItem="2Lt-Lv-bmZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="72" id="hVf-Qq-RAD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="agf-4i-DbW" secondAttribute="trailing" constant="24" id="iN3-ob-0wS"/>
+                <constraint firstItem="uCq-bS-idE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sQ7-h1-6uO"/>
                 <constraint firstItem="JCW-hu-wgA" firstAttribute="top" secondItem="agf-4i-DbW" secondAttribute="bottom" constant="4" id="u20-71-i7e"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -92,6 +107,7 @@
         </view>
     </objects>
     <resources>
+        <image name="close_button" width="36" height="36"/>
         <image name="notifications_graphic" width="256" height="256"/>
     </resources>
 </document>

@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteDetailsVC" customModule="TravelTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteDetailsVC" customModule="RakevetPlus" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="OO1-E7-lbv" id="3fX-4l-Fbz"/>
                 <outlet property="dateLabel" destination="O0P-FO-mcb" id="imk-SJ-1nL"/>
                 <outlet property="destStationLabel" destination="v9B-GH-Syv" id="7UK-Qv-tup"/>
                 <outlet property="origStationLabel" destination="onp-hJ-MFX" id="6D4-7X-DMt"/>
                 <outlet property="overlayButton" destination="I0B-aO-gaB" id="lVo-vy-z0C"/>
+                <outlet property="remindButton" destination="Mje-2q-tGr" id="Lft-e8-ndg"/>
+                <outlet property="remindButtonContainer" destination="6hh-6Q-CrO" id="Z8n-9y-e2U"/>
+                <outlet property="remindButtonLabel" destination="oLb-Yw-JZS" id="wux-f6-2DU"/>
                 <outlet property="routeTableView" destination="CYe-fq-gaw" id="TgR-pt-1yu"/>
                 <outlet property="scrollView" destination="gQp-I7-ML6" id="m9e-FS-VmN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,13 +33,13 @@
                     <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-I7-ML6">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-I7-ML6">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OO1-E7-lbv">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="475"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYe-fq-gaw" customClass="RigidTableView" customModule="TravelTest" customModuleProvider="target">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYe-fq-gaw" customClass="RigidTableView" customModule="RakevetPlus" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="155" width="414" height="320"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -168,13 +169,43 @@
                         <constraint firstAttribute="trailing" secondItem="OO1-E7-lbv" secondAttribute="trailing" id="yvF-Ij-z12"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hh-6Q-CrO">
+                    <rect key="frame" x="16" y="790" width="382" height="56"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הזכר לי לצאת" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-Yw-JZS">
+                            <rect key="frame" x="144" y="17.5" width="94.5" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mje-2q-tGr">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                            <connections>
+                                <action selector="didClickRemindButtonWithSender:" destination="-1" eventType="touchUpInside" id="Uxt-l8-y6d"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="2IY-rG-RQn"/>
+                        <constraint firstAttribute="bottom" secondItem="Mje-2q-tGr" secondAttribute="bottom" id="KHx-dv-ydU"/>
+                        <constraint firstItem="Mje-2q-tGr" firstAttribute="top" secondItem="6hh-6Q-CrO" secondAttribute="top" id="U9E-n7-Grj"/>
+                        <constraint firstItem="Mje-2q-tGr" firstAttribute="leading" secondItem="6hh-6Q-CrO" secondAttribute="leading" id="eVL-6V-2Sp"/>
+                        <constraint firstItem="oLb-Yw-JZS" firstAttribute="centerX" secondItem="6hh-6Q-CrO" secondAttribute="centerX" id="nno-AL-fMk"/>
+                        <constraint firstItem="oLb-Yw-JZS" firstAttribute="centerY" secondItem="6hh-6Q-CrO" secondAttribute="centerY" id="pLQ-Ja-tEs"/>
+                        <constraint firstAttribute="trailing" secondItem="Mje-2q-tGr" secondAttribute="trailing" id="z5t-hM-B3P"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="I0B-aO-gaB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="07j-3i-D07"/>
+                <constraint firstItem="6hh-6Q-CrO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2dk-y5-ns8"/>
                 <constraint firstItem="gQp-I7-ML6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B0O-PK-Ohp"/>
                 <constraint firstItem="I0B-aO-gaB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="D9f-h4-pg4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6hh-6Q-CrO" secondAttribute="trailing" constant="16" id="HIL-SX-7eh"/>
                 <constraint firstItem="gQp-I7-ML6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fwB-Ve-3ZT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6hh-6Q-CrO" secondAttribute="bottom" constant="16" id="ik0-Q3-TAY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gQp-I7-ML6" secondAttribute="trailing" id="kbf-rv-FT4"/>
                 <constraint firstAttribute="bottom" secondItem="I0B-aO-gaB" secondAttribute="bottom" id="oto-6h-rNn"/>
                 <constraint firstAttribute="bottom" secondItem="gQp-I7-ML6" secondAttribute="bottom" id="qs1-xI-d7b"/>

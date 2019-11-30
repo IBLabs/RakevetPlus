@@ -14,6 +14,7 @@ class NotificationsPermissionVC: PermissionInteractionController {
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak private var buttonLabel: UILabel!
     @IBOutlet weak private var button: UIButton!
+    @IBOutlet weak private var closeButton: UIButton!
     
     override func viewDidLoad() {
         
@@ -38,6 +39,10 @@ class NotificationsPermissionVC: PermissionInteractionController {
     }
     
     // MARK: - User Interaction Methods
+    
+    @IBAction private func didClickCloseButton(sender: UIButton) {
+        self.finish()
+    }
     
     @IBAction private func didClickAuthorizeButton(sender: UIButton) {
         UserNotificationsService.shared.requestAuthorization()
