@@ -224,7 +224,7 @@ extension SearchStationVC: UITextFieldDelegate {
         }
         
         self.filteredStations = self.stations.filter({
-            let nameContains = $0.heName.contains(searchText)
+            let nameContains = $0.name.contains(searchText)
             var keywordsContain = false
             if let keywords = $0.keywords {
                 for keyword in keywords {

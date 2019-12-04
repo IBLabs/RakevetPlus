@@ -16,8 +16,8 @@ class RecentRouteCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     func configure(with recentRoute: RecentRoute, dateFormatter: DateFormatter? = nil) {
-        self.origStationLabel.text = recentRoute.origStation.heName
-        self.destStationLabel.text = recentRoute.destStation.heName
+        self.origStationLabel.text = recentRoute.origStation.name
+        self.destStationLabel.text = recentRoute.destStation.name
 
         var formatter: DateFormatter!
         if dateFormatter != nil {

@@ -12,7 +12,7 @@ class DataStore {
     static let shared = DataStore()
     
     lazy var stations: [TrainStation] = {
-        return self.indexedStations.map { $0.1 }.sorted { $0.heName < $1.heName }
+        return self.indexedStations.map { $0.1 }.sorted { $0.name < $1.name }
     }()
     
     private var indexedStations = [String: TrainStation]()

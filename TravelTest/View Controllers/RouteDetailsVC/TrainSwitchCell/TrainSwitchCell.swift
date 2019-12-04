@@ -9,7 +9,10 @@
 import UIKit
 
 class TrainSwitchCell: UITableViewCell {
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var platformTitleLabel: UILabel!
     @IBOutlet weak var platformLabel: UILabel!
+    @IBOutlet weak private var waitingTimeTitleLabel: UILabel!
     @IBOutlet weak var waitingTimeLabel: UILabel!
     @IBOutlet weak var dashView: UIView!
     
@@ -26,6 +29,8 @@ class TrainSwitchCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        self.configureStrings()
+        
         self.dashView.layer.addSublayer(dashLayer)
     }
     
@@ -51,7 +56,13 @@ class TrainSwitchCell: UITableViewCell {
         let numberFormatter = NumberFormatter()
         numberFormatter.allowsFloats = false
         let waitingTimeString = numberFormatter.string(from: NSNumber(value: waitingTime)) ?? "--"
-        self.waitingTimeLabel.text = "\(waitingTimeString) דק׳"
+        self.waitingTimeLabel.text = String(format: NSLocalizedString("%@ דק׳", comment: "%@ דק׳"), waitingTimeString)
         self.platformLabel.text = "\(trainSwitch.departurePlatform)"
+    }
+    
+    private func configureStrings() {
+        self.platformTitleLabel.text = NSLocalizedString("רציף", comment: "רציף")
+        self.waitingTimeTitleLabel.text = NSLocalizedString("זמן המתנה", comment: "זמן המתנה")
+        self.titleLabel.text = NSLocalizedString("החלפה", comment: "החלפה")
     }
 }

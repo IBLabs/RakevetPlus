@@ -58,9 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // fetch and activate remote configuration
         RemoteConfigService.shared.performFetchAndActivate()
         
+        /*
         // configure the default region for SwiftDate
         let region = Region(calendar: Calendars.gregorian, zone: Zones.asiaJerusalem, locale: Locales.hebrewIsrael)
         SwiftDate.defaultRegion = region
+         */
         
         let stationsVC = StationsVC()
         let navigationController = UINavigationController(rootViewController: stationsVC)

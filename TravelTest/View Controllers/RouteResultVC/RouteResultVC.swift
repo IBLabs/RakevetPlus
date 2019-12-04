@@ -21,6 +21,7 @@ class RouteResultVC: UIViewController {
     @IBOutlet weak private var destStationLabel: UILabel!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var backButton: UIButton!
     
     @IBOutlet weak var routeSliderView: UIView!
     @IBOutlet var routeButtons: [UIButton]!
@@ -44,6 +45,7 @@ class RouteResultVC: UIViewController {
         
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
        
+        configureStrings()
         configureTabButtons()
         configureTableViews()
         
@@ -53,11 +55,11 @@ class RouteResultVC: UIViewController {
         }
         
         if let origStation = self.origStation, let destStation = self.destStation, let date = self.date {
-            self.origStationLabel.text = origStation.heName
-            self.destStationLabel.text = destStation.heName
+            self.origStationLabel.text = origStation.name
+            self.destStationLabel.text = destStation.name
             
             let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: "he_IL")
+            formatter.locale = Locale.current
             formatter.dateFormat = "EEEE, d MMMM, HH:mm"
             
             self.dateLabel.text = formatter.string(from: date)
@@ -120,9 +122,13 @@ class RouteResultVC: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
+    private func configureStrings() {
+        self.backButton.setTitle(NSLocalizedString("חזור", comment: "חזור"), for: .normal)
+    }
+    
     private func configureTabButtons() {
-        self.routeButtons[0].setTitle("\(self.directRoutes.count) ישיר", for: .normal)
-        self.routeButtons[1].setTitle("\(self.indirectRoutes.count) עם החלפות", for: .normal)
+        self.routeButtons[0].setTitle(String(format: NSLocalizedString("%d ישיר", comment: "%d ישיר"), self.directRoutes.count), for: .normal)
+        self.routeButtons[1].setTitle(String(format: NSLocalizedString("%d עם החלפות", comment: "%d עם החלפות"), self.indirectRoutes.count), for: .normal)
     }
     
     private func configureTableViews() {

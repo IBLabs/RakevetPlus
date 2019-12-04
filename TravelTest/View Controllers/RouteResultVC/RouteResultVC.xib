@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteResultVC" customModule="RakevetPlus" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="WFw-m2-LPl" id="bpu-5a-XTA"/>
                 <outlet property="dateLabel" destination="UIh-f6-S78" id="Q1u-i8-mKC"/>
                 <outlet property="destStationLabel" destination="Nye-fa-vNi" id="JRo-0H-Zem"/>
                 <outlet property="directRoutesTableView" destination="gpZ-gr-UOC" id="FiN-fz-fKC"/>

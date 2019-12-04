@@ -46,21 +46,21 @@ class FavouriteDetailsVC: UIViewController {
         self.destStation = favouriteRoute.destStation
         
         self.nameTextField.text = favouriteRoute.name
-        self.origStationLabel.text = favouriteRoute.origStation.heName
-        self.destStationLabel.text = favouriteRoute.destStation.heName
+        self.origStationLabel.text = favouriteRoute.origStation.name
+        self.destStationLabel.text = favouriteRoute.destStation.name
     }
     
     @IBAction private func didClickedSetOrigStationButton(sender: UIButton) {
         SearchStationVC.present(from: self, stations: DataStore.shared.stations, type: .origin) { (selectedStation) in
             self.origStation = selectedStation
-            self.origStationLabel.text = selectedStation.heName
+            self.origStationLabel.text = selectedStation.name
         }
     }
     
     @IBAction private func didClickedSetDestStationButton(sender: UIButton) {
         SearchStationVC.present(from: self, stations: DataStore.shared.stations, type: .destination) { (selectedStation) in
             self.destStation = selectedStation
-            self.destStationLabel.text = selectedStation.heName
+            self.destStationLabel.text = selectedStation.name
         }
     }
     

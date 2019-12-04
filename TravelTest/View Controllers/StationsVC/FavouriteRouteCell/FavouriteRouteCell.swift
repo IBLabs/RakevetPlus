@@ -15,8 +15,8 @@ class FavouriteRouteCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     func configure(with favouriteRoute: FavouriteRoute) {
-        self.origStationLabel.text = favouriteRoute.origStation.heName
-        self.destStationLabel.text = favouriteRoute.destStation.heName
+        self.origStationLabel.text = favouriteRoute.origStation.name
+        self.destStationLabel.text = favouriteRoute.destStation.name
         self.nameLabel.text = favouriteRoute.name
     }
 }

@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		03E21B20519141F7C80E49AB /* Pods_RakevetPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA335E91A07766E079B7ACB /* Pods_RakevetPlus.framework */; };
+		A8249C04239723BF0066B73D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8249C06239723BF0066B73D /* Localizable.strings */; };
 		A83B1316238B14E300E24111 /* Notifications+RakevetPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B1315238B14E300E24111 /* Notifications+RakevetPlus.swift */; };
 		A83B1318238B165D00E24111 /* UserNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B1317238B165D00E24111 /* UserNotificationsService.swift */; };
+		A844B0F72397368B00A85A91 /* EmptyFavouriteRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A844B0F92397368B00A85A91 /* EmptyFavouriteRouteCell.xib */; };
+		A844B0FB239736C700A85A91 /* EmptyRecentRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A844B0FD239736C700A85A91 /* EmptyRecentRouteCell.xib */; };
 		A8464289238F0CC3009F74A0 /* LocalNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8464288238F0CC3009F74A0 /* LocalNotificationsService.swift */; };
 		A846428C238F16D5009F74A0 /* WhatsNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A846428A238F16D5009F74A0 /* WhatsNewVC.swift */; };
 		A846428D238F16D5009F74A0 /* WhatsNewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A846428B238F16D5009F74A0 /* WhatsNewVC.xib */; };
 		A853A31822B3FFF600D0B05C /* StationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A31722B3FFF600D0B05C /* StationsVC.swift */; };
-		A853A31B22B3FFF600D0B05C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A853A31922B3FFF600D0B05C /* Main.storyboard */; };
 		A853A31D22B3FFFA00D0B05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A853A31C22B3FFFA00D0B05C /* Assets.xcassets */; };
-		A853A32022B3FFFA00D0B05C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A853A31E22B3FFFA00D0B05C /* LaunchScreen.storyboard */; };
 		A853A32922B4005200D0B05C /* train_stations.json in Resources */ = {isa = PBXBuildFile; fileRef = A853A32822B4005200D0B05C /* train_stations.json */; };
 		A853A32B22B4076A00D0B05C /* StationsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A32A22B4076A00D0B05C /* StationsMapVC.swift */; };
 		A853A32E22B4247700D0B05C /* TrainStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853A32D22B4247700D0B05C /* TrainStation.swift */; };
@@ -79,8 +80,6 @@
 		A8D9121323848BAC005E461F /* StationsMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121223848BAC005E461F /* StationsMapVC.xib */; };
 		A8D9121523848BC6005E461F /* SearchStationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121423848BC6005E461F /* SearchStationVC.xib */; };
 		A8D9121B23848D8C005E461F /* RecentRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121A23848D8C005E461F /* RecentRouteCell.xib */; };
-		A8D9121D23848E65005E461F /* EmptyRecentRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */; };
-		A8D9121F23848FF2005E461F /* EmptyFavouriteRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */; };
 		A8E3356823871794004D5B24 /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E3356723871794004D5B24 /* RemoteConfigService.swift */; };
 		A8F2BF5C23866E0700ADDB7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8F2BF5B23866E0700ADDB7E /* GoogleService-Info.plist */; };
 		A8F2BF5E2386EE3000ADDB7E /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8F2BF5D2386EE3000ADDB7E /* RemoteConfigDefaults.plist */; };
@@ -90,16 +89,20 @@
 		5A383DF8A4795C38E3D3F956 /* Pods-TravelTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest.release.xcconfig"; sourceTree = "<group>"; };
 		5EA335E91A07766E079B7ACB /* Pods_RakevetPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RakevetPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB36C880582403E2F06F2D5 /* Pods-TravelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTest/Pods-TravelTest.debug.xcconfig"; sourceTree = "<group>"; };
+		A80E3FD02397254F00916401 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A8249C05239723BF0066B73D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A83B1315238B14E300E24111 /* Notifications+RakevetPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+RakevetPlus.swift"; sourceTree = "<group>"; };
 		A83B1317238B165D00E24111 /* UserNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsService.swift; sourceTree = "<group>"; };
+		A844B0F82397368B00A85A91 /* he */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = he; path = he.lproj/EmptyFavouriteRouteCell.xib; sourceTree = "<group>"; };
+		A844B0FA2397368C00A85A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EmptyFavouriteRouteCell.xib; sourceTree = "<group>"; };
+		A844B0FC239736C700A85A91 /* he */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = he; path = he.lproj/EmptyRecentRouteCell.xib; sourceTree = "<group>"; };
+		A844B0FE239736C800A85A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EmptyRecentRouteCell.xib; sourceTree = "<group>"; };
 		A8464288238F0CC3009F74A0 /* LocalNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsService.swift; sourceTree = "<group>"; };
 		A846428A238F16D5009F74A0 /* WhatsNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewVC.swift; sourceTree = "<group>"; };
 		A846428B238F16D5009F74A0 /* WhatsNewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNewVC.xib; sourceTree = "<group>"; };
 		A853A31222B3FFF600D0B05C /* RakevetPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RakevetPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A853A31722B3FFF600D0B05C /* StationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsVC.swift; sourceTree = "<group>"; };
-		A853A31A22B3FFF600D0B05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A853A31C22B3FFFA00D0B05C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A853A31F22B3FFFA00D0B05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A853A32122B3FFFA00D0B05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A853A32822B4005200D0B05C /* train_stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = train_stations.json; sourceTree = "<group>"; };
 		A853A32A22B4076A00D0B05C /* StationsMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsMapVC.swift; sourceTree = "<group>"; };
@@ -163,8 +166,6 @@
 		A8D9121223848BAC005E461F /* StationsMapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationsMapVC.xib; sourceTree = "<group>"; };
 		A8D9121423848BC6005E461F /* SearchStationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchStationVC.xib; sourceTree = "<group>"; };
 		A8D9121A23848D8C005E461F /* RecentRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentRouteCell.xib; sourceTree = "<group>"; };
-		A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyRecentRouteCell.xib; sourceTree = "<group>"; };
-		A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyFavouriteRouteCell.xib; sourceTree = "<group>"; };
 		A8E3356723871794004D5B24 /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		A8F2BF5A238662CC00ADDB7E /* RakevetPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RakevetPlus.entitlements; sourceTree = "<group>"; };
 		A8F2BF5B23866E0700ADDB7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 		A853A30922B3FFF600D0B05C = {
 			isa = PBXGroup;
 			children = (
+				A8249C06239723BF0066B73D /* Localizable.strings */,
 				A8F2BF5A238662CC00ADDB7E /* RakevetPlus.entitlements */,
 				A853A31422B3FFF600D0B05C /* TravelTest */,
 				A853A31322B3FFF600D0B05C /* Products */,
@@ -230,11 +232,9 @@
 			children = (
 				A853A32122B3FFFA00D0B05C /* Info.plist */,
 				A8F2BF5B23866E0700ADDB7E /* GoogleService-Info.plist */,
-				A853A31922B3FFF600D0B05C /* Main.storyboard */,
 				A8F2BF5D2386EE3000ADDB7E /* RemoteConfigDefaults.plist */,
 				A8E3356723871794004D5B24 /* RemoteConfigService.swift */,
 				A891E31F22BE9B51009F9D10 /* AppDelegate.swift */,
-				A853A31E22B3FFFA00D0B05C /* LaunchScreen.storyboard */,
 				A853A31C22B3FFFA00D0B05C /* Assets.xcassets */,
 				A896D97622BD2BDF005F61DF /* View Controllers */,
 				A8D7E3D022B7FFEC002E0A39 /* Utilities */,
@@ -469,7 +469,7 @@
 			children = (
 				A896D97922BD393C005F61DF /* FavouriteRouteCell.swift */,
 				A8D6C3F222C4099D003CD712 /* FavouriteRouteCell.xib */,
-				A8D9121E23848FF2005E461F /* EmptyFavouriteRouteCell.xib */,
+				A844B0F92397368B00A85A91 /* EmptyFavouriteRouteCell.xib */,
 			);
 			path = FavouriteRouteCell;
 			sourceTree = "<group>";
@@ -479,7 +479,7 @@
 			children = (
 				A896D97B22BD39D9005F61DF /* RecentRouteCell.swift */,
 				A8D9121A23848D8C005E461F /* RecentRouteCell.xib */,
-				A8D9121C23848E65005E461F /* EmptyRecentRouteCell.xib */,
+				A844B0FD239736C700A85A91 /* EmptyRecentRouteCell.xib */,
 			);
 			path = RecentRouteCell;
 			sourceTree = "<group>";
@@ -536,7 +536,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				he,
 			);
 			mainGroup = A853A30922B3FFF600D0B05C;
 			productRefGroup = A853A31322B3FFF600D0B05C /* Products */;
@@ -553,7 +553,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A853A32022B3FFFA00D0B05C /* LaunchScreen.storyboard in Resources */,
 				A8BFD9FF238A6895005E6EFB /* LocationPermissionVC.xib in Resources */,
 				A846428D238F16D5009F74A0 /* WhatsNewVC.xib in Resources */,
 				A853A32922B4005200D0B05C /* train_stations.json in Resources */,
@@ -562,7 +561,7 @@
 				A853A31D22B3FFFA00D0B05C /* Assets.xcassets in Resources */,
 				A896D96922BC076B005F61DF /* RouteResultVC.xib in Resources */,
 				A8D9121B23848D8C005E461F /* RecentRouteCell.xib in Resources */,
-				A8D9121D23848E65005E461F /* EmptyRecentRouteCell.xib in Resources */,
+				A844B0FB239736C700A85A91 /* EmptyRecentRouteCell.xib in Resources */,
 				A8D9121523848BC6005E461F /* SearchStationVC.xib in Resources */,
 				A8BFDA03238A68A3005E6EFB /* NotificationsPermissionVC.xib in Resources */,
 				A891E32422BE9B6D009F9D10 /* RouteDetailsVC.xib in Resources */,
@@ -570,16 +569,16 @@
 				A8D6C3EA22C3F479003CD712 /* FavouriteDetailsVC.xib in Resources */,
 				A8D9121323848BAC005E461F /* StationsMapVC.xib in Resources */,
 				A8F2BF5E2386EE3000ADDB7E /* RemoteConfigDefaults.plist in Resources */,
+				A8249C04239723BF0066B73D /* Localizable.strings in Resources */,
 				A8D6C3F122C40874003CD712 /* EditFavouritesVC.xib in Resources */,
 				A8D9121023848AC0005E461F /* StationsVC.xib in Resources */,
 				A896D96B22BC07D6005F61DF /* DirectRouteCell.xib in Resources */,
-				A8D9121F23848FF2005E461F /* EmptyFavouriteRouteCell.xib in Resources */,
+				A844B0F72397368B00A85A91 /* EmptyFavouriteRouteCell.xib in Resources */,
 				A891E33622BFEE2A009F9D10 /* TrainSwitchCell.xib in Resources */,
 				A896D97522BC1B65005F61DF /* IndirectRouteCell.xib in Resources */,
 				A8BFD9FB238A6425005E6EFB /* PermissionContainerVC.xib in Resources */,
 				A8F2BF5C23866E0700ADDB7E /* GoogleService-Info.plist in Resources */,
 				A8D7E3DB22B81B61002E0A39 /* DatePickerVC.xib in Resources */,
-				A853A31B22B3FFF600D0B05C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,20 +686,31 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A853A31922B3FFF600D0B05C /* Main.storyboard */ = {
+		A8249C06239723BF0066B73D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A853A31A22B3FFF600D0B05C /* Base */,
+				A8249C05239723BF0066B73D /* en */,
+				A80E3FD02397254F00916401 /* he */,
 			);
-			name = Main.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		A853A31E22B3FFFA00D0B05C /* LaunchScreen.storyboard */ = {
+		A844B0F92397368B00A85A91 /* EmptyFavouriteRouteCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A853A31F22B3FFFA00D0B05C /* Base */,
+				A844B0F82397368B00A85A91 /* he */,
+				A844B0FA2397368C00A85A91 /* en */,
 			);
-			name = LaunchScreen.storyboard;
+			name = EmptyFavouriteRouteCell.xib;
+			sourceTree = "<group>";
+		};
+		A844B0FD239736C700A85A91 /* EmptyRecentRouteCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A844B0FC239736C700A85A91 /* he */,
+				A844B0FE239736C800A85A91 /* en */,
+			);
+			name = EmptyRecentRouteCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

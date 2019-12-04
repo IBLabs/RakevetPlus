@@ -22,6 +22,12 @@ class IndirectRouteCell: UITableViewCell {
     @IBOutlet weak private var arrowImageView: UIImageView!
     @IBOutlet weak private var durationLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.configureStrings()
+    }
+    
     func configure(with indirectRoute: IndirectRoute) {
         self.departureTimeLabel.text = indirectRoute.routeTrains.first?.departureTime.toFormat("HH:mm") ?? "--"
         self.arrivalTimeLabel.text = indirectRoute.routeTrains.last?.arrivalTime.toFormat("HH:mm") ?? "--"
@@ -50,6 +56,13 @@ class IndirectRouteCell: UITableViewCell {
             self.platformTitleLabel.alpha = 1
             self.arrowImageView.alpha = 1
         }
+    }
+    
+    private func configureStrings() {
+        self.departureTimeTitleLabel.text = NSLocalizedString("שעת יציאה", comment: "שעת יציאה")
+        self.arrivalTimeTitleLabel.text = NSLocalizedString("שעת הגעה", comment: "שעת הגעה")
+        self.platformTitleLabel.text = NSLocalizedString("רציף", comment: "רציף")
+        self.legCountTitleLabel.text = NSLocalizedString("החלפות", comment: "החלפות")
     }
     
     private func configureDurationLabel(indirectRoute: IndirectRoute) {

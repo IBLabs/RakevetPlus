@@ -27,8 +27,8 @@ struct TrainStationContainer: Codable {
 
 class TrainStation: Codable {
     let id: String
-    let heName: String
-    let enName: String
+    private let heName: String
+    private let enName: String
     let arName: String
     
     var keywords: [String]?
@@ -37,6 +37,36 @@ class TrainStation: Codable {
     private let _isAccessible: String
     private let _hasParking: String
     private let _paidParking: String
+    
+    var name: String {
+        guard let language = Bundle.main.preferredLocalizations.first else {
+            return self.enName
+        }
+        
+        switch language {
+        case "he":
+            return self.heName
+        case "en":
+            return self.enName
+        default:
+            return self.enName
+        }
+    }
+    
+    var altNames: [String] {
+        guard let language = Bundle.main.preferredLocalizations.first else {
+            return [self.arName, self.heName]
+        }
+        
+        switch language {
+        case "he":
+            return [self.arName, self.enName]
+        case "en":
+            return [self.arName, self.heName]
+        default:
+            return [self.arName, self.heName]
+        }
+    }
     
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: _coordinate.latitude, longitude: _coordinate.longitude)

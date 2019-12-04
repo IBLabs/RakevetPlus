@@ -23,6 +23,10 @@ class StationsVC: UIViewController {
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak private var searchButtonLabel: UILabel!
     @IBOutlet weak private var swapButton: UIButton!
+    @IBOutlet weak private var favouritesTitleLabel: UILabel!
+    @IBOutlet weak private var addFavouritesButton: UIButton!
+    @IBOutlet weak private var editFavouritesButton: UIButton!
+    @IBOutlet weak private var recentsTitleLabel: UILabel!
     
     var stations = [TrainStation]()
     var favouriteRoutes = [FavouriteRoute]()
@@ -32,13 +36,13 @@ class StationsVC: UIViewController {
     private var destStation: TrainStation? {
         didSet {
             guard let station = self.destStation else { return }
-            self.animateReplaceText(label: self.destStationLabel, text: station.heName)
+            self.animateReplaceText(label: self.destStationLabel, text: station.name)
         }
     }
     private var origStation: TrainStation? {
         didSet {
             guard let station = self.origStation else { return }
-            self.animateReplaceText(label: self.origStationLabel, text: station.heName)
+            self.animateReplaceText(label: self.origStationLabel, text: station.name)
         }
     }
     private var selectedDate: Date? = Date()
@@ -75,6 +79,7 @@ class StationsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.configureStrings()
         self.configureTableViews()
         self.configureDate()
         self.initializeSearchButtonAnimation()
@@ -144,6 +149,16 @@ class StationsVC: UIViewController {
     
     // MARK: Configuration Methods
     
+    private func configureStrings() {
+        self.destStationLabel.text = NSLocalizedString("בחר תחנת יעד", comment: "בחר תחנת יעד")
+        self.origStationLabel.text = NSLocalizedString("בחר תחנת מוצא", comment: "בחר תחנת מוצא")
+        self.searchButtonLabel.text = NSLocalizedString("חפש מסלול", comment: "חפש מסלול")
+        self.favouritesTitleLabel.text = NSLocalizedString("מסלולים מועדפים", comment: "מסלולים מועדפים")
+        self.editFavouritesButton.setTitle(NSLocalizedString("עריכה", comment: "עריכה"), for: .normal)
+        self.addFavouritesButton.setTitle(NSLocalizedString("הוספה", comment: "הוספה"), for: .normal)
+        self.recentsTitleLabel.text = NSLocalizedString("חיפושים אחרונים", comment: "חיפושים אחרונים")
+    }
+    
     private func configureTableViews() {
         let emptyFavouriteRouteCellNib = UINib(nibName: "EmptyFavouriteRouteCell", bundle: nil)
         self.favouritesTableView.register(emptyFavouriteRouteCellNib, forCellReuseIdentifier: "co.itamarbiton.TravelTest.EmptyFavouriteRouteCellIdentifier")
@@ -168,7 +183,7 @@ class StationsVC: UIViewController {
         }
         
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "he_IL")
+        formatter.locale = Locale.current
         formatter.dateFormat = "EEEE, d MMMM, HH:mm"
         
         self.dateLabel.text = formatter.string(from: selectedDate)
@@ -222,7 +237,7 @@ class StationsVC: UIViewController {
     
     private func formatDateAsParameter(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "he_IL")
+        formatter.locale = Locale.current
         formatter.dateFormat = "dd/MM/yyyy"
         
         return formatter.string(from: date)
@@ -303,7 +318,7 @@ class StationsVC: UIViewController {
             self.selectedDate = date
             
             let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: "he_IL")
+            formatter.locale = Locale.current
             formatter.dateFormat = "EEEE, d MMMM, HH:mm"
             
             self.dateLabel.text = formatter.string(from: date)

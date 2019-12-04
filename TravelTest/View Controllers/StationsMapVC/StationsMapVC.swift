@@ -21,7 +21,7 @@ class StationsMapVC: UIViewController {
         let annotations = self.stations.map { (trainStation) -> MKPointAnnotation in
             let annotation = MKPointAnnotation()
             annotation.coordinate = trainStation.coordinate
-            annotation.title = trainStation.heName
+            annotation.title = trainStation.name
             
             return annotation
         }

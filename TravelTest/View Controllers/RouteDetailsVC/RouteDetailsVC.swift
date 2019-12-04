@@ -13,8 +13,10 @@ class RouteDetailsVC: UIViewController {
     
     var routeTrains = [RouteTrain]()
 
+    @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var routeTableView: UITableView!
     @IBOutlet weak private var containerView: UIView!
+    @IBOutlet weak private var cardView: UIView!
     @IBOutlet weak private var overlayButton: UIButton!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var origStationLabel: UILabel!
@@ -30,12 +32,13 @@ class RouteDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.configureStrings()
+        
         self.setRemimdButton(visible: false, animated: false)
         
         self.initializeRouteDetails()
-        self.configureRouteDetails()
+        self.configureHeader()
         self.configureTableView()
-        self.configureScrollView()
         self.configureContainerView()
         self.configureShadows()
         
@@ -53,7 +56,6 @@ class RouteDetailsVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.updateInsets()
         self.updateRoundedCorners()
         self.updateShadows()
     }
@@ -76,19 +78,20 @@ class RouteDetailsVC: UIViewController {
         self.routeDetails = routeDetails
     }
     
-    private func configureRouteDetails() {
-        self.origStationLabel.text = self.routeTrains.first?.origStation.heName ?? "--"
-        self.destStationLabel.text = self.routeTrains.last?.destStation.heName ?? "--"
+    private func configureStrings() {
+        self.titleLabel.text = NSLocalizedString("פרטי מסלול", comment: "פרטי מסלול")
+        self.remindButtonLabel.text = NSLocalizedString("הזכר לי לצאת", comment: "הזכר לי לצאת")
+    }
+    
+    private func configureHeader() {
+        self.origStationLabel.text = self.routeTrains.first?.origStation.name ?? "--"
+        self.destStationLabel.text = self.routeTrains.last?.destStation.name ?? "--"
         self.dateLabel.text = self.routeTrains.first?.departureTime.toFormat("EEEE, d MMMM, HH:mm")
     }
     
     private func configureContainerView() {
-        self.containerView.layer.cornerRadius = 16
-        self.containerView.layer.masksToBounds = true
-    }
-    
-    private func configureScrollView() {
-        self.scrollView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        self.cardView.layer.cornerRadius = 16
+        self.cardView.layer.masksToBounds = true
     }
     
     private func configureTableView() {
@@ -107,11 +110,6 @@ class RouteDetailsVC: UIViewController {
         self.remindButtonContainer.layer.shadowOffset = CGSize(width: 0, height: 5)
         self.remindButtonContainer.layer.shadowRadius = 10
         self.remindButtonContainer.layer.shadowOpacity = 0.2
-    }
-    
-    private func updateInsets() {
-        let bottomInset = self.view.frame.maxY - self.remindButtonContainer.frame.minY
-        self.scrollView.contentInset = UIEdgeInsets(top: self.scrollView.adjustedContentInset.top, left: 0, bottom: bottomInset, right: 0)
     }
     
     private func updateShadows() {
@@ -178,13 +176,13 @@ class RouteDetailsVC: UIViewController {
         self.overlayButton.alpha = 0
         
         let screenHeight = UIScreen.main.bounds.height
-        self.scrollView.transform = .init(translationX: 0, y: screenHeight)
+        self.containerView.transform = .init(translationX: 0, y: screenHeight)
     }
     
     private func performEnterAnimation(completion: ((Bool) -> Void)? = nil) {
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: [], animations: {
             self.overlayButton.alpha = 1
-            self.scrollView.transform = .identity
+            self.containerView.transform = .identity
         }, completion: completion)
     }
     
@@ -193,7 +191,7 @@ class RouteDetailsVC: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: [], animations: {
             self.overlayButton.alpha = 0
-            self.scrollView.transform = .init(translationX: 0, y: screenHeight)
+            self.containerView.transform = .init(translationX: 0, y: screenHeight)
         }, completion: completion)
     }
     

@@ -16,8 +16,8 @@ class StationResultCell: UITableViewCell {
     @IBOutlet weak var parkingIconImageView: UIImageView!
     
     func configure(with station: TrainStation) {
-        self.nameLabel.text = station.heName
-        self.altNameLabel.text = "\(station.arName) / \(station.enName)"
+        self.nameLabel.text = station.name
+        self.altNameLabel.text = station.altNames.joined(separator: ", ")
         self.parkingIconImageView.isHidden = !station.hasParking
         self.handicapIconImageView.isHidden = !station.isAccessible
     }

@@ -19,8 +19,8 @@ class RouteDetailCell: UITableViewCell {
         self.contentView.backgroundColor = .clear
         self.contentView.superview?.backgroundColor = .clear
         
-        self.stationLabel.text = station.station.heName
-        self.platformLabel.text = "רציף \(station.platform)"
+        self.stationLabel.text = station.station.name
+        self.platformLabel.text = String(format: NSLocalizedString("רציף %@", comment: "רציף %@"), station.platform)
         
         switch type {
         case .initial:
