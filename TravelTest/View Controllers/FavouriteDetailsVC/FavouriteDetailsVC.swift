@@ -12,9 +12,12 @@ class FavouriteDetailsVC: UIViewController {
     
     @IBOutlet weak private var overlayButton: UIButton!
     @IBOutlet weak private var containerView: UIView!
+    @IBOutlet weak private var origStationTitleLabel: UILabel!
     @IBOutlet weak private var origStationLabel: UILabel!
+    @IBOutlet weak private var destStationTitleLabel: UILabel!
     @IBOutlet weak private var destStationLabel: UILabel!
     @IBOutlet weak private var nameTextField: UITextField!
+    @IBOutlet weak private var addButton: UIButton!
     
     private var origStation: TrainStation?
     private var destStation: TrainStation?
@@ -25,6 +28,8 @@ class FavouriteDetailsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initializeStrings()
         
         if let favouriteRoute = self.favouriteRoute {
             self.configure(with: favouriteRoute)
@@ -39,6 +44,15 @@ class FavouriteDetailsVC: UIViewController {
         performEnterAnimation { succeeded in 
             self.nameTextField.becomeFirstResponder()
         }
+    }
+    
+    private func initializeStrings() {
+        self.addButton.setTitle(NSLocalizedString("הוסף מסלול", comment: "הוסף מסלול"), for: .normal)
+        self.nameTextField.placeholder = NSLocalizedString("שם מסלול (לדוג׳ בית)", comment: "שם מסלול (לדוג׳ בית)")
+        self.origStationLabel.text = NSLocalizedString("בחר תחנת מוצא", comment: "בחר תחנת מוצא")
+        self.destStationLabel.text = NSLocalizedString("בחר תחנת יעד", comment: "בחר תחנת יעד")
+        self.origStationTitleLabel.text = NSLocalizedString("תחנת מוצא", comment: "תחנת מוצא")
+        self.destStationTitleLabel.text = NSLocalizedString("תחנת יעד", comment: "תחנת יעד")
     }
     
     private func configure(with favouriteRoute: FavouriteRoute) {

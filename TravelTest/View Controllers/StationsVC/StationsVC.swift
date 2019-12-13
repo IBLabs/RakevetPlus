@@ -58,7 +58,7 @@ class StationsVC: UIViewController {
         let superview = label.superview!
         superview.addSubview(replacementLabel)
         
-        replacementLabel.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
+        replacementLabel.leadingAnchor.constraint(equalTo: label.leadingAnchor).isActive = true
         replacementLabel.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 0).isActive = true
         superview.layoutIfNeeded()
         

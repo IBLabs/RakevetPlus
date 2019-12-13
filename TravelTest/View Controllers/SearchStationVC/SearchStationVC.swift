@@ -24,6 +24,7 @@ class SearchStationVC: UIViewController {
     @IBOutlet weak private var stationsTableView: UITableView!
     @IBOutlet weak private var resultTableView: UITableView!
     @IBOutlet weak private var closeButton: UIButton!
+    @IBOutlet weak private var searchTextField: UITextField!
     
     var delegate: SearchStationVCDelegate?
     var stations = [TrainStation]()
@@ -54,6 +55,7 @@ class SearchStationVC: UIViewController {
     private func configureLabels() {
         self.titleLabel.text = self.type.getTitle()
         self.closeButton.setTitle(NSLocalizedString("סגור", comment: "סגור"), for: .normal)
+        self.searchTextField.placeholder = NSLocalizedString("חפש תחנה", comment: "חפש תחנה")
     }
     
     private func configureTableViews() {
@@ -224,7 +226,7 @@ extension SearchStationVC: UITextFieldDelegate {
         }
         
         self.filteredStations = self.stations.filter({
-            let nameContains = $0.name.contains(searchText)
+            let nameContains = ($0.name.range(of: searchText, options: .caseInsensitive) != nil)
             var keywordsContain = false
             if let keywords = $0.keywords {
                 for keyword in keywords {

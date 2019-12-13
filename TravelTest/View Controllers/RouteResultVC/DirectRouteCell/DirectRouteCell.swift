@@ -25,6 +25,10 @@ class DirectRouteCell: UITableViewCell {
     }
 
     func configure(with directRoute: DirectRoute) {
+        if UIView.userInterfaceLayoutDirection(for: self.arrowImageView.semanticContentAttribute) == .leftToRight {
+            self.arrowImageView.transform = .init(scaleX: -1, y: 1)
+        }
+        
         self.departureTimeLabel.text = directRoute.routeTrain.departureTime.toFormat("HH:mm")
         self.arrivalTimeLabel.text = directRoute.routeTrain.arrivalTime.toFormat("HH:mm")
         self.platformLabel.text = directRoute.routeTrain.origPlatform
@@ -38,6 +42,7 @@ class DirectRouteCell: UITableViewCell {
             self.arrivalTimeTitleLabel.alpha = 0.2
             self.platformTitleLabel.alpha = 0.2
             self.arrowImageView.alpha = 0.2
+            self.durationLabel.alpha = 0.2
         } else {
             self.departureTimeLabel.alpha = 1
             self.arrivalTimeLabel.alpha = 1
@@ -46,6 +51,7 @@ class DirectRouteCell: UITableViewCell {
             self.arrivalTimeTitleLabel.alpha = 1
             self.platformTitleLabel.alpha = 1
             self.arrowImageView.alpha = 1
+            self.durationLabel.alpha = 1
         }
     }
     

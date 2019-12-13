@@ -52,13 +52,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פרטי מסלול" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6X-Jy-8ec">
-                                                    <rect key="frame" x="218.5" y="16" width="179.5" height="45.5"/>
+                                                    <rect key="frame" x="16" y="16" width="179.5" height="45.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5E-XP-GhF" userLabel="Close Button">
-                                                    <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                                    <rect key="frame" x="366" y="16" width="32" height="32"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="32" id="9h3-ae-Ln1"/>
@@ -75,7 +75,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_trip_icon" translatesAutoresizingMaskIntoConstraints="NO" id="CMf-hE-1Yu">
-                                                    <rect key="frame" x="384" y="75.5" width="6" height="30"/>
+                                                    <rect key="frame" x="16" y="75.5" width="6" height="30"/>
                                                     <color key="tintColor" red="0.8862745098" green="0.40784313729999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -84,7 +84,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Qnc-wm-P0z">
-                                                    <rect key="frame" x="380" y="127.5" width="14" height="15"/>
+                                                    <rect key="frame" x="12" y="127.5" width="14" height="15"/>
                                                     <color key="tintColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -93,17 +93,17 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אשדוד עד הלום" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onp-hJ-MFX">
-                                                    <rect key="frame" x="285" y="69.5" width="91" height="18"/>
+                                                    <rect key="frame" x="30" y="69.5" width="91" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="רחובות" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9B-GH-Syv">
-                                                    <rect key="frame" x="331" y="93.5" width="45" height="18"/>
+                                                    <rect key="frame" x="30" y="93.5" width="45" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="יום שני, 22 ביולי, 20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-FO-mcb">
-                                                    <rect key="frame" x="227" y="126" width="145" height="18"/>
+                                                    <rect key="frame" x="34" y="126" width="145" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -118,22 +118,22 @@
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="v9B-GH-Syv" firstAttribute="top" secondItem="onp-hJ-MFX" secondAttribute="bottom" constant="6" id="0eS-1a-SiP"/>
+                                                <constraint firstItem="O0P-FO-mcb" firstAttribute="leading" secondItem="Qnc-wm-P0z" secondAttribute="trailing" constant="8" id="4Vc-3j-ScX"/>
                                                 <constraint firstItem="Qnc-wm-P0z" firstAttribute="top" secondItem="CMf-hE-1Yu" secondAttribute="bottom" constant="22" id="A3h-qN-1Gq"/>
                                                 <constraint firstItem="O0P-FO-mcb" firstAttribute="top" secondItem="v9B-GH-Syv" secondAttribute="bottom" constant="14.5" id="BlO-c3-oAQ"/>
                                                 <constraint firstItem="onp-hJ-MFX" firstAttribute="top" secondItem="A6X-Jy-8ec" secondAttribute="bottom" constant="8" id="Bnf-d1-X8V"/>
                                                 <constraint firstAttribute="bottom" secondItem="6Ek-9m-ppD" secondAttribute="bottom" id="EEa-sl-y0H"/>
                                                 <constraint firstAttribute="trailing" secondItem="6Ek-9m-ppD" secondAttribute="trailing" id="FMn-Ru-52v"/>
-                                                <constraint firstItem="W5E-XP-GhF" firstAttribute="leading" secondItem="d0t-1l-dK7" secondAttribute="leading" constant="16" id="FPI-kB-8K0"/>
                                                 <constraint firstItem="Qnc-wm-P0z" firstAttribute="centerX" secondItem="CMf-hE-1Yu" secondAttribute="centerX" id="Hfc-nQ-3VF"/>
-                                                <constraint firstItem="Qnc-wm-P0z" firstAttribute="leading" secondItem="O0P-FO-mcb" secondAttribute="trailing" constant="8" id="Mec-9M-FcI"/>
-                                                <constraint firstAttribute="trailing" secondItem="A6X-Jy-8ec" secondAttribute="trailing" constant="16" id="OmU-uW-e1f"/>
+                                                <constraint firstItem="v9B-GH-Syv" firstAttribute="leading" secondItem="onp-hJ-MFX" secondAttribute="leading" id="PsE-eH-oe8"/>
+                                                <constraint firstItem="A6X-Jy-8ec" firstAttribute="leading" secondItem="d0t-1l-dK7" secondAttribute="leading" constant="16" id="QN3-Xr-6rM"/>
                                                 <constraint firstItem="W5E-XP-GhF" firstAttribute="top" secondItem="d0t-1l-dK7" secondAttribute="top" constant="16" id="SgF-tK-nBc"/>
-                                                <constraint firstItem="CMf-hE-1Yu" firstAttribute="leading" secondItem="onp-hJ-MFX" secondAttribute="trailing" constant="8" id="cME-zI-kVd"/>
                                                 <constraint firstItem="Qnc-wm-P0z" firstAttribute="centerY" secondItem="O0P-FO-mcb" secondAttribute="centerY" id="dGe-hw-wsH"/>
-                                                <constraint firstAttribute="trailing" secondItem="CMf-hE-1Yu" secondAttribute="trailing" constant="24" id="eAW-F7-rDd"/>
                                                 <constraint firstItem="A6X-Jy-8ec" firstAttribute="top" secondItem="d0t-1l-dK7" secondAttribute="top" constant="16" id="gu2-9t-JwA"/>
                                                 <constraint firstItem="6Ek-9m-ppD" firstAttribute="top" secondItem="O0P-FO-mcb" secondAttribute="bottom" constant="16" id="hLu-vQ-B71"/>
-                                                <constraint firstItem="v9B-GH-Syv" firstAttribute="trailing" secondItem="onp-hJ-MFX" secondAttribute="trailing" id="rwt-6H-5d6"/>
+                                                <constraint firstAttribute="trailing" secondItem="W5E-XP-GhF" secondAttribute="trailing" constant="16" id="r5a-Lp-TQY"/>
+                                                <constraint firstItem="CMf-hE-1Yu" firstAttribute="leading" secondItem="d0t-1l-dK7" secondAttribute="leading" constant="16" id="rjK-gy-1Vb"/>
+                                                <constraint firstItem="onp-hJ-MFX" firstAttribute="leading" secondItem="CMf-hE-1Yu" secondAttribute="trailing" constant="8" id="uDL-xT-OFY"/>
                                                 <constraint firstItem="6Ek-9m-ppD" firstAttribute="leading" secondItem="d0t-1l-dK7" secondAttribute="leading" id="ugN-Gq-HQz"/>
                                                 <constraint firstItem="CMf-hE-1Yu" firstAttribute="top" secondItem="onp-hJ-MFX" secondAttribute="bottom" constant="-12" id="w7L-mN-410"/>
                                             </constraints>

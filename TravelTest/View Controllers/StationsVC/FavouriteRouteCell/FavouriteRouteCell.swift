@@ -13,6 +13,15 @@ class FavouriteRouteCell: UITableViewCell {
     @IBOutlet weak var origStationLabel: UILabel!
     @IBOutlet weak var destStationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak private var chevronImageView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        if UIView.userInterfaceLayoutDirection(for: self.chevronImageView.semanticContentAttribute) == .leftToRight {
+            self.chevronImageView.transform = .init(scaleX: -1, y: 1)
+        }
+    }
     
     func configure(with favouriteRoute: FavouriteRoute) {
         self.origStationLabel.text = favouriteRoute.origStation.name

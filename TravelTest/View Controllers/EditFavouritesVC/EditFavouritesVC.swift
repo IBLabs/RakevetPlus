@@ -12,10 +12,14 @@ class EditFavouritesVC: UIViewController {
     
     private var favouriteRoutes = DataStore.shared.getFavouriteRoutes()
     
+    @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var favouritesTableView: UITableView!
+    @IBOutlet weak private var backButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initializeStrings()
         
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
 
@@ -25,6 +29,11 @@ class EditFavouritesVC: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    private func initializeStrings() {
+        self.backButton.setTitle(NSLocalizedString("חזור", comment: "חזור"), for: .normal)
+        self.titleLabel.text = NSLocalizedString("מסלולים מועדפים", comment: "מסלולים מועדפים")
     }
     
     private func refreshTableView() {

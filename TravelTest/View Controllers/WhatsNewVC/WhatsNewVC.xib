@@ -32,26 +32,26 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgC-oF-scL">
                     <rect key="frame" x="0.0" y="60" width="414" height="836"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-9b-ROl">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-9b-ROl">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="836"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-rN-m9S">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="861.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מה חדש" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7Q-Sy-H1G">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מה חדש" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7Q-Sy-H1G">
                                             <rect key="frame" x="16" y="16" width="382" height="43"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="גרסה 1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oda-Nk-iVe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="גרסה 1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oda-Nk-iVe">
                                             <rect key="frame" x="16" y="59" width="382" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8U-M0-fzT">
-                                            <rect key="frame" x="16" y="16" width="36" height="36"/>
+                                            <rect key="frame" x="362" y="16" width="36" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="36" id="Ux6-5g-3QL"/>
                                                 <constraint firstAttribute="width" constant="36" id="bNs-GU-byk"/>
@@ -133,7 +133,7 @@ Cg
                                                     <rect key="frame" x="0.0" y="374" width="414" height="358"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lt6-Hp-x9v">
-                                                            <rect key="frame" x="16" y="0.0" width="382" height="131"/>
+                                                            <rect key="frame" x="16" y="0.0" width="382" height="179"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="🚂">
                                                                     <attributes>
@@ -173,7 +173,7 @@ Cg
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen_shot_2" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-nR-5ap">
-                                                            <rect key="frame" x="0.0" y="147" width="414" height="211"/>
+                                                            <rect key="frame" x="0.0" y="195" width="414" height="163"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -192,7 +192,6 @@ Cg
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstItem="N8U-M0-fzT" firstAttribute="leading" secondItem="adZ-rN-m9S" secondAttribute="leading" constant="16" id="Dks-p2-OsY"/>
                                         <constraint firstAttribute="trailing" secondItem="a7Q-Sy-H1G" secondAttribute="trailing" constant="16" id="Jhe-d9-dOb"/>
                                         <constraint firstAttribute="trailing" secondItem="oda-Nk-iVe" secondAttribute="trailing" constant="16" id="JiY-fI-wgT"/>
                                         <constraint firstItem="oda-Nk-iVe" firstAttribute="top" secondItem="a7Q-Sy-H1G" secondAttribute="bottom" id="KIt-5K-Apy"/>
@@ -207,6 +206,7 @@ Cg
                                         <constraint firstItem="cWH-23-yxS" firstAttribute="leading" secondItem="adZ-rN-m9S" secondAttribute="leading" id="oqv-YE-q3m"/>
                                         <constraint firstItem="OU3-xA-P7v" firstAttribute="leading" secondItem="adZ-rN-m9S" secondAttribute="leading" id="qkx-HV-Ay7"/>
                                         <constraint firstItem="cWH-23-yxS" firstAttribute="top" secondItem="OU3-xA-P7v" secondAttribute="bottom" constant="16" id="tS0-7n-goE"/>
+                                        <constraint firstAttribute="trailing" secondItem="N8U-M0-fzT" secondAttribute="trailing" constant="16" id="zXy-x0-5CS"/>
                                     </constraints>
                                 </view>
                             </subviews>

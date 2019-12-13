@@ -13,6 +13,7 @@ class DatePickerVC: UIViewController {
     @IBOutlet weak private var datePicker: UIDatePicker!
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var overlayButton: UIButton!
+    @IBOutlet weak private var doneButton: UIButton!
     
     var completion: ((Date) -> Void)?
 
@@ -26,6 +27,10 @@ class DatePickerVC: UIViewController {
         super.viewDidAppear(animated)
         
         performEnterAnimation()
+    }
+    
+    private func initializeStrings() {
+        self.doneButton.setTitle(NSLocalizedString("אישור", comment: "אישור."), for: .normal)
     }
     
     @IBAction private func didClickedOverlayButton(sender: UIButton) {

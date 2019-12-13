@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="containerView" destination="NhQ-gW-HRb" id="XPm-Kv-Dcp"/>
                 <outlet property="datePicker" destination="qMQ-11-XTB" id="NgT-qF-Wft"/>
+                <outlet property="doneButton" destination="Gm9-Y6-ovZ" id="D4a-vp-RZp"/>
                 <outlet property="overlayButton" destination="WeH-yA-ulx" id="HDc-Ws-nid"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

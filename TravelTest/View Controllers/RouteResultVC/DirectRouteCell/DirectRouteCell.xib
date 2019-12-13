@@ -14,10 +14,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqO-Wf-kUh">
-                    <rect key="frame" x="232" y="7" width="166" height="46"/>
+                    <rect key="frame" x="16" y="7" width="166" height="46"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת יציאה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2M-CN-wuk">
-                            <rect key="frame" x="112.5" y="0.0" width="53.5" height="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת הגעה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2M-CN-wuk">
+                            <rect key="frame" x="104" y="0.0" width="62" height="15"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -27,8 +27,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת הגעה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-pP-Voi">
-                            <rect key="frame" x="7" y="0.0" width="54" height="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעת יציאה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-pP-Voi">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="15"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -46,22 +46,22 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="1Pb-12-cXR" firstAttribute="leading" secondItem="hqn-JV-ZcX" secondAttribute="trailing" constant="12" id="5Zd-iY-iVT"/>
+                        <constraint firstItem="A8f-pP-Voi" firstAttribute="leading" secondItem="3dG-Rw-htC" secondAttribute="leading" id="8Kx-AM-Mnx"/>
                         <constraint firstItem="1Pb-12-cXR" firstAttribute="top" secondItem="u2M-CN-wuk" secondAttribute="bottom" constant="2" id="8cw-sY-8kd"/>
                         <constraint firstAttribute="trailing" secondItem="1Pb-12-cXR" secondAttribute="trailing" id="Dc3-gN-ZOy"/>
                         <constraint firstItem="hqn-JV-ZcX" firstAttribute="leading" secondItem="3dG-Rw-htC" secondAttribute="trailing" constant="12" id="G6a-XT-3zw"/>
-                        <constraint firstItem="A8f-pP-Voi" firstAttribute="trailing" secondItem="3dG-Rw-htC" secondAttribute="trailing" id="N6B-f0-VfR"/>
-                        <constraint firstItem="u2M-CN-wuk" firstAttribute="trailing" secondItem="1Pb-12-cXR" secondAttribute="trailing" id="SBj-w1-sOQ"/>
                         <constraint firstItem="3dG-Rw-htC" firstAttribute="top" secondItem="A8f-pP-Voi" secondAttribute="bottom" constant="2" id="b0h-AI-yb1"/>
                         <constraint firstAttribute="trailing" secondItem="u2M-CN-wuk" secondAttribute="trailing" id="dJt-Lv-1z5"/>
                         <constraint firstAttribute="bottom" secondItem="3dG-Rw-htC" secondAttribute="bottom" id="gkN-Jj-R8A"/>
                         <constraint firstItem="u2M-CN-wuk" firstAttribute="top" secondItem="NqO-Wf-kUh" secondAttribute="top" id="qeX-IN-ymP"/>
+                        <constraint firstItem="u2M-CN-wuk" firstAttribute="leading" secondItem="1Pb-12-cXR" secondAttribute="leading" id="smS-VS-Xd3"/>
                         <constraint firstAttribute="bottom" secondItem="1Pb-12-cXR" secondAttribute="bottom" id="tA7-rl-zsC"/>
                         <constraint firstItem="hqn-JV-ZcX" firstAttribute="centerY" secondItem="1Pb-12-cXR" secondAttribute="centerY" id="tSK-Uo-tVK"/>
                         <constraint firstItem="3dG-Rw-htC" firstAttribute="leading" secondItem="NqO-Wf-kUh" secondAttribute="leading" id="uCz-l2-a8A"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdU-aG-4pC">
-                    <rect key="frame" x="16" y="15" width="23" height="46"/>
+                    <rect key="frame" x="375" y="7" width="23" height="46"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPu-iF-2F9">
                             <rect key="frame" x="0.0" y="17" width="15" height="29"/>
@@ -87,7 +87,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה ו-32 דק׳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeG-AI-rwy">
-                    <rect key="frame" x="330.5" y="53" width="67.5" height="14.5"/>
+                    <rect key="frame" x="16" y="53" width="67.5" height="14.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -95,20 +95,20 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="MdU-aG-4pC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1Ri-QT-Jhr"/>
-                <constraint firstItem="MdU-aG-4pC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="62d-bg-gxf"/>
-                <constraint firstItem="HeG-AI-rwy" firstAttribute="trailing" secondItem="NqO-Wf-kUh" secondAttribute="trailing" id="BDs-ti-yL4"/>
-                <constraint firstAttribute="trailing" secondItem="NqO-Wf-kUh" secondAttribute="trailing" constant="16" id="TTH-Ku-qGJ"/>
+                <constraint firstItem="HeG-AI-rwy" firstAttribute="leading" secondItem="NqO-Wf-kUh" secondAttribute="leading" id="5i1-Ii-02b"/>
+                <constraint firstItem="NqO-Wf-kUh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="UJ6-UG-MlY"/>
+                <constraint firstItem="MdU-aG-4pC" firstAttribute="top" secondItem="NqO-Wf-kUh" secondAttribute="top" id="bDk-fU-p8S"/>
+                <constraint firstAttribute="trailing" secondItem="MdU-aG-4pC" secondAttribute="trailing" constant="16" id="j82-Ru-9BZ"/>
                 <constraint firstItem="NqO-Wf-kUh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-8" id="omb-in-KVo"/>
                 <constraint firstItem="HeG-AI-rwy" firstAttribute="top" secondItem="NqO-Wf-kUh" secondAttribute="bottom" id="twy-vr-d2K"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="arrivalTimeLabel" destination="3dG-Rw-htC" id="8cu-Z9-PwZ"/>
-                <outlet property="arrivalTimeTitleLabel" destination="A8f-pP-Voi" id="Wjk-38-cM6"/>
+                <outlet property="arrivalTimeLabel" destination="1Pb-12-cXR" id="hno-ik-JK6"/>
+                <outlet property="arrivalTimeTitleLabel" destination="u2M-CN-wuk" id="Rav-ol-Qdr"/>
                 <outlet property="arrowImageView" destination="hqn-JV-ZcX" id="rsR-RJ-B7I"/>
-                <outlet property="departureTimeLabel" destination="1Pb-12-cXR" id="0Ux-dc-80H"/>
-                <outlet property="departureTimeTitleLabel" destination="u2M-CN-wuk" id="CNS-pg-aJP"/>
+                <outlet property="departureTimeLabel" destination="3dG-Rw-htC" id="6lG-dQ-hPO"/>
+                <outlet property="departureTimeTitleLabel" destination="A8f-pP-Voi" id="Xdv-mO-qMO"/>
                 <outlet property="durationLabel" destination="HeG-AI-rwy" id="tH2-K7-4zf"/>
                 <outlet property="platformLabel" destination="yPu-iF-2F9" id="riH-YE-Lop"/>
                 <outlet property="platformTitleLabel" destination="bcV-Sr-XSp" id="qj8-M1-ww8"/>

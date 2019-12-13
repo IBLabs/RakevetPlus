@@ -20,11 +20,15 @@ class RouteResultVC: UIViewController {
     @IBOutlet weak private var origStationLabel: UILabel!
     @IBOutlet weak private var destStationLabel: UILabel!
     @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var dateLabel: UILabel!
     @IBOutlet weak private var backButton: UIButton!
     
     @IBOutlet weak var routeSliderView: UIView!
     @IBOutlet var routeButtons: [UIButton]!
+    
+    @IBOutlet weak private var directRoutesButton: UIButton!
+    @IBOutlet weak private var indirectRoutesButton: UIButton!
         
     var routeResult: RouteResult? {
         didSet {
@@ -64,6 +68,11 @@ class RouteResultVC: UIViewController {
             
             self.dateLabel.text = formatter.string(from: date)
         }
+        
+        if UIView.userInterfaceLayoutDirection(for: self.scrollView.semanticContentAttribute) == .rightToLeft {
+            self.scrollView.transform = .init(rotationAngle: .pi)
+            self.contentView.transform = .init(rotationAngle: .pi)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,15 +84,6 @@ class RouteResultVC: UIViewController {
                 activeDirectRouteIndex = index
                 break
             }
-            
-            /*
-            if route.routeTrain.departureTime.isInPast {
-                continue
-            } else {
-                activeDirectRouteIndex = index
-                break
-            }
-             */
         }
         
         if activeDirectRouteIndex != -1 {
@@ -99,15 +99,6 @@ class RouteResultVC: UIViewController {
                 activeIndirectRouteIndex = index
                 break
             }
-            
-            /*
-            if route.routeTrains.first?.departureTime.isInPast ?? false {
-                continue
-            } else {
-                activeIndirectRouteIndex = index
-                break
-            }
-             */
         }
         
         if activeIndirectRouteIndex != -1 {
@@ -152,12 +143,23 @@ class RouteResultVC: UIViewController {
     }
     
     @IBAction func didClickedRouteButton(sender: UIButton) {
-        let buttonIndex = self.routeButtons.firstIndex { $0 == sender }
-        guard let index = buttonIndex else {
+        var buttonIndex = -1
+        switch sender {
+        case self.directRoutesButton:
+            buttonIndex = 0
+            
+        case self.indirectRoutesButton:
+            buttonIndex = 1
+            
+        default:
+            return
+        }
+        
+        guard buttonIndex != -1 else {
             return
         }
 
-        self.moveToTab(atIndex: index)
+        self.moveToTab(atIndex: buttonIndex)
     }
 
     private func moveToTab(atIndex index: Int) {

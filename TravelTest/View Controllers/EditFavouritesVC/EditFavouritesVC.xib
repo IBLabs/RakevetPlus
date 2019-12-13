@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditFavouritesVC" customModule="TravelTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditFavouritesVC" customModule="RakevetPlus" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="11u-am-KEp" id="Mz8-Qa-Ju5"/>
                 <outlet property="favouritesTableView" destination="gpK-hA-XDr" id="yIx-j7-lts"/>
+                <outlet property="titleLabel" destination="txK-a0-iM6" id="8xh-rg-Inc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,24 +25,25 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11u-am-KEp">
-                            <rect key="frame" x="30" y="48" width="33" height="34"/>
+                            <rect key="frame" x="16" y="48" width="72" height="32"/>
+                            <color key="backgroundColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="Ef9-tI-sG2"/>
+                                <constraint firstAttribute="width" constant="72" id="wpZ-yK-CXj"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <state key="normal" title="חזור"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didClickedBackButtonWithSender:" destination="-1" eventType="touchUpInside" id="YNn-a1-vst"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-G5-T27">
-                            <rect key="frame" x="16" y="60" width="8" height="14"/>
-                            <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מסלולים מועדפים" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txK-a0-iM6">
-                            <rect key="frame" x="207" y="119.5" width="191" height="32.5"/>
+                            <rect key="frame" x="16" y="119.5" width="191" height="32.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -50,11 +51,9 @@
                     </subviews>
                     <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="txK-a0-iM6" secondAttribute="trailing" constant="16" id="33v-8F-5jM"/>
                         <constraint firstAttribute="bottom" secondItem="txK-a0-iM6" secondAttribute="bottom" constant="8" id="AS2-xu-Py0"/>
-                        <constraint firstItem="Qfk-G5-T27" firstAttribute="centerY" secondItem="11u-am-KEp" secondAttribute="centerY" constant="2" id="TTh-oe-VMH"/>
-                        <constraint firstItem="Qfk-G5-T27" firstAttribute="leading" secondItem="J7a-2x-AF9" secondAttribute="leading" constant="16" id="oAL-KD-RPS"/>
-                        <constraint firstItem="11u-am-KEp" firstAttribute="leading" secondItem="Qfk-G5-T27" secondAttribute="trailing" constant="6" id="oYY-2K-vOC"/>
+                        <constraint firstItem="txK-a0-iM6" firstAttribute="leading" secondItem="J7a-2x-AF9" secondAttribute="leading" constant="16" id="Yy9-MA-zJq"/>
+                        <constraint firstItem="11u-am-KEp" firstAttribute="leading" secondItem="J7a-2x-AF9" secondAttribute="leading" constant="16" id="dbI-2x-Gb4"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-hA-XDr">
@@ -79,9 +78,7 @@
                 <constraint firstItem="J7a-2x-AF9" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nEB-BH-g81"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="119"/>
         </view>
     </objects>
-    <resources>
-        <image name="chevron_icon" width="8" height="14"/>
-    </resources>
 </document>
